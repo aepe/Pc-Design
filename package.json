@@ -1,0 +1,42 @@
+{
+  "name": "vue-rollup-component-template",
+  "version": "1.0.0",
+  "description": "vue 组件开发框架",
+  "main": "./src/index.js",
+  "scripts": {
+    "dev": "npm run clear:dir && cross-env NODE_ENV=development rollup --config build/rollup.config.es.js --watch",
+    "build": "npm run clear:dir && npm run build:browser && npm run build:es && npm run build:iife",
+    "build:browser": "rollup --config build/rollup.config.browser.js",
+    "build:es": "rollup --config build/rollup.config.es.js",
+    "build:iife": "rollup --config build/rollup.config.iife.js",
+    "clear:dir": "node build/clearDir.js"
+  },
+  "keywords": [
+    "bhabgs"
+  ],
+  "author": "bhabgs",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "clean-css": "^4.2.1",
+    "cross-env": "^6.0.3",
+    "rollup-plugin-babel": "3.0.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-css-only": "^1.0.0",
+    "rollup-plugin-less": "^1.1.2",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-tsx": "^1.0.2",
+    "rollup-plugin-typescript": "^1.0.1",
+    "rollup-plugin-uglify-es": "^0.0.1",
+    "rollup-plugin-vue": "^5.1.2",
+    "tslib": "^1.10.0",
+    "typescript": "^3.6.4",
+    "vue": "^2.6.10",
+    "vue-property-decorator": "^8.3.0",
+    "vue-rollup-component-template": "^1.0.0",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
