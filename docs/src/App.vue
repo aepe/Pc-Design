@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-10-29 11:44:57
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-10-29 14:16:20
+ * @LastEditTime: 2019-10-29 16:42:19
  -->
 <template>
   <div id="app">
@@ -19,6 +19,8 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  created() {
   }
 }
 </script>

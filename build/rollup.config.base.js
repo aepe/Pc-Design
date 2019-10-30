@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-10-29 10:56:25
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-10-29 14:17:52
+ * @LastEditTime: 2019-10-30 15:11:35
  */
 import resolve from 'rollup-plugin-node-resolve' // 告诉 Rollup 如何查找外部模块
 import commonjs from 'rollup-plugin-commonjs' // 将CommonJS模块转换为 ES2015 供 Rollup 处理
@@ -16,6 +16,7 @@ import { writeFileSync } from 'fs' // 写文件
 import typescript from 'rollup-plugin-typescript';
 import tsx from 'rollup-plugin-tsx'; // tsx编译
 import less from 'rollup-plugin-less'; // less 编译
+import replace from 'rollup-plugin-replace'
 export default {
   input: 'src/index.ts',
   plugins: [
@@ -29,6 +30,10 @@ export default {
     less(),
     commonjs(),
     vue({ css: false }), 
+    replace({
+      'process.env.NODE_ENV': JSON.stringify('development'),
+      'process.env.VUE_ENV': JSON.stringify('browser')
+    }),
     babel(
       {
         exclude: 'node_modules/**', // 防止打包node_modules下的文件
