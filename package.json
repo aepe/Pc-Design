@@ -1,5 +1,5 @@
 {
-  "name": "vue-rollup-component-template",
+  "name": "zx-util-ui",
   "version": "1.0.0",
   "description": "vue 组件开发框架",
   "main": "./src/index.js",
