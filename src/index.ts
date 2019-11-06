@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-10-29 10:54:09
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-10-29 16:41:29
+ * @LastEditTime: 2019-11-05 16:29:00
  */
 import vueComponents from './components';
 import zxUtil from './packages';
@@ -14,6 +14,7 @@ const install = function(Vue: any) {
     // 工具
     Vue.prototype.$zxUtil = zxUtil;
     // 组件
+    console.log(vueComponents)
     vueComponents.forEach((component) => {
         Vue.component(component.name, component);
     });

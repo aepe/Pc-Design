@@ -4,12 +4,13 @@
  * @Author: bhabgs
  * @Date: 2019-10-29 11:44:57
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-10-29 16:42:19
+ * @LastEditTime: 2019-11-05 16:30:27
  -->
 <template>
     <div id="app">
         <mt-button></mt-button>
         <mt-input></mt-input>
+        <SiderBox />
     </div>
 </template>
 

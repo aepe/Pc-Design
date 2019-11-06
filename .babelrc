@@ -9,11 +9,12 @@
       "stage-3"
     ],
     "plugins": [
-        [
-          "module-resolver",
-          {
-            "root": ["src/"]
-          }
-        ]
+      ["transform-vue-jsx", { "jsx": "this.$h" }],
+      [
+        "module-resolver",
+        {
+          "root": ["src/"]
+        }
       ]
+    ]
   }
