@@ -1,18 +1,16 @@
-# docs
+# 美腾科技工厂 UI 组件库 docs 文档
 
-> A Vue.js project
+> 运行开发美腾科技工厂 UI 组件库文档
 
-## Build Setup
+## 运行组件库
 
-``` bash
-# install dependencies
-npm install
+```bash
+# 安装依赖
+yarn / npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
+# 运行
+yarn dev / npm run dev
 
-# build for production with minification
-npm run build
+# 打包
+yarn build / npm run build
 ```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
