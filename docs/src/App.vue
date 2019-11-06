@@ -16,6 +16,7 @@
 </template>
 
 <script>
+// import Markdown from '@/md/guide.md';
 export default {
     name: 'app',
     data() {
