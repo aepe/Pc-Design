@@ -1,5 +1,5 @@
 // 找到components文件夹下以.vue命名的文件
-const requireComponent = require.context('./', true, /\.vue/);
+const requireComponent = require.context('./', true, /\.(vue)|(tsx)|(jsx)/);
 
 // 遍历每个文件
 const vueComponents = requireComponent.keys().map((filePath) => {
