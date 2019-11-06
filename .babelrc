@@ -1,20 +1,29 @@
 {
     "presets": [
-      ["env", { "modules": false }],
-      ["latest", {
-        "es2015": {
-          "modules": false
-        }
-      }],
-      "stage-3"
+        [
+            "env",
+            {
+                "modules": false
+            }
+        ],
+        [
+            "latest",
+            {
+                "es2015": {
+                    "modules": false
+                }
+            }
+        ],
+        "stage-3"
     ],
     "plugins": [
-      ["transform-vue-jsx", { "jsx": "this.$h" }],
-      [
-        "module-resolver",
-        {
-          "root": ["src/"]
-        }
-      ]
+        [
+            "module-resolver",
+            {
+                "root": [
+                    "src/"
+                ]
+            }
+        ]
     ]
-  }
+}
