@@ -38,7 +38,7 @@ export default {
         babel({
             exclude: 'node_modules/**', // 防止打包node_modules下的文件
             runtimeHelpers: true, // 使plugin-transform-runtime生效
-            plugins: ['transform-vue-jsx'],
+            plugins: ['transform-vue-jsx', 'external-helpers'], // jsx语法
         }),
         css({
             output(style) {
