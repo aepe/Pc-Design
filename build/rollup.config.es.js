@@ -7,7 +7,6 @@
  * @LastEditTime: 2019-10-29 13:36:03
  */
 import base from './rollup.config.base';
-import uglify from 'rollup-plugin-uglify-es'; //js压缩
 
 const config = Object.assign({}, base, {
     output: {
@@ -18,7 +17,5 @@ const config = Object.assign({}, base, {
         extend: true,
     },
 });
-
-// config.plugins.push(uglify())
 
 export default config;
