@@ -8,10 +8,10 @@
  -->
 <template>
     <div id="app">
-        <mt-button></mt-button>
-        <mt-input></mt-input>
-        <test></test>
-        <SiderBox />
+        <mt-button />
+        <mt-input />
+        <mt-sider />
+        <mt-test />
     </div>
 </template>
 
