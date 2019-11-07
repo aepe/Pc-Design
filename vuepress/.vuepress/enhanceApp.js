@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-07 09:20:06
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-07 09:45:03
+ * @LastEditTime: 2019-11-07 13:35:45
  */
 import mtUtil from '../../dist/mt-util.min';
 export default ({
