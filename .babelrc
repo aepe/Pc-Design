@@ -21,7 +21,8 @@
             "module-resolver",
             {
                 "root": [
-                    "src/"
+                    "src/",
+                    "build/"
                 ]
             }
         ]

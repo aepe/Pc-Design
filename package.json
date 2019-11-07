@@ -4,12 +4,13 @@
     "description": "vue 组件开发框架",
     "main": "./src/index.ts",
     "scripts": {
-        "dev": "npm run clear:dir && cross-env NODE_ENV=development rollup --config build/rollup.config.es.ts --watch",
+        "dev": "npm run clear:dir && cross-env NODE_ENV=development rollup --config build/rollup.config.es.js --watch && docs:dev",
         "build": "npm run clear:dir && npm run build:browser && npm run build:es && npm run build:iife",
         "build:browser": "rollup --config build/rollup.config.browser.ts",
         "build:es": "rollup --config build/rollup.config.es.ts",
         "build:iife": "rollup --config build/rollup.config.iife.ts",
-        "clear:dir": "node build/clearDir.ts"
+        "clear:dir": "node build/clearDir.ts",
+        "docs:dev": "vuepress dev vuepress"
     },
     "keywords": [
         "bhabgs"
@@ -42,9 +43,11 @@
         "rollup-plugin-vue": "^5.1.2",
         "tslib": "^1.10.0",
         "typescript": "^3.6.4",
+        "typestyle": "^2.0.4",
         "vue": "^2.6.10",
         "vue-property-decorator": "^8.3.0",
         "vue-rollup-component-template": "^1.0.0",
-        "vue-template-compiler": "^2.6.10"
+        "vue-template-compiler": "^2.6.10",
+        "vuepress": "^1.2.0"
     }
 }
