@@ -31,8 +31,7 @@
         ]
     },
     "include": [
-        "src/index.ts",
-        "build/rollup.config.base.ts",
+        "src/**/*",
     ],
     "exclude": [
         "node_modules",
