@@ -20,7 +20,7 @@ const themeConfig = {
         { text: '主题', link: '/vue/theme/' },
     ],
     sidebar: {
-        '/vue/': [['', 'vue 组件介绍'], ['install/', '安装'], ['quicklearning/', '快速上手'], ['upData/', '更新日志'], ['button/', '按钮'], ['theme/', '主题定制化']],
+        '/vue/': [['', 'vue 组件介绍'], ['install/', '安装'], ['quicklearning/', '快速上手'], ['upData/', '更新日志'], ['theme/', '主题定制化'], ['test/', '测试组件'], ['timeline/', '时间轴']],
     },
     sidebarDepth: 2,
 };

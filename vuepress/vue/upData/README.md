@@ -1,12 +1,14 @@
 <!--
- * @abstract: 
- * @version: 
+ * @abstract:
+ * @version:
  * @Author: bhabgs
  * @Date: 2019-11-07 11:49:39
  * @LastEditors: bhabgs
  * @LastEditTime: 2019-11-07 12:23:35
  -->
+
 # 组件更新信息
+
 <script>
   const data = [
     {
