@@ -6,25 +6,28 @@
  * @LastEditors: bhabgs
  * @LastEditTime: 2019-11-05 16:29:00
  */
+import Vue from 'vue';
 import vueComponents from './components';
 import directives from './directives';
 import zxUtil from './packages';
 
+// 开发组件时可以使用自定义指令
+Vue.use(directives);
+
 // 按需引用组件
 let componentsExportList: any = {};
-// loop
+
+// 循环组件
 vueComponents.forEach((component) => {
     componentsExportList[component.name] = component;
     // 按需引入组件install
-    component.install = (Vue: any) => {
-        Vue.component(component.name, component);
-    };
+    component.install = (Vue: any) => Vue.component(component.name, component);
 });
 
 // 注册install
 const install = function(Vue: any) {
     // 指令
-    directives.install(Vue);
+    Vue.use(directives);
     // 工具
     Vue.prototype.$zxUtil = zxUtil;
     // 组件
@@ -36,4 +39,4 @@ if (typeof window !== 'undefined' && window.Vue) {
     install(window.Vue);
 }
 
-export default { install, ...componentsExportList }; //...componentsExportList
+export default { install, ...componentsExportList };

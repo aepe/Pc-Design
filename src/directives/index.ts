@@ -1,8 +1,11 @@
-import { mtTest } from './test';
-
 export default {
     install: (Vue: any) => {
-        // Vue.use(ref, { name: 'ant-ref' });
-        mtTest(Vue);
+        const requireComponent = require.context('./', true, /\.(ts)/);
+        requireComponent.keys().map((filePath) => {
+            const fileName = filePath.slice(filePath.lastIndexOf('/') + 1).replace(/\..*$/, '');
+            if (fileName !== 'index') {
+                requireComponent(filePath)(Vue);
+            }
+        });
     },
 };
