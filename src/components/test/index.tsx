@@ -2,8 +2,13 @@ import { Component, Vue } from 'vue-property-decorator';
 
 @Component
 export default class MtTest extends Vue {
-    public msg: string = 'This is mt test page';
+    public msg: string = 'This is mt test component';
     public render(): any {
-        return <h1>{this.msg}</h1>;
+        return (
+            <div>
+                <h1>{this.msg}</h1>
+                {/* <p mt-test></p> */}
+            </div>
+        );
     }
 }
