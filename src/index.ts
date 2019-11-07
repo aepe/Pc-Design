@@ -14,7 +14,6 @@ const install = function(Vue: any) {
     // 工具
     Vue.prototype.$zxUtil = zxUtil;
     // 组件
-    console.log(vueComponents)
     vueComponents.forEach((component) => {
         Vue.component(component.name, component);
     });

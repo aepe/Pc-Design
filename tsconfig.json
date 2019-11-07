@@ -2,7 +2,7 @@
     "compilerOptions": {
         "target": "esnext",
         "module": "esnext",
-        "strict": true,
+        "strict": false,
         "jsx": "preserve",
         "importHelpers": false,
         "moduleResolution": "node",
@@ -31,8 +31,7 @@
         ]
     },
     "include": [
-        "src/index.ts",
-        "build/rollup.config.base.ts",
+        "src/**/*",
     ],
     "exclude": [
         "node_modules",
