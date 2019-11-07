@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-10-29 10:54:09
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-05 16:29:00
+ * @LastEditTime: 2019-11-07 15:58:12
  */
 import Vue from 'vue';
 import vueComponents from './components';
@@ -23,6 +23,8 @@ vueComponents.forEach((component) => {
     // 按需引入组件install
     component.install = (Vue: any) => Vue.component(component.name, component);
 });
+
+import './styles/index.less';
 
 // 注册install
 const install = function(Vue: any) {
