@@ -7,6 +7,8 @@
  * @LastEditTime: 2019-11-07 13:35:45
  */
 import mtUtil from '../../dist/mt-util.min';
+import '../../dist/mt.style.css';
+
 export default ({
     Vue, // VuePress 正在使用的 Vue 构造函数
     options, // 附加到根实例的一些选项
