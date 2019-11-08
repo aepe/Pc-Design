@@ -4,10 +4,65 @@
  * @Author: bhabgs
  * @Date: 2019-11-06 16:37:55
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-08 09:46:44
+ * @LastEditTime: 2019-11-08 10:35:42
  -->
 <!-- # 组件使用指南 -->
 
 <p style="color: red; font-size: 50px; text-align:center; padding-top: 5rem;">
     我们不是vue的开发者，我们只是vue的搬运工
 </p>
+# 美腾科技工厂前端组工具集合
+
+> 美腾科技工厂常用的组件开发
+
+## 运行组件库
+
+```bash
+# 安装依赖
+yarn / npm install
+
+# 运行
+yarn dev / npm run dev
+
+# 打包
+yarn build / npm run build
+```
+
+## 运行 docs 文档
+
+```bash
+# 进入
+yarn docs:dev / npm run docs:dev
+```
+
+## vue 组件
+
+> 组件的开发方案需要在 src/components 建立自己的组件文件夹，以 vue 官网组件开发方式开发即可，支持 tsx 开发方案，组件支持自动引入。
+``` javascript
+// 注意组件定义格式目前组件名字应为 z-{any} 名字
+<template>
+    <div>test component</div>
+<template>
+<script>
+export default {
+    data() {
+        return {
+            
+        }
+    }
+}
+</script>
+// tsx 组件
+export default class Zui extends {
+
+}
+// Zui 为组件名称 也就是组件调用名称
+```
+
+## vue 工具
+
+> 工具的开发方案需要在 src/packages 建立自己的包文件夹，可采用 ts 方案开发，包的到处方案是在包的根目录下建立 index.ts。
+
+1. 
+
+## 包格式

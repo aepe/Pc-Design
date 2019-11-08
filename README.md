@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-10-29 14:22:46
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-10-29 14:27:52
+ * @LastEditTime: 2019-11-08 10:29:36
  -->
 
 # 美腾科技工厂前端组工具集合
@@ -28,21 +28,32 @@ yarn build / npm run build
 
 ```bash
 # 进入
-cd docs
-
-# 安装依赖
-yarn / npm install
-
-# 运行
-yarn dev / npm run dev
-
-# 打包
-yarn build / npm run build
+yarn docs:dev / npm run docs:dev
 ```
 
 ## vue 组件
 
 > 组件的开发方案需要在 src/components 建立自己的组件文件夹，以 vue 官网组件开发方式开发即可，支持 tsx 开发方案，组件支持自动引入。
+``` javascript
+// 注意组件定义格式目前组件名字应为 z-{any} 名字
+<template>
+    <div>test component</div>
+<template>
+<script>
+export default {
+    data() {
+        return {
+            
+        }
+    }
+}
+</script>
+// tsx 组件
+export default class Zui extends {
+
+}
+// Zui 为组件名称 也就是组件调用名称
+```
 
 ## vue 工具
 
