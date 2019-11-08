@@ -1,8 +1,13 @@
+import Vue from 'vue';
+import mtloading from '../components/loading/index';
+const Mask = Vue.extend(mtloading);
 export default (Vue: any) => {
     return Vue.directive('mt-loading', {
         bind(el: any, binding: any, vnode: any, oldVnode: any) {
-            console.log(123, el, binding, vnode, oldVnode);
-            // el.innerText = 'test';
+            const mask = new Mask({
+                el: document.createElement('div'),
+            });
+            el.appendChild(mask.$el);
         },
     });
 };
