@@ -2,7 +2,7 @@ import { Component, Vue, Prop } from 'vue-property-decorator';
 
 @Component
 export default class MtTimeline extends Vue {
-    @Prop(String)
+    // @Prop(String)
     // private propA: string;
     msg: string = 'This is mt timeline component';
     render(): any {
