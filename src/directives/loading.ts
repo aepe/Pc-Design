@@ -4,10 +4,16 @@ const Mask = Vue.extend(mtloading);
 export default (Vue: any) => {
     return Vue.directive('mt-loading', {
         bind(el: any, binding: any, vnode: any, oldVnode: any) {
-            const mask = new Mask({
-                el: document.createElement('div'),
-            });
-            el.appendChild(mask.$el);
+            el.style.position = 'relative';
+            if (!binding.expression || binding.value) {
+                const mask = new Mask({
+                    el: document.createElement('div'),
+                });
+                mask.$props.fullScreen = false;
+                mask.$props.markVisible = true;
+                el.appendChild(mask.$el);
+            }
+           
         },
     });
 };
