@@ -17,9 +17,6 @@ import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import replace from 'rollup-plugin-replace';
 
-const colors = {
-    blue: '#056ef0',
-};
 export default {
     input: 'src/index.ts',
     plugins: [
@@ -49,4 +46,5 @@ export default {
             plugins: ['transform-vue-jsx', 'external-helpers'], // jsx语法
         }),
     ],
+    external: ['vue', 'vue-property-decorator'],
 };
