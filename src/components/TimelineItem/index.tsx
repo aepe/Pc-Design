@@ -7,20 +7,18 @@ export default class ZTimelineItem extends Vue {
      * @Param content {string} @Required false @Default -- @Options -- @Description 内容
      * @Param dotColor {string} @Required false @Default {@BorderColor-1} @Options -- @Description 节点颜色
      * @Param lineColor {string} @Required false @Default {@BorderColor-1} @Options -- @Description 线颜色
-     * @Param lineType {string} @Required false @Default solid @Options solid|dotted @Description 线类型
+     * @Param lineType {string} @Required false @Default solid @Options solid|dashed|dotted @Description 线类型
      */
-    @Prop({ type: String }) public title!: string;
-    @Prop({ type: String }) public content?: string;
-    @Prop({ type: String }) public dotColor?: string;
-    @Prop({ type: String }) public lineColor?: string;
-    @Prop({ type: String }) public lineType?: string;
-
-    msg: string = 'This is z timeline item component';
+    @Prop({ type: String }) private title!: string;
+    @Prop({ type: String }) private content?: string;
+    @Prop({ type: String }) private dotColor?: string;
+    @Prop({ type: String }) private lineColor?: string;
+    @Prop({ type: String }) private lineType?: string;
 
     render() {
         return (
             <div class="z-timeline-item">
-                <div class="z-timeline-line" style={`border-color:${this.lineColor}`}></div>
+                <div class="z-timeline-line" style={{ 'border-left-color': this.lineColor, 'border-left-style': this.lineType }}></div>
                 <div class="z-timeline-icon">
                     <span class="z-timeline-dot" style={`border-color:${this.dotColor}`}></span>
                 </div>
