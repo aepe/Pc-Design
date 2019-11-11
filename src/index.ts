@@ -32,9 +32,6 @@ const install = function(Vue: any) {
     Vue.use(directives);
     // 工具
     Vue.prototype.$Zutil = Zutil;
-    vueComponents.forEach((component) => {
-        console.log(component.name)
-    })
     // 组件
     vueComponents.forEach((component) => Vue.component(component.name, component));
 };
