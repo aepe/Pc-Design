@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-07 09:48:14
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-08 09:43:09
+ * @LastEditTime: 2019-11-12 09:35:01
  */
 const themeConfig = {
     nav: [
@@ -29,6 +29,7 @@ const themeConfig = {
             ['Tag/', 'tag 标签'],
             ['loading/', 'loading加载'],
             ['timeline/', '时间轴'],
+            ['Table/', 'table'],
             ['test/', '测试组件']
         ],
     },
