@@ -16,25 +16,56 @@
 3. 可删除tag
 4. 删除是否需要确认
 5. ...自行发挥
-6. 是否边框
-7. 按钮位置：右上 右侧
+
+## Demo
+
+-   ### 基础用法
+
+    <templates-demo name="tag-demo">
+    <<< @/vuepress/.vuepress/components/tag/demo.vue
+    </templates-demo>
+
+-  ### 可关闭
+
+    <templates-demo name="tag-demo-close">
+    <<< @/vuepress/.vuepress/components/tag/demo-close.vue
+    </templates-demo>
+
+-  ### 可选尺寸
+
+    <templates-demo name="tag-demo-size">
+    <<< @/vuepress/.vuepress/components/tag/demo-size.vue
+    </templates-demo>
+
+-  ### 切换tag的显示状态
+
+    <templates-demo name="tag-demo-visible">
+    <<< @/vuepress/.vuepress/components/tag/demo-visible.vue
+    </templates-demo>
+
+-  ### 可选主题
+
+    <templates-demo name="tag-demo-theme">
+    <<< @/vuepress/.vuepress/components/tag/demo-theme.vue
+    </templates-demo>
 
 
-<template>
-  <Ztag :isBorder="true"
-    :isClose="true"
-    size="large"
-    color="pink"
-    v-for="(i, key) in 10"
-    :key="key"
-    @click="onClose" />
-</template>
-<script>
-  export default {
-    public onClose() {
-        console.log(1);
-      }
-  }
+## API
+
+Attributes
+| 参数    | 描述                 | 类型   | 是否必填 | 可选值 | 默认值 |
+| :------ | :------------------- | :----- | :------- | :----- | :----- |
+| size   | 尺寸     | string | false     | large、small、mini      | -     |
+| closable | 是否可关闭 | boolean | false    | -      | false      |
+| isVisible | 是否显示 | boolean | false    | -      | true      |
+| type | 类型 | string | false    | success、info、warning、danger       |  info    |
+| theme | 类型 | string | false    | fill、plain       |  plain    |
+
+Events
+| 事件名称    | 描述                 | 回调参数   |
+| :------ | :------------------- | :----- | :------- | :----- | :----- |
+| click    | 点击Tag时触发的事件                 | -   |
+| close    | 关闭Tag时触发的事件                 | -   |
 </script>
 
 

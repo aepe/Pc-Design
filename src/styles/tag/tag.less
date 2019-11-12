@@ -1,50 +1,48 @@
 @z-prefix: z;
 @z-prefix-cls: ~'@{z-prefix}-tag';
 .@{z-prefix-cls} {
+  display: inline-block;
   padding: 0 10px;
   box-sizing: border-box;
-  border-radius: 10px;
   text-align: center;
   background-color: @InfoColor;
   border: none;
   color: #fff;
   position: relative;
-  cursor: pointer;
-  .icon {
+  margin: 0 10px;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  height: 42px;
+  line-height: 40px;
+  font-size: 20px;
+  border-radius: 8px;
+  .z-close {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
     cursor: pointer;
-    &:hover {
-      background-color: @BorderColor-2;
-    }
+    font-style: normal;
+    vertical-align: middle;
+    border-radius: 50%;
+    background-color: transparent;
+    user-select: none;
+    font-size: 15px;
+    position: relative;
+    top: -1px;
+    right: -5px;
+    box-sizing: border-box;
   }
   &:focus{
     outline:0;
-  } 
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    pointer-events: none;
-    background-color: #333;
-    background-repeat: no-repeat;
-    background-position: 50%;
-    opacity: 0;
-    transition: all .3s;
-    border-radius: 10px;
-  }
-  &:active:after {
-    opacity: .3;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    transition: 0s;
   }
   // 大size
   &-large {
-    height: 45px;
-    line-height: 45px;
-    font-size: 23px;
-    .icon {
+    height: 42px;
+    line-height: 40px;
+    font-size: 20px;
+    border-radius: 8px;
+    .z-close {
       font-size: 15px;
     }
     &::after {
@@ -56,10 +54,11 @@
   }
   // 中size
   &-small {
-    height: 35px;
-    line-height: 35px;
-    font-size: 22px;
-    .icon {
+    height: 36px;
+    line-height: 34px;
+    font-size: 18px;
+    border-radius: 6px;
+    .z-close {
       font-size: 14px;
     }
     &::after {
@@ -71,10 +70,11 @@
   }
   // 小size
   &-mini {
-    height: 30px;
+    height: 32px;
     line-height: 30px;
-    font-size: 20px;
-    .icon {
+    font-size: 12px;
+    border-radius: 4px;
+    .z-close {
       font-size: 13px;
     }
     &::after {
@@ -84,9 +84,71 @@
       right: -5px;
     }
   }
-  // 边框
-  &-border {
-    border: 1px solid @BorderColor-1;
+  // 类型
+  &-success {
+    border-color: @SuccessColor;
+    background-color: transparent;
+    color:  @SuccessColor;
+    .z-close {
+      &:hover {
+        background-color: @SuccessColor;
+        color: #fff;
+      }
+    }
+  }
+  &-info {
+    border-color: @InfoColor;
+    background-color: transparent;
+    color: @InfoColor;
+    .z-close {
+      &:hover {
+        background-color: @InfoColor;
+        color: #fff;
+      }
+    }
+  }
+  &-danger {
+    border-color: @ErrorColor;
+    background-color: transparent;
+    color: @ErrorColor;
+    .z-close {
+      &:hover {
+        background-color: @ErrorColor;
+        color: #fff;
+      }
+    }
+  }
+  &-warning {
+    border-color: @WarningColor;
+    background-color: transparent;
+    color: @WarningColor;
+    .z-close {
+      &:hover {
+        background-color: @WarningColor;
+        color: #fff;
+      }
+    }
+  }
+  // 主题
+  &-fill&-success {
+    border-color: @SuccessColor;
+    background-color: @SuccessColor;
+    color:  #fff;
+  }
+  &-fill&-info {
+    border-color: @InfoColor;
+    background-color: @InfoColor;
+    color: #fff;
+  }
+  &-fill&-danger {
+    border-color: @ErrorColor;
+    background-color: @ErrorColor;
+    color: #fff;
+  }
+  &-fill&-warning {
+    border-color: @WarningColor;
+    background-color: @WarningColor;
+    color: #fff;
   }
 }
 

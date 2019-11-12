@@ -1,10 +1,10 @@
 import { Component, Vue, Prop } from 'vue-property-decorator';
 
 @Component
-export default class Ztag extends Vue {
+export default class ZTag extends Vue {
     // tag大小
     @Prop({
-        default: "large",
+        default: "",
         type: String,
     }) public size!: string;
     // tag是否显示
@@ -14,26 +14,26 @@ export default class Ztag extends Vue {
     }) public isVisible?: boolean;
     // 是否显示删除按钮
     @Prop({
-        default: true,
+        default: false,
         type: Boolean,
-    }) public isClose?: boolean;
-    // 是否有边框
+    }) public closable?: boolean;
+    // 类型
     @Prop({
-        default: true,
-        type: Boolean,
-    }) public isBorder?: boolean;
-    // 预设颜色
-    @Prop({
-        default: "",
+        default: "info",
         type: String,
-    }) public color?: string;
+    }) public type?: string;
+    // 主题
+    @Prop({
+        default: "plain",
+        type: String,
+    }) public theme?: string;
     // 设置颜色类
-    public setColorClass() {
-        return `z-tag-${this.color}`
+    public setTypeClass() {
+        return `z-tag-${this.type}`
     }
     // 设置大小
     public setClass() {
-        return `z-tag-${this.size}`;
+        return this.size ? `z-tag-${this.size}` : null;
     }
     // 设置显示或隐藏
     public setVisible() {
@@ -41,28 +41,39 @@ export default class Ztag extends Vue {
     }
     // 设置是否删除
     public setClose() {
-        return this.isClose;
+        return this.closable;
     }
-    // 设置边框
-    public setBorder() {
-        const border = this.isBorder ? 'z-tag-border' : '';
-        return border;
+    // 设置主题
+    public setTheme() {
+        return this.theme ? `z-tag-${this.theme}` : null;
+    }
+    // 关闭按钮操作
+    public handleClose(e: any) {
+        e.stopPropagation();
+        this.$emit('close', e);
+    }
+    // 点击tag
+    public handleClick(e: any) {
+        e.stopPropagation();
+        this.$emit('click', e);
     }
     public renderIcon(): any {
         return this.setClose() ? (
-            <i class="iconfont zxclose">X</i>
+            <i class="z-close iconfont zxclose"  on-click={ this.handleClose }>X</i>
         ) : null;
     }
     public render(): any {
+        const slots = this.$slots.default || [];
         return (
-            <button class={['z-tag', 
-                this.setClass(), 
-                this.setColorClass(),
-                this.setBorder()]}
-                v-show={this.setVisible()}>
-                tag666666
+            <span class={['z-tag', 
+                this.setClass(),
+                this.setTypeClass(),
+                this.setTheme()]}
+                v-show={this.setVisible()}
+                on-click={ this.handleClick }>
+                    {slots}
                 {this.renderIcon()}
-            </button>
+            </span>
         );
     }
 }
