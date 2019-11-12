@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-07 09:48:14
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-12 09:35:01
+ * @LastEditTime: 2019-11-12 11:04:35
  */
 const themeConfig = {
     nav: [
@@ -18,6 +18,7 @@ const themeConfig = {
             ],
         },
         { text: '主题', link: '/vue/theme/' },
+        { text: 'github', link: 'https://github.com/zx-js/zx-util-ui' },
     ],
     sidebar: {
         '/vue/': [
@@ -26,6 +27,7 @@ const themeConfig = {
             ['install/', '安装'],
             ['quicklearning/', '快速上手'],
             ['theme/', '主题定制化'],
+            ['Button/', 'button'],
             ['Tag/', 'tag 标签'],
             ['loading/', 'loading加载'],
             ['timeline/', '时间轴'],

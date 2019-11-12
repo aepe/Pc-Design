@@ -4,11 +4,11 @@
  * @Author: bhabgs
  * @Date: 2019-11-06 16:39:45
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-08 09:40:21
+ * @LastEditTime: 2019-11-12 13:39:45
  */
 const themeConfig = require('./config/themeConfig').themeConfig;
 module.exports = {
-    title: 'Hello zx-util-ui',
+    title: 'zx-util-ui',
     port: 9991,
     markdown: {
         plugins: [
