@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="tagBox">
-      <z-tag :isVisible="visible"
+      <z-tag :visible="visible"
         :closable="true"
         @close="handleClick">movies...</z-tag>
     </div>

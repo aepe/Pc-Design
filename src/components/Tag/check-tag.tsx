@@ -12,13 +12,13 @@ export default class ZCheckTag extends Vue {
   // checked 状态设置类名
   public setClassByChecked() {
     const { checked } = this;
-    console.log(checked);
     return {
       [`z-checkable-tag-checked`]: checked
     }
   }
   // 单机tag
-  public handleClick() {
+  public handleClick(e: any) {
+    e.stopPropagation();
     const { checked } = this;
     this.$emit('input', !checked);
     this.$emit('change', !checked);

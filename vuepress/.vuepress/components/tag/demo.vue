@@ -3,7 +3,6 @@
     <z-tag v-for="(i, key) in tags"
       :key="key"
       :type="i.type"
-      :closable="i.closeable"
       @click="handleClick"
       @close="handleClose">{{i.title}}</z-tag>
   </div>

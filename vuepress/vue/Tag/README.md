@@ -51,6 +51,12 @@
     <templates-demo name="tag-demo-theme">
     <<< @/vuepress/.vuepress/components/tag/demo-theme.vue
     </templates-demo>
+
+-  ### 关闭确认
+
+    <templates-demo name="tag-demo-confirm">
+    <<< @/vuepress/.vuepress/components/tag/demo-confirm.vue
+    </templates-demo>
     
 -  ### 可多选标签-类似于checkbox效果
 
@@ -68,9 +74,11 @@ Attributes
 | :------ | :------------------- | :----- | :------- | :----- | :----- |
 | size   | 尺寸     | string | false     | large、small、mini      | -     |
 | closable | 是否可关闭 | boolean | false    | -      | false      |
-| isVisible | 是否显示 | boolean | false    | -      | true      |
+| visible | 是否显示 | boolean | false    | -      | true      |
 | type | 类型 | string | false    | success、info、warning、danger       |  info    |
 | theme | 主题 | string | false    | fill、plain       |  plain    |
+| hasConfirm | 是否关闭标签提示 | boolean | false    | -       |  false    |
+| confirm-message | 关闭标签提示语 | string | false    | -       |  确认关闭标签么？    |
 
 Events
 | 事件名称    | 描述                 | 回调参数   |

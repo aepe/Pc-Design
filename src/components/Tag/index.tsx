@@ -1,7 +1,14 @@
-import { Component, Vue, Prop } from 'vue-property-decorator';
+import { Component, Vue, Prop, Model } from 'vue-property-decorator';
 
 @Component
 export default class ZTag extends Vue {
+    @Model ('change', {
+        type: Boolean
+      }) public checked!: boolean;
+      @Prop({
+        type: Boolean,
+        default: false,
+      }) public checked!: boolean;
     // tag大小
     @Prop({
         default: "",
@@ -11,7 +18,7 @@ export default class ZTag extends Vue {
     @Prop({
         default: true,
         type: Boolean,
-    }) public isVisible?: boolean;
+    }) public visible?: boolean;
     // 是否显示删除按钮
     @Prop({
         default: false,
@@ -27,6 +34,17 @@ export default class ZTag extends Vue {
         default: "plain",
         type: String,
     }) public theme?: string;
+    // 点击关闭是否确认提示
+    @Prop({
+        default: false,
+        type: Boolean,
+    }) public hasConfirm?: boolean;
+    // 开启关闭标签确认提示时-关闭标签提示语
+    @Prop({
+        type: String,
+        default: "确认关闭标签么？",
+    }) public confirmMessage?: string;
+    
     // 设置颜色类
     public setTypeClass() {
         return `z-tag-${this.type}`
@@ -37,11 +55,18 @@ export default class ZTag extends Vue {
     }
     // 设置显示或隐藏
     public setVisible() {
-        return this.isVisible;
+        return this.visible;
     }
     // 设置是否删除
     public setClose() {
         return this.closable;
+    }
+    // checked 状态设置类名
+    public setClassByChecked() {
+        const { checked } = this;
+        return {
+        [`z-checkable-tag-checked`]: checked
+        }
     }
     // 设置主题
     public setTheme() {
@@ -50,6 +75,12 @@ export default class ZTag extends Vue {
     // 关闭按钮操作
     public handleClose(e: any) {
         e.stopPropagation();
+         const { hasConfirm, confirmMessage } = this;
+        if (hasConfirm) {
+            const conf = confirm(confirmMessage);
+            this.$emit('close', conf);
+            return;
+        }
         this.$emit('close', e);
     }
     // 点击tag
@@ -59,19 +90,26 @@ export default class ZTag extends Vue {
     }
     public renderIcon(): any {
         return this.setClose() ? (
-            <i class="z-close iconfont zxclose"  on-click={ this.handleClose }>X</i>
+            <i class="z-close iconfont zxclose"  on-click={ this.handleClose }></i>
         ) : null;
     }
     public render(): any {
-        const slots = this.$slots.default || [];
+        const {setClass,
+            setTypeClass,
+            setTheme,
+            setVisible,
+            handleClick,
+            $slots,
+            setClassByChecked } = this;
         return (
             <span class={['z-tag', 
-                this.setClass(),
-                this.setTypeClass(),
-                this.setTheme()]}
-                v-show={this.setVisible()}
-                on-click={ this.handleClick }>
-                    {slots}
+                setClass(),
+                setTypeClass(),
+                setTheme(),
+                setClassByChecked() ]}
+                v-show={setVisible()}
+                on-click={ handleClick }>
+                    {$slots.default}
                 {this.renderIcon()}
             </span>
         );
