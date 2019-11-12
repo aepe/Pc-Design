@@ -33,7 +33,6 @@ export default {
             extract: 'dist/mt.style.css', // 输出路径
         }),
         commonjs(),
-        vue({ css: false }),
         replace({
             include: 'src/*',
             $them: 'red',
@@ -45,6 +44,7 @@ export default {
             runtimeHelpers: true, // 使plugin-transform-runtime生效
             plugins: ['transform-vue-jsx', 'external-helpers'], // jsx语法
         }),
+        vue({ css: false }),
     ],
     external: ['vue', 'vue-property-decorator'],
 };
