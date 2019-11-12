@@ -1,9 +1,8 @@
 import {Vue, Component, Prop, Watch} from 'vue-property-decorator';
-import './loading.less';
 @Component
 export default class Mtloading extends Vue{
-    @Prop({default: '#333'}) public dotBackground?: string;
-    @Prop({default: 'rgba(119, 111, 111, .7)'}) public markBackground?: string;
+    @Prop({default: '@Black'}) public dotBackground?: string;
+    @Prop({default: 'rgba(0, 0, 0, .3)'}) public markBackground?: string;
     @Prop({default: false}) public visible?: boolean;
     @Prop({default: true}) public fullScreen?: boolean;
 
