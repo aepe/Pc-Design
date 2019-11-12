@@ -1,15 +1,28 @@
 <!--
- * @abstract:
- * @version:
+ * @abstract: 
+ * @version: 
  * @Author: bhabgs
- * @Date: 2019-10-29 14:22:46
- * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-12 12:04:16
+ * @Date: 2019-11-06 16:37:55
+ * @LastEditors: bhabgs
+ * @LastEditTime: 2019-11-12 16:35:05
  -->
+<!-- # 组件使用指南 -->
 
-# 美腾科技工厂前端组工具集合
+<p style="color: red; font-size: 50px; text-align:center; padding-top: 5rem;">
+    我们不是vue的开发者，我们只是vue的搬运工
+</p>
 
-> 美腾科技工厂常用组件开发
+
+## 资源地址
+[在线文档](http://bhabgs.com/docs/)
+## 开发者须知
+> 该框架既定名称为zx-util-ui less 存在层级关系，父级别定义的变量 通过`@import`能够 集成到子级别引用
+> 1. 框架前缀名称要求 
+> 2. `style class` 类名为**zx**开头 `例：zx-button`
+> 3. `.tsx` 组件名称 class类 为大写的Z开头 `例: ZButton`
+> 4. 组件文件夹命名 首字母应大写 `例: Button`
+> 5. 主题颜色存放在src/styles/theme/default.less
+> 6. iconfont 在index.less 下引入 每次更新图标后请及时更换在线地址
 
 ## 运行组件库
 
@@ -27,49 +40,55 @@ yarn build / npm run build
 ## 运行 docs 文档
 
 ```bash
-# 运行
+# 进入
 yarn docs:dev / npm run docs:dev
 ```
+
+
 
 ## vue 组件
 
 > 组件的开发方案需要在 src/components 建立自己的组件文件夹，以 vue 官网组件开发方式开发即可，支持 tsx 开发方案，组件支持自动引入。
-
-```javascript
-// 注意目前组件名定义格式 z-{name} | Z{Name} 名字， {name}为自定义的组件名称
+``` javascript
+// 注意组件定义格式目前组件名字应为 z-{any} 名字
 <template>
     <div>test component</div>
-</template>
-
+<template>
 <script>
 export default {
-    name: 'z-name',
-};
+    data() {
+        return {
+            
+        }
+    }
+}
 </script>
-
 // tsx 组件
-export default class ZName extends Vue { }
-// ZName 为组件名称 也就是组件调用名称
+export default class Zui extends {
+
+}
+// Zui 为组件名称 也就是组件调用名称
 ```
 
 ## vue 工具
 
 > 工具的开发方案需要在 src/packages 建立自己的包文件夹，可采用 ts 方案开发，包的到处方案是在包的根目录下建立 index.ts。
 
-## 包格式
+1. 
 
-> js 组件包以及 util 工具请在 src/packages 下进行开发 导出方案以下为标准
+## style 格式
 
-```javascript
-// index.ts
-export default {
-    install: Function,
-    name: 'name',
-    version: '1.0.0',
-};
+> 类名定义前缀全部以z开头
+> 1. 避免与其他框架名字重复
+> 2. 方便统一修改
+> 3. 框架统一性
+
+
+``` less
+.z-button{
+
+}
+.z-{any} {
+
+}
 ```
-
--   [ ] 正在引入单元测试
--   [x] 框架搭建基本完成
--   [x] 加入 vue 编译组件
--   [x] 自动引入组件
