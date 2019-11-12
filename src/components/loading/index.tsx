@@ -27,9 +27,6 @@ export default class Mtloading extends Vue{
         })
        
     }
-    public setMarkFn (position: string) {
-        this.markStyle.position = position;
-    }
     render() {
         if (!this.visible) {
             return false;
