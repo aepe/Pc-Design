@@ -1,0 +1,24 @@
+@check-tag-prefix: z-checkable;
+@check-tag-prefix-cls: ~'@{check-tag-prefix}-tag';
+.@{check-tag-prefix-cls} {
+  display: inline-block;
+  font-size: 14px;
+  margin: 0 10px;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  border-color: transparent;
+  color:  @FontColor-1;
+  border-radius: 4px;
+  &:hover {
+    color: @SuccessColor;
+  }
+  &-checked {
+    background-color: @SuccessColor;
+    border-color: @SuccessColor;
+    color:  #fff;
+    &:hover {
+      color:  #fff;
+    }
+  }
+}

@@ -10,13 +10,14 @@
 
 import ZButton from './button/main';
 import Zloading from './loading/main';
-import ZTag from './Tag/main';
+import {ZTag, ZCheckTag} from './Tag/main';
 import ZTimeline from './Timeline/main';
 import ZTimelineItem from './TimelineItem/main';
 const compontents: any[] = [
     ZButton,
     Zloading,
     ZTag,
+    ZCheckTag,
     ZTimeline,
     ZTimelineItem
 ];

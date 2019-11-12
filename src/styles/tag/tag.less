@@ -1,0 +1,158 @@
+@z-prefix: z;
+@z-prefix-cls: ~'@{z-prefix}-tag';
+.@{z-prefix-cls} {
+  display: inline-block;
+  padding: 0 10px;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: @InfoColor;
+  border: none;
+  color: #fff;
+  position: relative;
+  margin: 0 10px;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  height: 42px;
+  line-height: 40px;
+  font-size: 20px;
+  border-radius: 8px;
+  white-space: nowrap;
+  .z-close {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    cursor: pointer;
+    font-style: normal;
+    vertical-align: middle;
+    border-radius: 50%;
+    background-color: transparent;
+    user-select: none;
+    font-size: 15px;
+    position: relative;
+    top: -1px;
+    right: -5px;
+    box-sizing: border-box;
+  }
+  &:focus{
+    outline:0;
+  }
+  // 大size
+  &-large {
+    height: 42px;
+    line-height: 40px;
+    font-size: 20px;
+    border-radius: 8px;
+    .z-close {
+      font-size: 15px;
+    }
+    &::after {
+      top: -10px;
+      bottom: -10px;
+      left: -10px;
+      right: -10px;
+    }
+  }
+  // 中size
+  &-small {
+    height: 36px;
+    line-height: 34px;
+    font-size: 18px;
+    border-radius: 6px;
+    .z-close {
+      font-size: 14px;
+    }
+    &::after {
+      top: -8px;
+      bottom: -8px;
+      left: -8px;
+      right: -8px;
+    }
+  }
+  // 小size
+  &-mini {
+    height: 32px;
+    line-height: 30px;
+    font-size: 12px;
+    border-radius: 4px;
+    .z-close {
+      font-size: 13px;
+    }
+    &::after {
+      top: -5px;
+      bottom: -5px;
+      left: -5px;
+      right: -5px;
+    }
+  }
+  // 类型
+  &-success {
+    border-color: @SuccessColor;
+    background-color: transparent;
+    color:  @SuccessColor;
+    .z-close {
+      &:hover {
+        background-color: @SuccessColor;
+        color: #fff;
+      }
+    }
+  }
+  &-info {
+    border-color: @InfoColor;
+    background-color: transparent;
+    color: @InfoColor;
+    .z-close {
+      &:hover {
+        background-color: @InfoColor;
+        color: #fff;
+      }
+    }
+  }
+  &-danger {
+    border-color: @ErrorColor;
+    background-color: transparent;
+    color: @ErrorColor;
+    .z-close {
+      &:hover {
+        background-color: @ErrorColor;
+        color: #fff;
+      }
+    }
+  }
+  &-warning {
+    border-color: @WarningColor;
+    background-color: transparent;
+    color: @WarningColor;
+    .z-close {
+      &:hover {
+        background-color: @WarningColor;
+        color: #fff;
+      }
+    }
+  }
+  // 主题
+  &-fill&-success {
+    border-color: @SuccessColor;
+    background-color: @SuccessColor;
+    color:  #fff;
+  }
+  &-fill&-info {
+    border-color: @InfoColor;
+    background-color: @InfoColor;
+    color: #fff;
+  }
+  &-fill&-danger {
+    border-color: @ErrorColor;
+    background-color: @ErrorColor;
+    color: #fff;
+  }
+  &-fill&-warning {
+    border-color: @WarningColor;
+    background-color: @WarningColor;
+    color: #fff;
+  }
+}
+
+// 预设颜色
+@colors: pink, magenta, red, volcano, orange, yellow, gold, cyan, lime, green, blue, geekblue,
+    purple;
