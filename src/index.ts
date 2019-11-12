@@ -3,11 +3,11 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-10-29 10:54:09
- * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-12 15:44:29
+ * @LastEditors: 王晓龙
+ * @LastEditTime: 2019-11-12 16:58:10
  */
 import Vue from 'vue';
-import {compontents} from './components';
+import { compontents } from './components';
 import directives from './directives';
 import Zutil from './packages';
 
@@ -16,7 +16,6 @@ Vue.use(directives);
 
 // 按需引用组件
 let componentsExportList: any = {};
-
 
 // 循环组件
 // compontents.forEach((component) => {
