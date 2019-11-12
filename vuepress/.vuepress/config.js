@@ -3,8 +3,8 @@
  * @version: 
  * @Author: bhabgs
  * @Date: 2019-11-06 16:39:45
- * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-12 16:08:04
+ * @LastEditors: 王晓龙
+ * @LastEditTime: 2019-11-12 16:58:17
  */
 const themeConfig = require('./config/themeConfig').themeConfig;
 module.exports = {
