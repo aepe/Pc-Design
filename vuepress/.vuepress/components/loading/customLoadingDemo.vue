@@ -1,8 +1,16 @@
+<!--
+ * @abstract: 
+ * @version: 
+ * @Author: bhabgs
+ * @Date: 2019-11-12 14:04:54
+ * @LastEditors: bhabgs
+ * @LastEditTime: 2019-11-12 15:49:52
+ -->
 <template>
   <div>
-    <mtloading :visible="customMarkShow">
+    <Zloading :visible="customMarkShow">
       <p class="loading-style">Loading...</p>
-    </mtloading>
+    </Zloading>
     <div class="switch" @click="cusTomChangeShow">显示</div>
   </div>
 </template>
