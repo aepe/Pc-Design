@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-06 16:37:55
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-12 10:57:14
+ * @LastEditTime: 2019-11-12 14:04:05
  -->
 <!-- # 组件使用指南 -->
 
@@ -19,6 +19,7 @@
 > 3. `.tsx` 组件名称 class类 为大写的Z开头 `例: ZButton`
 > 4. 组件文件夹命名 首字母应大写 `例: Button`
 > 5. 主题颜色存放在src/styles/theme/default.less
+> 6. iconfont 在index.less 下引入 每次更新图标后请及时更换在线地址
 
 ## 运行组件库
 

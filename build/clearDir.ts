@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-10-29 11:18:05
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-10-29 11:35:05
+ * @LastEditTime: 2019-11-12 13:36:09
  */
 const fs = require('fs');
 const path = require('path');
@@ -26,4 +26,4 @@ function delDir(path) {
     }
 }
 
-delDir(path.resolve(__dirname, '../dist'));
+delDir(path.resolve(__dirname, '../dist/js'));
