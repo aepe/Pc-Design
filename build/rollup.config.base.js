@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-10-29 10:56:25
  * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-12 16:11:37
+ * @LastEditTime: 2019-11-12 16:55:27
  */
 import resolve from 'rollup-plugin-node-resolve'; // 告诉 Rollup 如何查找外部模块
 import commonjs from 'rollup-plugin-commonjs'; // 将CommonJS模块转换为 ES2015 供 Rollup 处理
