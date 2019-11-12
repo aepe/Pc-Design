@@ -1,6 +1,14 @@
+<!--
+ * @abstract: 
+ * @version: 
+ * @Author: bhabgs
+ * @Date: 2019-11-12 14:04:54
+ * @LastEditors: bhabgs
+ * @LastEditTime: 2019-11-12 15:50:00
+ -->
 <template>
   <div>
-    <mtloading :visible="markShow" />
+    <Zloading :visible="markShow" />
     <div class="switch" @click="changeShow">显示</div>
   </div>
 </template>

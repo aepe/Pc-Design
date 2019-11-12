@@ -4,10 +4,10 @@
  * @Author: bhabgs
  * @Date: 2019-10-29 10:54:09
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-08 10:28:11
+ * @LastEditTime: 2019-11-12 15:44:29
  */
 import Vue from 'vue';
-import vueComponents from './components';
+import {compontents} from './components';
 import directives from './directives';
 import Zutil from './packages';
 
@@ -17,12 +17,13 @@ Vue.use(directives);
 // 按需引用组件
 let componentsExportList: any = {};
 
+
 // 循环组件
-vueComponents.forEach((component) => {
-    componentsExportList[component.name] = component;
-    // 按需引入组件install
-    component.install = (Vue: any) => Vue.component(component.name, component);
-});
+// compontents.forEach((component) => {
+//     componentsExportList[component.name] = component;
+//     // 按需引入组件install
+//     component.install = (Vue: any) => Vue.component(component.name, component);
+// });
 
 import './styles/index.less';
 
@@ -33,7 +34,7 @@ const install = function(Vue: any) {
     // 工具
     Vue.prototype.$Zutil = Zutil;
     // 组件
-    vueComponents.forEach((component) => Vue.component(component.name, component));
+    compontents.forEach((component) => Vue.component(component.name, component.install));
 };
 
 // 自动注册组件

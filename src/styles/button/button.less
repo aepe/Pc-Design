@@ -1,0 +1,61 @@
+.zx-button{
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    background: @White;
+    border: 1px solid @BorderColor-1;
+    color: @FontColor-2;
+    text-align: center;
+    box-sizing: border-box;
+    outline: none;
+    margin: 0;
+    transition: .1s;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    opacity: .8;
+    &:disabled{
+        cursor: not-allowed;
+        opacity: .6;
+        &:hover{
+            opacity: .6;
+        }
+        &:active{
+            opacity: .6;
+        }
+    }
+    &:hover{
+        opacity: .9;
+    }
+    &:active{
+        opacity: 1;
+    }
+    &.zx-button-primary{
+        color: @White;
+        background-color: @ActiveColor;
+        border-color: @ActiveColor;
+    }
+    &.zx-button-success{
+        color: @White;
+        background-color: @SuccessColor;
+        border-color: @SuccessColor;
+    }
+    &.zx-button-warning{
+        color: @White;
+        background-color: @WarningColor;
+        border-color: @WarningColor;
+    }
+
+    &.zx-button-danger{
+        color: @White;
+        background-color: @ErrorColor;
+        border-color: @ErrorColor;
+    }
+
+    &.zx-button-text{
+        color: @ActiveColor;
+        background-color: none;
+        border: none;
+    }
+}

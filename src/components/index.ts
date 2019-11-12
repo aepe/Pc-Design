@@ -1,17 +1,24 @@
 /*
- * @abstract:
- * @version:
+ * @abstract: 
+ * @version: 
  * @Author: bhabgs
- * @Date: 2019-11-05 15:45:56
+ * @Date: 2019-11-12 14:04:54
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-05 16:29:27
+ * @LastEditTime: 2019-11-12 15:43:25
  */
 // 找到components文件夹下以.vue命名的文件
-const requireComponent = require.context('./', true, /\.(tsx)|(jsx)/); //.(vue)|
 
-// 遍历每个文件
-const vueComponents = requireComponent.keys().map((filePath) => {
-    return requireComponent(filePath);
-});
-
-export default vueComponents;
+import ZButton from './button/main';
+import Zloading from './loading/main';
+import ZTag from './Tag/main';
+import ZTimeline from './Timeline/main';
+import ZTimelineItem from './TimelineItem/main';
+const compontents: any[] = [
+    ZButton,
+    Zloading,
+    ZTag,
+    ZTimeline,
+    ZTimelineItem
+];
+export {compontents}
+export default compontents;

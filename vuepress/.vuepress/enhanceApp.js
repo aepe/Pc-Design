@@ -4,10 +4,10 @@
  * @Author: bhabgs
  * @Date: 2019-11-07 09:20:06
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-08 10:17:53
+ * @LastEditTime: 2019-11-12 13:36:45
  */
-import mtUtil from '../../dist/mt-util.min';
-import '../../dist/mt.style.css';
+import mtUtil from '../../dist/js/mt-util.min';
+import '../../dist/css/mt.style.css';
 
 export default ({
     Vue, // VuePress 正在使用的 Vue 构造函数

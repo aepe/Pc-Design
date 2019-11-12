@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-10-29 10:56:25
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-12 08:54:48
+ * @LastEditTime: 2019-11-12 15:53:55
  */
 import resolve from 'rollup-plugin-node-resolve'; // 告诉 Rollup 如何查找外部模块
 import commonjs from 'rollup-plugin-commonjs'; // 将CommonJS模块转换为 ES2015 供 Rollup 处理
@@ -15,12 +15,15 @@ import typescript from 'rollup-plugin-typescript';
 import postcss from 'rollup-plugin-postcss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
-import replace from 'rollup-plugin-replace';
+import replace from '@rollup/plugin-replace';
 
 export default {
     input: 'src/index.ts',
     plugins: [
-        resolve({ extensions: ['.tsx'] }),
+        resolve({ 
+            browser: true,
+            extensions: ['.tsx']
+        }),
         typescript({
             exclude: 'node_modules/**',
             typescript: require('typescript'),
@@ -30,7 +33,7 @@ export default {
         }),
         postcss({
             plugins: [autoprefixer, cssnano],
-            extract: 'dist/mt.style.css', // 输出路径
+            extract: 'dist/css/mt.style.css', // 输出路径
         }),
         commonjs(),
         replace({
@@ -46,5 +49,5 @@ export default {
         }),
         vue({ css: false }),
     ],
-    external: ['vue', 'vue-property-decorator'],
+    external: ['vue'],// , 'vue-property-decorator'
 };

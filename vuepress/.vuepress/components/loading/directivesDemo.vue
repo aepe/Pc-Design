@@ -1,5 +1,13 @@
+<!--
+ * @abstract: 
+ * @version: 
+ * @Author: bhabgs
+ * @Date: 2019-11-12 14:04:54
+ * @LastEditors: bhabgs
+ * @LastEditTime: 2019-11-12 15:53:03
+ -->
 <template>
-  <div class="directives-body" v-mt-loading></div>
+  <div class="directives-body" v-z-loading></div>
 </template>
 <style>
 .directives-body {
