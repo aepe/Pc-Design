@@ -10,7 +10,8 @@
         "build:es": "rollup --config build/rollup.config.es.ts",
         "build:iife": "rollup --config build/rollup.config.iife.ts",
         "clear:dir": "node build/clearDir.ts",
-        "docs:dev": "vuepress dev vuepress"
+        "docs:dev": "vuepress dev vuepress",
+        "docs:build": "vuepress build vuepress"
     },
     "keywords": [
         "bhabgs"
