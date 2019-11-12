@@ -3,8 +3,8 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-10-29 14:22:46
- * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-08 10:29:36
+ * @LastEditors: 王晓龙
+ * @LastEditTime: 2019-11-12 10:53:00
  -->
 
 # 美腾科技工厂前端组工具集合
@@ -36,7 +36,7 @@ yarn docs:dev / npm run docs:dev
 > 组件的开发方案需要在 src/components 建立自己的组件文件夹，以 vue 官网组件开发方式开发即可，支持 tsx 开发方案，组件支持自动引入。
 
 ```javascript
-// 注意目前组件名定义格式 z-{name} 名字， {name}为自定义的组件名称
+// 注意目前组件名定义格式 z-{name} | Z{Name} 名字， {name}为自定义的组件名称
 <template>
     <div>test component</div>
 </template>
