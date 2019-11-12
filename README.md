@@ -3,13 +3,13 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-10-29 14:22:46
- * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-08 10:29:36
+ * @LastEditors: 王晓龙
+ * @LastEditTime: 2019-11-12 12:04:16
  -->
 
 # 美腾科技工厂前端组工具集合
 
-> 美腾科技工厂常用的组件开发
+> 美腾科技工厂常用组件开发
 
 ## 运行组件库
 
@@ -27,32 +27,29 @@ yarn build / npm run build
 ## 运行 docs 文档
 
 ```bash
-# 进入
+# 运行
 yarn docs:dev / npm run docs:dev
 ```
 
 ## vue 组件
 
 > 组件的开发方案需要在 src/components 建立自己的组件文件夹，以 vue 官网组件开发方式开发即可，支持 tsx 开发方案，组件支持自动引入。
-``` javascript
-// 注意组件定义格式目前组件名字应为 z-{any} 名字
+
+```javascript
+// 注意目前组件名定义格式 z-{name} | Z{Name} 名字， {name}为自定义的组件名称
 <template>
     <div>test component</div>
-<template>
+</template>
+
 <script>
 export default {
-    data() {
-        return {
-            
-        }
-    }
-}
+    name: 'z-name',
+};
 </script>
-// tsx 组件
-export default class Zui extends {
 
-}
-// Zui 为组件名称 也就是组件调用名称
+// tsx 组件
+export default class ZName extends Vue { }
+// ZName 为组件名称 也就是组件调用名称
 ```
 
 ## vue 工具
@@ -66,8 +63,8 @@ export default class Zui extends {
 ```javascript
 // index.ts
 export default {
-    install: Log,
-    name: 'Log',
+    install: Function,
+    name: 'name',
     version: '1.0.0',
 };
 ```

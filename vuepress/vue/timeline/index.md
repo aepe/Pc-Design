@@ -1,11 +1,22 @@
+<!--
+ * @Description:
+ * @Version: 0.0.1
+ * @Author: 王晓龙
+ * @Date: 2019-11-12 10:53:37
+ * @LastEditors: 王晓龙
+ * @LastEditTime: 2019-11-12 11:59:56
+ -->
+
 # 时间轴 `timeline`
 
-::: warning 预计实现功能
+## Features
 
-1. 默认图标为 ⭕️（可定制修改）
-2. 定制化横竖排列
-3. 时间轴颜色默认为{dotColor: '颜色可定制', lineType: 'solid' | 'dashed' | 'dotted' }
-4. ...自行发挥
+::: warning 实现功能
+
+1. 可自定义时间轴节点 可更改颜色
+2. 可更改时间轴线的颜色和类型
+3. 可更改时间节点顺序
+4. 可自定义时间轴文字内容
 
 :::
 
@@ -23,10 +34,22 @@
     <<< @/vuepress/.vuepress/components/timeline/demo2.vue
     </templates-demo>
 
--   ### 顺序
+-   ### 节点顺序
 
     <templates-demo name="timeline-demo3">
     <<< @/vuepress/.vuepress/components/timeline/demo3.vue
+    </templates-demo>
+
+-   ### 自定义 dot 插槽
+
+    <templates-demo name="timeline-demo4">
+    <<< @/vuepress/.vuepress/components/timeline/demo4.vue
+    </templates-demo>
+
+-   ### 自定义内容插槽
+
+    <templates-demo name="timeline-demo5">
+    <<< @/vuepress/.vuepress/components/timeline/demo5.vue
     </templates-demo>
 
 ## API
@@ -41,11 +64,18 @@
 
     | 参数      | 描述                 | 类型   | 是否必填 | 可选值                          | 默认值  |
     | :-------- | :------------------- | :----- | :------- | :------------------------------ | :------ |
-    | title     | 指定时间轴的标题     | string | true     | -                               | -       |
-    | content   | 指定时间轴的内容文字 | string | false    | -                               | -       |
+    | title     | 指定时间轴的标题     | string | false    | -                               | -       |
+    | content   | 指定时间轴的文字内容 | string | false    | -                               | -       |
     | dotColor  | 指定时间轴节点的颜色 | string | false    | -                               | #DCDFE6 |
     | lineColor | 指定时间轴线的颜色   | string | false    | -                               | #DCDFE6 |
     | lineType  | 指定时间轴线的类型   | string | false    | 'solid' \| 'dashed' \| 'dotted' | 'solid' |
+
+-   ### timeline-item slot
+
+    | 参数    | 描述                 |
+    | :------ | :------------------- |
+    | dot     | 自定义时间轴节点     |
+    | content | 自定义时间轴文字内容 |
 
 <!-- ## Example
 
