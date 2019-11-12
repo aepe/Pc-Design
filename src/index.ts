@@ -4,7 +4,11 @@
  * @Author: bhabgs
  * @Date: 2019-10-29 10:54:09
  * @LastEditors: bhabgs
+<<<<<<< HEAD
  * @LastEditTime: 2019-11-12 15:44:29
+=======
+ * @LastEditTime: 2019-11-12 11:26:30
+>>>>>>> 加入日志输出
  */
 import Vue from 'vue';
 import {compontents} from './components';
@@ -33,6 +37,10 @@ const install = function(Vue: any) {
     Vue.use(directives);
     // 工具
     Vue.prototype.$Zutil = Zutil;
+    // 测试组件
+    vueComponents.forEach((item)=> {
+        console.log(item.name)
+    })
     // 组件
     compontents.forEach((component) => Vue.component(component.name, component.install));
 };
