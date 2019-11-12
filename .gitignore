@@ -3,5 +3,6 @@ dist
 
 .prettierignore
 .DS_Store
+*/.DS_Store
 
 .vscode
