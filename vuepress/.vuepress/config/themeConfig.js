@@ -29,6 +29,7 @@ const themeConfig = {
             ['theme/', '主题定制化'],
             ['Button/', 'button'],
             ['Tag/', 'tag 标签'],
+            ['Input/', 'Input 输入框'],
             ['loading/', 'loading加载'],
             ['timeline/', 'timeline时间轴'],
             ['Table/', 'table表格'],

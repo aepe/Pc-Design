@@ -24,7 +24,6 @@
   export default {
     data() {
       return {
-        visible: true,
         tags: [
           '标签一',
           '标签二',
