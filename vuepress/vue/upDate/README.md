@@ -42,5 +42,7 @@ export default {
 </script>
 
 <style lang="stylus">
-
+.demo5
+    .custom-summary
+        border none;
 </style>
