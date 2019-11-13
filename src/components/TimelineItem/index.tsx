@@ -12,16 +12,16 @@ export default class ZTimelineItem extends Vue {
     timeline!: any;
 
     render() {
-        let dotSlots = this.$slots.dot || <span class="z-timeline-dot" style={`border-color:${this.dotColor}`}></span>;
+        let dotSlots = this.$slots.dot || <span class="zx-timeline-dot" style={`border-color:${this.dotColor}`}></span>;
         let summartContent = this.$slots.content || this.content;
-        let timelineSummary = summartContent ? <div class="z-timeline-summary">{summartContent}</div> : '';
+        let timelineSummary = summartContent ? <div class="zx-timeline-summary">{summartContent}</div> : '';
 
         return (
-            <div class="z-timeline-item">
-                <div class="z-timeline-line" style={{ 'border-left-color': this.lineColor, 'border-left-style': this.lineType }}></div>
-                <div class="z-timeline-icon">{dotSlots}</div>
-                <div class="z-timeline-content">
-                    <div class="z-timeline-title">{this.title}</div>
+            <div class="zx-timeline-item">
+                <div class="zx-timeline-line" style={{ 'border-left-color': this.lineColor, 'border-left-style': this.lineType }}></div>
+                <div class="zx-timeline-icon">{dotSlots}</div>
+                <div class="zx-timeline-content">
+                    <div class="zx-timeline-title">{this.title}</div>
                     {timelineSummary}
                 </div>
             </div>
