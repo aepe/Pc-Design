@@ -2,10 +2,7 @@ import { Component, Vue, Prop, Provide } from 'vue-property-decorator';
 
 @Component
 export default class ZTimeline extends Vue {
-    /**
-     * @Param reverse {boolean} @Required false @Default -- @Options -- @Description 节点排序
-     */
-    @Prop({ type: Boolean, default: false }) private reverse?: boolean;
+    @Prop({ type: Boolean, default: false }) private reverse?: boolean; // 节点排序
 
     @Provide()
     timeline = this;
