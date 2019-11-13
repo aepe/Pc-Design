@@ -22,47 +22,47 @@
 
 ## 代码演示
 
--   ### 基础用法
+  ### 基础用法
 
-    <templates-demo name="tag-demo">
-    <<< @/vuepress/.vuepress/components/tag/demo.vue
-    </templates-demo>
+<templates-demo name="tag-demo">
+<<< @/vuepress/.vuepress/components/tag/demo.vue
+</templates-demo>
 
--  ### 可关闭
+ ### 可关闭
 
-    <templates-demo name="tag-demo-close">
-    <<< @/vuepress/.vuepress/components/tag/demo-close.vue
-    </templates-demo>
+<templates-demo name="tag-demo-close">
+<<< @/vuepress/.vuepress/components/tag/demo-close.vue
+</templates-demo>
 
--  ### 可选尺寸
+ ### 可选尺寸
 
-    <templates-demo name="tag-demo-size">
-    <<< @/vuepress/.vuepress/components/tag/demo-size.vue
-    </templates-demo>
+<templates-demo name="tag-demo-size">
+<<< @/vuepress/.vuepress/components/tag/demo-size.vue
+</templates-demo>
 
--  ### 切换tag的显示状态
+ ### 切换tag的显示状态
 
-    <templates-demo name="tag-demo-visible">
-    <<< @/vuepress/.vuepress/components/tag/demo-visible.vue
-    </templates-demo>
+<templates-demo name="tag-demo-visible">
+<<< @/vuepress/.vuepress/components/tag/demo-visible.vue
+</templates-demo>
 
--  ### 可选主题
+ ### 可选主题
 
-    <templates-demo name="tag-demo-theme">
-    <<< @/vuepress/.vuepress/components/tag/demo-theme.vue
-    </templates-demo>
+<templates-demo name="tag-demo-theme">
+<<< @/vuepress/.vuepress/components/tag/demo-theme.vue
+</templates-demo>
 
--  ### 关闭确认
+ ### 关闭确认
 
-    <templates-demo name="tag-demo-confirm">
-    <<< @/vuepress/.vuepress/components/tag/demo-confirm.vue
-    </templates-demo>
+<templates-demo name="tag-demo-confirm">
+<<< @/vuepress/.vuepress/components/tag/demo-confirm.vue
+</templates-demo>
     
--  ### 可多选标签-类似于checkbox效果
+ ### 可多选标签-类似于checkbox效果
 
-    <templates-demo name="tag-demo-check-tag">
-    <<< @/vuepress/.vuepress/components/tag/demo-check-tag.vue
-    </templates-demo>
+<templates-demo name="tag-demo-check-tag">
+<<< @/vuepress/.vuepress/components/tag/demo-check-tag.vue
+</templates-demo>
 
 
 ## API
