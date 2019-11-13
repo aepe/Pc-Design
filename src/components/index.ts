@@ -1,25 +1,20 @@
 /*
- * @abstract: 
- * @version: 
+ * @abstract:
+ * @version:
  * @Author: bhabgs
  * @Date: 2019-11-12 14:04:54
- * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-12 15:43:25
+ * @LastEditors: 王晓龙
+ * @LastEditTime: 2019-11-13 11:38:49
  */
 // 找到components文件夹下以.vue命名的文件
 
 import ZButton from './button/main';
 import Zloading from './loading/main';
-import {ZTag, ZCheckTag} from './Tag/main';
+import { ZTag, ZCheckTag } from './Tag/main';
 import ZTimeline from './Timeline/main';
 import ZTimelineItem from './TimelineItem/main';
-const compontents: any[] = [
-    ZButton,
-    Zloading,
-    ZTag,
-    ZCheckTag,
-    ZTimeline,
-    ZTimelineItem
-];
-export {compontents}
+import ZTable from './Table/main';
+import ZTableColumn from './TableColumn/main';
+const compontents: any[] = [ZButton, Zloading, ZTag, ZCheckTag, ZTimeline, ZTimelineItem, ZTable, ZTableColumn];
+export { compontents };
 export default compontents;
