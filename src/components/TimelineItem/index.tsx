@@ -1,19 +1,15 @@
-import { Component, Vue, Prop } from 'vue-property-decorator';
+import { Component, Vue, Prop, Inject } from 'vue-property-decorator';
 
 @Component
 export default class ZTimelineItem extends Vue {
-    /**
-     * @Param title {string} @Required false @Default -- @Options -- @Description 标题
-     * @Param content {string} @Required false @Default -- @Options -- @Description 内容
-     * @Param dotColor {string} @Required false @Default {@BorderColor-1} @Options -- @Description 节点颜色
-     * @Param lineColor {string} @Required false @Default {@BorderColor-1} @Options -- @Description 线颜色
-     * @Param lineType {string} @Required false @Default solid @Options solid|dashed|dotted @Description 线类型
-     */
-    @Prop({ type: String }) private title?: string;
-    @Prop({ type: String }) private content?: string;
-    @Prop({ type: String }) private dotColor?: string;
-    @Prop({ type: String }) private lineColor?: string;
-    @Prop({ type: String }) private lineType?: string;
+    @Prop({ type: String }) private title?: string; // 标题
+    @Prop({ type: String }) private content?: string; // 内容
+    @Prop({ type: String }) private dotColor?: string; // 节点颜色
+    @Prop({ type: String }) private lineColor?: string; // 线颜色
+    @Prop({ type: String }) private lineType?: string; // 线类型
+
+    @Inject()
+    timeline!: any;
 
     render() {
         let dotSlots = this.$slots.dot || <span class="z-timeline-dot" style={`border-color:${this.dotColor}`}></span>;
