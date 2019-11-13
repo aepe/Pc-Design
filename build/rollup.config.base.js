@@ -3,8 +3,8 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-10-29 10:56:25
- * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-12 15:53:55
+ * @LastEditors: 王晓龙
+ * @LastEditTime: 2019-11-12 16:55:27
  */
 import resolve from 'rollup-plugin-node-resolve'; // 告诉 Rollup 如何查找外部模块
 import commonjs from 'rollup-plugin-commonjs'; // 将CommonJS模块转换为 ES2015 供 Rollup 处理
@@ -20,9 +20,9 @@ import replace from '@rollup/plugin-replace';
 export default {
     input: 'src/index.ts',
     plugins: [
-        resolve({ 
+        resolve({
             browser: true,
-            extensions: ['.tsx']
+            extensions: ['.tsx'],
         }),
         typescript({
             exclude: 'node_modules/**',
@@ -49,5 +49,5 @@ export default {
         }),
         vue({ css: false }),
     ],
-    external: ['vue'],// , 'vue-property-decorator'
+    external: ['vue'], // , 'vue-property-decorator'
 };
