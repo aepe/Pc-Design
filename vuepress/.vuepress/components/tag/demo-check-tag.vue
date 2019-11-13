@@ -6,8 +6,6 @@
       <z-check-tag
         v-for="(i, key) in tags"
         :key="key"
-        size="mini"
-        closable
         :checked="selectedTags.indexOf(i) > -1"
         @change="(checked) => handleChange(i, checked)">{{i.title}}</z-check-tag>
     </div>

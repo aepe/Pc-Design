@@ -26,7 +26,7 @@ export default class ZCheckTag extends Vue {
   public render(): any {
     const {handleClick, $slots} = this;
     return (
-      <span class={["z-tag z-checkable-tag",
+      <span class={["z-checkable-tag",
       this.setClassByChecked()]}
       onClick={ handleClick }>
       {$slots.default}
