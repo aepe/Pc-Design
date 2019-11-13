@@ -2,13 +2,6 @@ import { Component, Vue, Prop, Model } from 'vue-property-decorator';
 
 @Component
 export default class ZTag extends Vue {
-    @Model ('change', {
-        type: Boolean
-      }) public checked!: boolean;
-      @Prop({
-        type: Boolean,
-        default: false,
-      }) public checked!: boolean;
     // tag大小
     @Prop({
         default: "",
@@ -61,13 +54,6 @@ export default class ZTag extends Vue {
     public setClose() {
         return this.closable;
     }
-    // checked 状态设置类名
-    public setClassByChecked() {
-        const { checked } = this;
-        return {
-        [`z-checkable-tag-checked`]: checked
-        }
-    }
     // 设置主题
     public setTheme() {
         return this.theme ? `z-tag-${this.theme}` : null;
@@ -99,14 +85,12 @@ export default class ZTag extends Vue {
             setTheme,
             setVisible,
             handleClick,
-            $slots,
-            setClassByChecked } = this;
+            $slots } = this;
         return (
             <span class={['z-tag', 
                 setClass(),
                 setTypeClass(),
-                setTheme(),
-                setClassByChecked() ]}
+                setTheme() ]}
                 v-show={setVisible()}
                 on-click={ handleClick }>
                     {$slots.default}
