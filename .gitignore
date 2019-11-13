@@ -1,8 +1,8 @@
 node_modules
 dist
-vuepress
+
 .prettierignore
 .DS_Store
 */.DS_Store
-
+/vuepress/
 .vscode
