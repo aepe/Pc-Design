@@ -1,10 +1,14 @@
-import { Component, Vue, Prop } from 'vue-property-decorator';
+import { Component, Vue, Prop, Emit } from 'vue-property-decorator';
 
 interface State{
     zType: string | null
 }
 @Component
 export default class ZButton extends Vue {
+    @Emit('click')
+    public btnClick(e) {
+        return e;
+    }
 
     // button风格
     @Prop({
@@ -56,14 +60,14 @@ export default class ZButton extends Vue {
     }
     // 拼装classname
     get className(): string {
-        const type: string = 'zx-button '+ 'zx-button-'+this.type;
-        const size: string = ' zx-button-'+this.size;
-        const circle: string = this.circle ? ' zx-button-circle' : '';
+        const type: string = 'z-button '+ 'z-button-'+this.type;
+        const size: string = ' z-button-'+this.size;
+        const circle: string = this.circle ? ' z-button-circle' : '';
 
         return type + size + circle;
     }
     public render() {
         const slots = this.$slots.default || [];
-    return <button disabled={this.disabled} class={this.className}>{slots}</button>
+        return <button onClick={this.btnClick} disabled={this.disabled} class={this.className}>{slots}</button>
     }
 }
