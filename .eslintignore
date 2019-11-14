@@ -1,0 +1,5 @@
+.vue
+.less
+dist
+node_modules
+/src/styles

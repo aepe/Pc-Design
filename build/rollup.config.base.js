@@ -3,8 +3,8 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-10-29 10:56:25
- * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-12 16:55:27
+ * @LastEditors: bhabgs
+ * @LastEditTime: 2019-11-14 09:21:26
  */
 import resolve from 'rollup-plugin-node-resolve'; // 告诉 Rollup 如何查找外部模块
 import commonjs from 'rollup-plugin-commonjs'; // 将CommonJS模块转换为 ES2015 供 Rollup 处理
@@ -16,6 +16,7 @@ import postcss from 'rollup-plugin-postcss';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import replace from '@rollup/plugin-replace';
+import { eslint } from "rollup-plugin-eslint";
 
 export default {
     input: 'src/index.ts',
@@ -24,6 +25,7 @@ export default {
             browser: true,
             extensions: ['.tsx'],
         }),
+        eslint(),
         typescript({
             exclude: 'node_modules/**',
             typescript: require('typescript'),
