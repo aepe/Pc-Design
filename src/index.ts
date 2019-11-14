@@ -3,29 +3,17 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-10-29 10:54:09
- * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-12 16:58:10
+ * @LastEditors: bhabgs
+ * @LastEditTime: 2019-11-14 09:23:18
  */
 import Vue from 'vue';
 import { compontents } from './components';
 import directives from './directives';
 import Zutil from './packages';
+import './styles/index.less';
 
 // 开发组件时可以使用自定义指令
 Vue.use(directives);
-
-// 按需引用组件
-let componentsExportList: any = {};
-
-// 循环组件
-// compontents.forEach((component) => {
-//     componentsExportList[component.name] = component;
-//     // 按需引入组件install
-//     component.install = (Vue: any) => Vue.component(component.name, component);
-// });
-
-import './styles/index.less';
-
 // 注册install
 const install = function(Vue: any) {
     // 指令
@@ -41,4 +29,4 @@ if (typeof window !== 'undefined' && window.Vue) {
     install(window.Vue);
 }
 
-export default { install, Zutil, ...componentsExportList };
+export default { install, Zutil };
