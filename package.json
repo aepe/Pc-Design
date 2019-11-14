@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "npm run clear:dir && cross-env NODE_ENV=development rollup --config build/rollup.config.es.js --watch && docs:dev",
     "build": "npm run clear:dir && npm run build:browser && npm run build:es && npm run build:iife",
-    "build:browser": "rollup --config build/rollup.config.browser.ts",
+    "build:browser": "rollup --config build/rollup.config.browser.js",
     "build:es": "rollup --config build/rollup.config.es.ts",
-    "build:iife": "rollup --config build/rollup.config.iife.ts",
+    "build:iife": "rollup --config build/rollup.config.iife.js",
     "clear:dir": "node build/clearDir.ts",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
@@ -34,6 +34,11 @@
     "cacheable": "^0.2.9",
     "cross-env": "^6.0.3",
     "eslint": "^6.6.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-typescript": "^0.14.0",
     "less": "^3.10.3",
     "rollup": "^1.26.0",

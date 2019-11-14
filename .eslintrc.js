@@ -4,11 +4,11 @@
  * @Author: bhabgs
  * @Date: 2019-11-13 16:46:16
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-14 10:50:43
+ * @LastEditTime: 2019-11-14 11:01:36
  */
 module.exports = {
     parser: '@typescript-eslint/parser',
-    // extends: "standard",
+    extends: "standard",
     env: {
         "browser": true
     },
