@@ -1,6 +1,6 @@
 /*
- * @abstract: 
- * @version: 
+ * @abstract:
+ * @version:
  * @Author: bhabgs
  * @Date: 2019-11-12 15:32:20
  * @LastEditors: bhabgs
@@ -12,12 +12,11 @@ const ZTag = {
     version: '0.0.1',
     name: 'ZTag',
     install: Tag
-}
+};
 const ZCheckTag = {
     version: '0.0.1',
     name: 'ZCheckTag',
     install: CheckTag
-}
-export {ZTag, ZCheckTag}
+};
+export { ZTag, ZCheckTag };
 export default ZTag;
-
