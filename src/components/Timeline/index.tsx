@@ -15,8 +15,8 @@ export default class ZTimeline extends Vue {
         }
 
         return (
-            <div class="zx-timeline">
-                <div class="zx-timeline-inner">{slots}</div>
+            <div class="z-timeline">
+                <div class="z-timeline-inner">{slots}</div>
             </div>
         );
     }
