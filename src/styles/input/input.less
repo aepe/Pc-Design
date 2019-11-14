@@ -1,0 +1,27 @@
+
+@z-input-prefix: z;
+@z-input-prefix-cls: ~'@{z-input-prefix}-input';
+.@{z-input-prefix-cls} {
+  display: flex;
+  align-items: center;
+  &-text {
+    border-radius: 4px;
+    box-shadow: none;
+    border: none;
+    padding: 0 @medium-padding-size;
+    border: 1px solid @ActiveColor;
+    height: 40px;
+    line-height: 40px;
+    color: @Black;
+    font-size: @medium-font-size;
+    box-sizing: border-box;
+  }
+  &-label {
+    display: inline-block;
+    width: auto;
+    text-align: left;
+    font-size: @medium-font-size;
+    color: @Black;
+    width: 100px;
+  }
+}

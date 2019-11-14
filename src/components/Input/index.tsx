@@ -7,6 +7,11 @@ export default class ZInput extends Vue {
     type: String
   }) public type!: string;
 
+  @Prop({
+    default: '',
+    type: String
+  }) public label!: string;
+
   // 设置input框的类型
   public setInputType() {
     return this.type;
@@ -17,8 +22,31 @@ export default class ZInput extends Vue {
     return `z-input-${this.type}`;
   }
 
-    public render() {
-      const { setInputType, setInputClass } = this;
-      return <input type={setInputType()} class={setInputClass()} />;
-    }
+  // render pre
+  public renderPre() {
+    return <span class={'z-input-pre'}>aaa</span>
+  }
+
+  // render Label
+  public renderLabel() {
+    const { label } = this;
+    return label ? <span class={'z-input-label'}>{label}:</span> : null;
+  }
+
+  // render input
+  public renderInput() {
+    const { type, setInputType, setInputClass } = this;
+    return <input type={setInputType()} class={[setInputClass()]} />
+  }
+
+  public render() {
+    const { renderInput, renderLabel, renderPre } = this;
+    return (
+      <div class="z-input">
+        {renderLabel()}
+        {renderPre()}
+        {renderInput()}
+      </div>
+    );
+  }
 }
