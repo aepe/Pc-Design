@@ -1,30 +1,37 @@
-import { Component, Vue, Prop, Inject } from 'vue-property-decorator';
+import { Component, Vue, Inject } from 'vue-property-decorator';
 
 @Component
 export default class ZTableHead extends Vue {
-    @Inject()
-    table!: any;
+  @Inject()
+  table!: any;
 
-    render() {
-        let slots = this.$slots.default || [];
+  @Inject()
+  slots!: any[];
 
-        return (
-            <div class="thead">
-                <table>
-                    <colgroup>
-                        <col style="width:100px; background:#f00;" />
-                    </colgroup>
-                    <thead>
-                        <tr>
-                            <th>aaaaaa</th>
-                            <th>aaaaaa</th>
-                            <th>aaaaaa</th>
-                            <th>aaaaaa</th>
-                            <th>aaaaaa</th>
-                        </tr>
-                    </thead>
-                </table>
-            </div>
-        );
-    }
+  @Inject()
+  tableData!: any[];
+
+  render() {
+    // let slots = this.$slots.default || [];
+    console.log(this.slots);
+
+    return (
+      <div class="z-table-header">
+        <table>
+          <colgroup>
+            <col />
+          </colgroup>
+          <thead>
+            <tr>
+              <th>aaaaaa</th>
+              <th>aaaaaa</th>
+              <th>aaaaaa</th>
+              <th>aaaaaa</th>
+              <th>aaaaaa</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    );
+  }
 }

@@ -1,46 +1,53 @@
-import {Vue, Component, Prop, Watch} from 'vue-property-decorator';
-import './loading.less';
+/*
+ * @abstract:
+ * @version:
+ * @Author: wpp
+ * @Date: 2019-11-08 11:48:49
+ * @LastEditors: bhabgs
+ * @LastEditTime: 2019-11-14 14:44:02
+ */
+import { Vue, Component, Prop } from 'vue-property-decorator';
 @Component
-export default class ZLoading extends Vue{
-    @Prop({default: '#333'}) public dotBackground?: string;
-    @Prop({default: 'rgba(119, 111, 111, .7)'}) public markBackground?: string;
-    @Prop({default: false}) public visible?: boolean;
-    @Prop({default: true}) public fullScreen?: boolean;
+export default class Zloading extends Vue {
+	@Prop({ default: '#333' }) public dotBackground?: string;
+	@Prop({ default: 'rgba(0, 0, 0, .3)' }) public markBackground?: string;
+	@Prop({ default: false }) public visible?: boolean;
+	@Prop({ default: true }) public fullScreen?: boolean;
 
-    get markStyle() {
-        return {
-            backgroundColor: this.markBackground,
-            position: this.fullScreen ? 'fixed' : 'absolute',
-        }
-    }
-    get dotBGColor() {
-        return {
-            backgroundColor: this.dotBackground,
-        }
-    }
-    public mounted() {
-        this.$nextTick(() => {
-            if (!this.fullScreen) {
-                let parentNode: any = document.getElementsByClassName('wpp-loading-mark')[0].parentNode;
-                parentNode ? parentNode.style.position = 'relative' : '';
-            }
-        })
-       
-    }
-    public setMarkFn (position: string) {
-        this.markStyle.position = position;
-    }
-    render() {
-        if (!this.visible) {
-            return false;
-        }
-        const slotText = this.$slots.default
-        ||
-        <div class="loader">
-            <div class="dot dot1" style={this.dotBGColor}></div>
-            <div class="dot dot2" style={this.dotBGColor}></div>
-            <div class="dot dot3" style={this.dotBGColor}></div>
-        </div> ;
-        return <div class="wpp-loading-mark" style={this.markStyle}>{slotText}</div>
-    }
+	get zxMarkStyle() {
+		return {
+			backgroundColor: this.markBackground,
+			position: this.fullScreen ? 'fixed' : 'absolute'
+		};
+	}
+
+	get zxDotBGColor() {
+		return {
+			backgroundColor: this.dotBackground
+		};
+	}
+
+	public mounted() {
+		this.$nextTick(() => {
+			if (!this.fullScreen) {
+				const parentNode: any = document.getElementsByClassName('zx-loading-mark')[0].parentNode;
+				if (parentNode) {
+					parentNode.style.position = 'relative';
+				}
+			}
+		});
+	}
+
+	render() {
+		if (!this.visible) {
+			return false;
+		}
+		const slotText = this.$slots.default ||
+			<div class="zx-loader">
+				<div class="zx-dot zx-dot1" style={this.zxDotBGColor}></div>
+				<div class="zx-dot zx-dot2" style={this.zxDotBGColor}></div>
+				<div class="zx-dot zx-dot3" style={this.zxDotBGColor}></div>
+			</div>;
+		return <div class="zx-loading-mark" style={this.zxMarkStyle}>{slotText}</div>;
+	}
 }

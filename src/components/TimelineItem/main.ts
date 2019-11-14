@@ -1,6 +1,6 @@
 /*
- * @abstract: 
- * @version: 
+ * @abstract:
+ * @version:
  * @Author: bhabgs
  * @Date: 2019-11-12 15:32:20
  * @LastEditors: bhabgs
@@ -8,10 +8,9 @@
  */
 import TimelineItem from './index';
 const ZTimelineItem = {
-    version: '0.0.1',
-    name: 'ZTimelineItem',
-    install: TimelineItem
-}
-export {ZTimelineItem}
+  version: '0.0.1',
+  name: 'ZTimelineItem',
+  install: TimelineItem
+};
+export { ZTimelineItem };
 export default ZTimelineItem;
-

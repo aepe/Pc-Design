@@ -1,13 +1,16 @@
-import { Component, Vue, Prop, Inject } from 'vue-property-decorator';
+import { Component, Vue, Inject } from 'vue-property-decorator';
 
 @Component
 export default class ZTableColumn extends Vue {
-    @Inject()
-    table!: any;
+  @Inject()
+  table!: any;
 
-    render() {
-        let slots = this.$slots.default || [];
+  @Inject()
+  tableData!: any[];
 
-        return <div class="z-table-column">aaaa</div>;
-    }
+  render() {
+    // let slots = this.$slots.default || [];
+
+    return <div class="z-table-column">aaaa</div>;
+  }
 }
