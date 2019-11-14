@@ -99,16 +99,9 @@ export default class ZTag extends Vue {
             <i class="z-close iconfont zxclose" on-click={ this.handleClose }></i>
         ) : null;
     }
-    
+
     public render(): any {
-        const {
-            setClass,
-            setTypeClass,
-            setTheme,
-            setVisible,
-            handleClick,
-            $slots
-        } = this;
+        const { setClass, setTypeClass, setTheme, setVisible, handleClick, $slots } = this;
         return (
             <span class={['z-tag', setClass(), setTypeClass(), setTheme()]}
                 v-show={setVisible()}

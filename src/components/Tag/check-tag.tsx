@@ -5,7 +5,7 @@ export default class ZCheckTag extends Vue {
   @Model('change', {
     type: Boolean
   }) public checked!: boolean;
-  
+
   @Prop({
     type: Boolean,
     default: false
