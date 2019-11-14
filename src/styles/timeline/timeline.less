@@ -1,11 +1,11 @@
 @dotSize: 20px;
 
-.zx-timeline {
-    .zx-timeline-inner {
-        .zx-timeline-item {
+.z-timeline {
+    .z-timeline-inner {
+        .z-timeline-item {
             position: relative;
 
-            .zx-timeline-line {
+            .z-timeline-line {
                 position: absolute;
                 left: @dotSize / 2 - 1px;
                 top: @dotSize / 2;
@@ -14,7 +14,7 @@
                 border-left: 2px solid @BorderColor-1;
             }
 
-            .zx-timeline-icon {
+            .z-timeline-icon {
                 position: absolute;
                 left: 0;
                 top: 0;
@@ -25,7 +25,7 @@
                 justify-content: center;
                 margin-top: 6px;
 
-                .zx-timeline-dot {
+                .z-timeline-dot {
                     display: block;
                     width: @dotSize;
                     height: @dotSize;
@@ -37,20 +37,20 @@
             }
 
             &:last-child {
-                .zx-timeline-line {
+                .z-timeline-line {
                     display: none;
                 }
             }
 
-            .zx-timeline-content {
+            .z-timeline-content {
                 padding: 0 0 40px @dotSize + 15px;
 
-                .zx-timeline-title {
+                .z-timeline-title {
                     font-size: 20px;
                     color: @FontColor-1;
                 }
 
-                .zx-timeline-summary {
+                .z-timeline-summary {
                     font-size: 14px;
                     color: @FontColor-2;
                     margin-top: 5px;
