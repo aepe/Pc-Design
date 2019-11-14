@@ -1,7 +1,11 @@
 import { Component, Vue, Prop, Provide } from 'vue-property-decorator';
 import TableHeader from './tableHead';
 
-@Component
+@Component({
+  components: {
+    TableHeader
+  }
+})
 export default class ZTable extends Vue {
   @Prop({ type: Array, default: [] }) private data?: any[]; // 标题
 
