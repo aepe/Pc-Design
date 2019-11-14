@@ -8,9 +8,9 @@
  */
 import Table from './index';
 const ZTable = {
-    version: '0.0.1',
-    name: 'ZTable',
-    install: Table,
+  version: '0.0.1',
+  name: 'ZTable',
+  install: Table
 };
 export { ZTable };
 export default ZTable;

@@ -8,9 +8,9 @@
  */
 import TableColumn from './index';
 const ZTableColumn = {
-    version: '0.0.1',
-    name: 'ZTableColumn',
-    install: TableColumn,
+  version: '0.0.1',
+  name: 'ZTableColumn',
+  install: TableColumn
 };
 export { ZTableColumn };
 export default ZTableColumn;
