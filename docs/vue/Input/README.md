@@ -3,8 +3,8 @@
  * @version: 
  * @Author: bhabgs
  * @Date: 2019-11-12 09:06:17
- * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-13 11:55:08
+ * @LastEditors: langxue
+ * @LastEditTime: 2019-11-14 16:09:19
  -->
 # input 组件
 > 应用vue组件开发方式进行开发
@@ -13,11 +13,37 @@
 > 3. input loading状态
 > 4. size（medium / small / mini）
 > 5. @ActiveColor 为默认主色调
-## to do (郎雪)
 
-## 基本应用
+## demo
+
+### 基础用法
 <templates-demo name="Input-index">
 <<< @/docs/.vuepress/components/Input/index.vue
+</templates-demo>
+
+### 标签
+<templates-demo name="Input-demo-label">
+<<< @/docs/.vuepress/components/Input/demo-label.vue
+</templates-demo>
+
+### 尺寸
+<templates-demo name="Input-demo-size">
+<<< @/docs/.vuepress/components/Input/demo-size.vue
+</templates-demo>
+
+### 图标
+<templates-demo name="Input-demo-icon">
+<<< @/docs/.vuepress/components/Input/demo-icon.vue
+</templates-demo>
+
+### 限制输入长度
+<templates-demo name="Input-demo-length">
+<<< @/docs/.vuepress/components/Input/demo-length.vue
+</templates-demo>
+
+### 禁用状态
+<templates-demo name="Input-demo-disabled">
+<<< @/docs/.vuepress/components/Input/demo-disabled.vue
 </templates-demo>
 
 ## api
