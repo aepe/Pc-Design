@@ -5,11 +5,11 @@ export default class ZInput extends Vue {
   @Model('input', {
     type: [Number, String]
   }) public inputValue!: number | string;
-  
+
   // value
   @Prop({
-    type: String
-  }) public value!: string;
+    type: [Number, String]
+  }) public value!: number | string;
 
   // 类型
   @Prop({
