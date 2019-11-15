@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-12 09:06:17
  * @LastEditors: langxue
- * @LastEditTime: 2019-11-14 16:09:19
+ * @LastEditTime: 2019-11-15 15:11:19
  -->
 # input 组件
 > 应用vue组件开发方式进行开发
@@ -50,11 +50,27 @@
 
 | 参数    | 描述                               | 类型    | 是否必填 | 可选值        | 默认值 |
 | :------ | :--------------------------------- | :------ | :------- | :------------ | :----- |
+| type | 文本框类型 | String | false | text和其他原生 input 的 type 值 | text |
+| placeholder | 文本框占位文本 | String | false | - | 请输入内容 |
+| disabled | 禁用 | Boolean | false | - | false |
+| label | 文本框标签文本 | String | false | - | - |
+| labelWidth | 文本框标签文本宽度 | String | false | - | auto |
+| size | 文本框尺寸 | String | false | medium，small，mini | medium |
+| min | 文本框输入最小值 | Number | false | - | - |
+| max | 文本框输入最大值 | Number | false | - | - |
+| suffixIcon | 后置icon | String | false | - | - |
+| prefixIcon | 前置icon | String | false | - | - |
+| showWordLimit | 是否显示输入字数统计 | Boolean | false | - | false |
+
+
 
 
 ## event
 | 事件名称    | 描述                               | 类型    | 是否必填 | 可选值        | 默认值 |
 | :------ | :--------------------------------- | :------ | :------- | :------------ | :----- |
+| blur | 在 Input 失去焦点时触发 | - | - | - | - |
+| input | 在 Input 值改变时触发 | - | - | - | - |
+| change | 在 Input 失去焦点且值发生改变时触发 | - | - | - | - |
 
 
 
