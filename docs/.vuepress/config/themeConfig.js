@@ -3,8 +3,8 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-07 09:48:14
- * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-14 14:04:39
+ * @LastEditors: wpp
+ * @LastEditTime: 2019-11-14 15:23:14
  */
 const themeConfig = {
     nav: [
@@ -31,10 +31,11 @@ const themeConfig = {
             ['Button/', 'button'],
             ['Tag/', 'tag 标签'],
             ['Input/', 'Input 输入框'],
-            ['loading/', 'loading加载'],
+            ['Loading/', 'loading加载'],
             ['timeline/', 'timeline时间轴'],
             ['Table/', 'table表格'],
             ['Message/', 'Message提示'],
+            ['Drag/', 'drag拖动'],
             ['ml/', '马良docs']
         ],
     },

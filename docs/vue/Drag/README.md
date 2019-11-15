@@ -1,10 +1,10 @@
 <!--
- * @abstract: 
- * @version: 
+ * @abstract:
+ * @version:
  * @Author: wpp
  * @Date: 2019-11-07 17:20:23
  * @LastEditors: wpp
- * @LastEditTime: 2019-11-14 12:17:40
+ * @LastEditTime: 2019-11-14 16:44:01
  -->
 # Drag
 
@@ -16,8 +16,8 @@
 
 ### Drag效果展示:
 
-<templates-demo name="loading-loadingDemo">
-<!-- <<< @/docs/.vuepress/components/loading/loadingDemo.vue -->
+<templates-demo name="Drag-demo">
+<<< @/docs/.vuepress/components/Drag/demo.vue
 </templates-demo>
 
 ## API
