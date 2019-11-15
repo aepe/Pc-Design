@@ -1,10 +1,10 @@
 /*
- * @abstract: 
- * @version: 
+ * @abstract:
+ * @version:
  * @Author: bhabgs
  * @Date: 2019-11-06 16:39:45
  * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-12 16:58:17
+ * @LastEditTime: 2019-11-15 10:55:00
  */
 const themeConfig = require('./config/themeConfig').themeConfig;
 module.exports = {
@@ -13,18 +13,33 @@ module.exports = {
     base: '/docs/',
     markdown: {
         plugins: [
-        '@org/foo', // 等价于 @org/markdown-it-foo，如果对应的包存在
-        ['markdown-it-bar', {
-        // 提供你的选项
-        }]
-        ]
+            '@org/foo', // 等价于 @org/markdown-it-foo，如果对应的包存在
+            [
+                'markdown-it-bar',
+                {
+                    // 提供你的选项
+                },
+            ],
+        ],
     },
     themeConfig,
     configureWebpack: {
         resolve: {
-          alias: {
-            // '@alias': __dirname + 'public'
-          }
-        }
-      }
-}
+            alias: {
+                // '@alias': __dirname + 'public'
+            },
+        },
+    },
+    chainWebpack(config, isServer) {
+        config.module
+            .rule('vue')
+            .use('vue-loader')
+            .loader('vue-loader')
+            .tap((options) => {
+                options.compilerOptions = {
+                    preserveWhitespace: false,
+                };
+                return options;
+            });
+    },
+};
