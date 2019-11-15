@@ -12,7 +12,9 @@
     "clear:dir": "node build/clearDir.ts",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "deploy": "bash deploy.sh"
+    "deploy": "bash deploy.sh",
+    "deploy:to": "ts-node .robot/bs-start.js",
+    "deploy:success": "ts-node .robot/bs-success.js"
   },
   "keywords": [
     "bhabgs"
@@ -34,6 +36,8 @@
     "babel-preset-stage-3": "^6.24.1",
     "cacheable": "^0.2.9",
     "cross-env": "^6.0.3",
+    "ding-robot": "^1.0.0",
+    "dingtalk-robot-sender": "^1.2.0",
     "eslint": "^6.6.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.18.2",
@@ -42,6 +46,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-typescript": "^0.14.0",
     "less": "^3.10.3",
+    "log4js": "^6.0.0",
     "rollup": "^1.26.0",
     "rollup-plugin-babel": "3.0.0",
     "rollup-plugin-commonjs": "^10.1.0",

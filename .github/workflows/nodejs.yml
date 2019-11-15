@@ -24,7 +24,11 @@ jobs:
       run: npm install
     - name: 编译源码
       run: npm run build
+    - name: 开始部署代码
+      run: npm run deploy:to
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BUILD_SCRIPT: npm run deploy
+    - name: 部署成功
+      run: npm run deploy:success
         CI: true
