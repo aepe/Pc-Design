@@ -13,8 +13,8 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "deploy": "bash deploy.sh",
-    "deploy:to": "ts-node .robot/bs-start.js",
-    "deploy:success": "ts-node .robot/bs-success.js"
+    "deploy:to": "node .robot/bs-start.js",
+    "deploy:success": "node .robot/bs-success.js"
   },
   "keywords": [
     "bhabgs"
