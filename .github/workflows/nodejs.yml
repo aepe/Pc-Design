@@ -1,9 +1,9 @@
-name: node ci run
+name: 文档发布
 
 on:
   push:
     branches:
-    - release
+    - develop
 
 jobs:
   test:
@@ -24,5 +24,9 @@ jobs:
       run: npm install
     - name: 编译源码
       run: npm run build
+    - name: 开始部署代码
+      run: npm run deploy:to
       env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BUILD_SCRIPT: npm run deploy && npm run deploy:success
         CI: true
