@@ -1,82 +1,181 @@
 
-@z-input-prefix: z;
-@z-input-prefix-cls: ~'@{z-input-prefix}-input';
-.@{z-input-prefix-cls} {
+
+.z-input {
   width: 100%;
+  position: relative;
   display: flex;
   align-items: center;
-  &-box {
-    display: flex;
-    align-items: center;
-  }
-  &-item {
+  .z-input-inner {
     width: 100%;
-    outline: none;
+    height: 40px;
+    line-height: 40px;
     border-radius: 4px;
-    box-shadow: none;
     border: none;
     padding: 0 @medium-padding-size;
     border: 1px solid @ActiveColor;
-    height: 40px;
-    line-height: 40px;
-    color: @FontColor-2;
-    font-size: @medium-font-size;
     box-sizing: border-box;
-    &::-webkit-input-placeholder { /* WebKit browsers */
-      color: @FontColor-4;
-      font-size: @medium-font-size;
-    }
-    &::-moz-placeholder { /* Mozilla Firefox 19+ */
-      color: @FontColor-4;
-      font-size: @medium-font-size;
-    }
-    &:-ms-input-placeholder { /* Internet Explorer 10+ */
-      color: @FontColor-4;
-      font-size: @medium-font-size;
-    }
-  }
-  &-label {
-    display: inline-block;
-    width: auto;
-    text-align: left;
+    box-shadow: none;
     font-size: @medium-font-size;
-    color: @FontColor-1;
-  }
-  &-disabled {
-    border-color: @DisableColor;
-    background-color: @BorderColor-4;
-    color: @FontColor-4;
-    cursor: not-allowed;
-  }
-  // 尺寸
-  &-item-small {
-    padding: @small-padding-size;
-    font-size: @small-font-size;
-    height: 38px;
-    line-height: 38px;
+    color: @FontColor-2;
+    cursor: pointer;
     &::-webkit-input-placeholder { /* WebKit browsers */
-      font-size: @small-font-size;
+      color: @FontColor-4;
+      font-size: @medium-font-size;
     }
     &::-moz-placeholder { /* Mozilla Firefox 19+ */
-      font-size: @small-font-size;
+      color: @FontColor-4;
+      font-size: @medium-font-size;
     }
     &:-ms-input-placeholder { /* Internet Explorer 10+ */
-      font-size: @small-font-size;
+      color: @FontColor-4;
+      font-size: @medium-font-size;
     }
   }
-  &-item-mini {
-    padding: @mini-padding-size;
-    font-size: @mini-font-size;
-    height: 36px;
-    line-height: 36px;
-    &::-webkit-input-placeholder { /* WebKit browsers */
-      font-size: @mini-font-size;
+  &.z-input-small {
+    .z-input-inner {
+      padding: @small-padding-size;
+      font-size: @small-font-size;
+      height: 36px;
+      line-height: 36px;
+      &::-webkit-input-placeholder { /* WebKit browsers */
+        color: @FontColor-4;
+        font-size: @small-font-size;
+      }
+      &::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: @FontColor-4;
+        font-size: @small-font-size;
+      }
+      &:-ms-input-placeholder { /* Internet Explorer 10+ */
+        color: @FontColor-4;
+        font-size: @small-font-size;
+      }
     }
-    &::-moz-placeholder { /* Mozilla Firefox 19+ */
+  }
+  &.z-input-mini {
+    .z-input-inner {
+      padding: @mini-padding-size;
       font-size: @mini-font-size;
+      height: 32px;
+      line-height: 32px;
+      &::-webkit-input-placeholder { /* WebKit browsers */
+        color: @FontColor-4;
+        font-size: @mini-font-size;
+      }
+      &::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: @FontColor-4;
+        font-size: @mini-font-size;
+      }
+      &:-ms-input-placeholder { /* Internet Explorer 10+ */
+        color: @FontColor-4;
+        font-size: @mini-font-size;
+      }
     }
-    &:-ms-input-placeholder { /* Internet Explorer 10+ */
-      font-size: @mini-font-size;
+  }
+  // 后置icon
+  &.z-input-suffix {
+    .z-input-inner {
+      padding: 0 40px 0 @medium-padding-size;
+    }
+    .z-input-suffix-icon {
+      .z-input-suffix-icon-inner {
+        display: inline-block;
+        width: 40px;
+        text-align: center;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .iconfont {
+          font-size: @medium-font-size;
+        }
+      }
+    }
+    &.z-input-small {
+      .z-input-inner {
+        padding-right: 36px;
+      }
+      .z-input-suffix-icon {
+        .z-input-suffix-icon-inner {
+          width: 36px;
+          .iconfont {
+            font-size: @small-font-size;
+          }
+        }
+      }
+    }
+    &.z-input-mini {
+      .z-input-inner {
+        padding-right: 32px;
+      }
+      .z-input-suffix-icon {
+        .z-input-suffix-icon-inner {
+          width: 32px;
+          .iconfont {
+            font-size: @mini-font-size;
+          }
+        }
+      }
+    }
+  }
+  // 前置icon
+  &.z-input-prefix {
+    .z-input-inner {
+      padding: 0 @medium-padding-size 0 40px;
+    }
+    .z-input-prefix-icon {
+      .z-input-prefix-icon-inner {
+        display: inline-block;
+        width: 40px;
+        text-align: center;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .iconfont {
+          font-size: @medium-font-size;
+        }
+      }
+    }
+    &.z-input-small {
+      .z-input-inner {
+        padding-right: 36px;
+      }
+      .z-input-prefix-icon {
+        .z-input-prefix-icon-inner {
+          width: 36px;
+          .iconfont {
+            font-size: @small-font-size;
+          }
+        }
+      }
+    }
+    &.z-input-mini {
+      .z-input-inner {
+        padding-right: 32px;
+      }
+      .z-input-prefix-icon {
+        .z-input-prefix-icon-inner {
+          width: 32px;
+          .iconfont {
+            font-size: @mini-font-size;
+          }
+        }
+      }
+    }
+  }
+  // 禁用
+  &.z-input-disabled {
+    .z-input-inner {
+      border-color: @DisableColor;
+      background-color: @BorderColor-4;
+      color: @FontColor-4;
+      cursor: not-allowed;
     }
   }
 }
