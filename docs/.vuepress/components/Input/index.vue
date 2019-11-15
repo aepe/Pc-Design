@@ -4,17 +4,17 @@
  * @Author: langxue
  * @Date: 2019-11-12 11:07:52
  * @LastEditors: langxue
- * @LastEditTime: 2019-11-15 14:58:59
+ * @LastEditTime: 2019-11-15 16:45:41
  -->
 <template>
   <div id="input-demo">
     <z-input type="text"
-        :value="inputText"
-          placeholder="请输入内容"
-          @blur="handleBlur"
-          @input="handleInput"
-          @change="handleChange" />
-          <span>{{inputText}}</span>
+        v-model="value"
+        placeholder="请输入内容"
+        @blur="handleBlur"
+        @input="handleInput"
+        @change="handleChange" />
+        <span>{{value}}</span>
     <br />
     <z-input type="password"
           placeholder="请输入密码" />
@@ -24,7 +24,7 @@
 export default {
   data() {
     return {
-      inputText: ''
+      value: 0
     };
   },
   methods: {
