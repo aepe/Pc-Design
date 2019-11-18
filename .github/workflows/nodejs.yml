@@ -1,9 +1,9 @@
-name: node ci run
+name: 文档发布
 
 on:
   push:
     branches:
-    - release
+    - develop
 
 jobs:
   test:
@@ -13,7 +13,6 @@ jobs:
     strategy:
       matrix:
         node-version: [8.x, 10.x, 12.x]
-
     steps:
     - uses: actions/checkout@master
     - name: 初始化node环境
@@ -22,7 +21,14 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: 安装项目依赖
       run: npm install
+    - name: 发送部署通知
+      run: npm run deploy:to
     - name: 编译源码
       run: npm run build
+    - name: 开始部署代码
       env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BUILD_SCRIPT: npm run deploy
         CI: true
+      run: npm run deploy:to    
+      
