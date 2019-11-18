@@ -1,6 +1,6 @@
 <template>
-  <div class="demo1">
-    <z-table :column="column" :data="list"></z-table>
+  <div class="demo3">
+    <z-table :column="column" :data="list" type="border"></z-table>
   </div>
 </template>
 

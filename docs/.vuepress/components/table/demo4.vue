@@ -1,5 +1,5 @@
 <template>
-  <div class="demo1">
+  <div class="demo4">
     <z-table :column="column" :data="list"></z-table>
   </div>
 </template>
@@ -8,15 +8,18 @@
 const column = [
   {
     prop: 'name',
-    label: '姓名'
+    label: '姓名',
+    align: 'left'
   },
   {
     prop: 'age',
-    label: '年龄'
+    label: '年龄',
+    align: 'center'
   },
   {
     prop: 'job',
-    label: '工作'
+    label: '工作',
+    align: 'right'
   },
   {
     prop: 'address',

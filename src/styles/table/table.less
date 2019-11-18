@@ -53,4 +53,36 @@
       }
     }
   }
+
+  // 条纹
+  &.z-table__stripe {
+    .z-table-body {
+      table {
+        tbody {
+          tr {
+            &:nth-child(even) {
+              background: @BorderColor-3;
+            }
+
+            &:hover {
+              background: @BorderColor-4;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 边框
+  &.z-table__border {
+    table {
+      tr {
+        th,
+        td {
+          border: solid @BorderColor-2;
+          border-width: 0 1px 1px 1px;
+        }
+      }
+    }
+  }
 }

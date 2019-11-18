@@ -10,8 +10,8 @@ export default class ZTableHead extends Vue {
   private get getHTs(): JSX.Element {
     return (
       <tr>
-        {this.table.column.map((item: any) => (
-          <th>{item.label}</th>
+        {this.table.column.map((col: any) => (
+          <th align={col.align || 'left'}>{col.label}</th>
         ))}
       </tr>
     );
