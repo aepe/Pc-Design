@@ -4,7 +4,7 @@
  * @Author: 
  * @Date: 2019-11-14 16:03:05
  * @LastEditors: langxue
- * @LastEditTime: 2019-11-18 11:42:13
+ * @LastEditTime: 2019-11-18 12:12:09
  -->
 <template>
   <div id="input-demo-icon">
@@ -28,8 +28,9 @@
       </z-input>
         <z-input type="text"
         placeholder="请输入内容"
-        prefixIcon="zxsousuo"
-        class="item-input" />
+        class="item-input">
+        <i slot="prefix" class="iconfont zxsousuo"></i>
+      </z-input>
     </div>
   </div>
 </template>
