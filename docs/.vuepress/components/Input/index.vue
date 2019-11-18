@@ -4,12 +4,12 @@
  * @Author: langxue
  * @Date: 2019-11-12 11:07:52
  * @LastEditors: langxue
- * @LastEditTime: 2019-11-15 16:51:42
+ * @LastEditTime: 2019-11-18 09:34:18
  -->
 <template>
   <div id="input-demo">
     <z-input type="text"
-        :value="value"
+        v-model="value"
         placeholder="请输入内容"
         @blur="handleBlur"
         @input="handleInput"
