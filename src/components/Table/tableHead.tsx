@@ -8,7 +8,6 @@ export default class ZTableHead extends Vue {
 
   /* ************************ Main ************************** */
   private get getHTs(): JSX.Element {
-    console.log(this.table);
     return (
       <tr>
         {this.table.column.map((item: any) => (

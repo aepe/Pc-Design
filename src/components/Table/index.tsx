@@ -21,7 +21,7 @@ export default class ZTable extends Vue {
       return [];
     }
   })
-  private data?: any[]; // 数据
+  private data?: any; // 数据
 
   @Prop({
     type: Array,
@@ -31,6 +31,8 @@ export default class ZTable extends Vue {
   })
   private column?: any[]; // 每列的配置项
 
+  @Prop({ type: String, default: '' }) private type?: string; // table类型
+
   /* ************************ Provide ************************ */
   @Provide()
   private table: Vue = this;
@@ -39,17 +41,13 @@ export default class ZTable extends Vue {
   private slots: VNode[] = this.$slots.default || [];
 
   /* ************************ Main *************************** */
-  private tableWidth: number = 0;
-
-  private mounted() {
-    this.tableWidth = (this.$refs['z-table'] as HTMLHtmlElement).offsetWidth;
-  }
 
   /* ************************ Render ************************* */
   render() {
-    const tableCol = <TableCol tableWidth={this.tableWidth} />;
+    const tableCol = <TableCol />;
+
     return (
-      <div class="z-table" ref="z-table">
+      <div class="z-table">
         <TableHeader>{tableCol}</TableHeader>
         <TableBody>{tableCol}</TableBody>
         {/* <div class="noData">暂无数据</div> */}
