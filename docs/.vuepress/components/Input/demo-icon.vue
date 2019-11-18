@@ -4,7 +4,7 @@
  * @Author: 
  * @Date: 2019-11-14 16:03:05
  * @LastEditors: langxue
- * @LastEditTime: 2019-11-15 12:02:42
+ * @LastEditTime: 2019-11-18 11:42:13
  -->
 <template>
   <div id="input-demo-icon">
@@ -19,18 +19,18 @@
         prefixIcon="zxsousuo"
         class="item-input" />
     </div>
-    <!-- <div class="attr">
+    <div class="attr">
       <strong>slot方式：</strong>
       <z-input type="text"
         placeholder="请输入内容"
         class="item-input">
-        <i slot="suffix" class="iconfont zxclose z-input-suffix-icon"></i>
+        <i slot="suffix" class="iconfont zxclose"></i>
       </z-input>
         <z-input type="text"
         placeholder="请输入内容"
         prefixIcon="zxsousuo"
         class="item-input" />
-    </div> -->
+    </div>
   </div>
 </template>
 <style lang="stylus">
