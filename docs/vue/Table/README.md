@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-12 09:06:17
  * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-14 16:44:00
+ * @LastEditTime: 2019-11-18 16:51:46
  -->
 
 # table 组件
@@ -24,10 +24,39 @@
 <<< @/docs/.vuepress/components/table/demo1.vue
 </templates-demo>
 
+### 条纹型表格
+
+<templates-demo name="table-demo2">
+<<< @/docs/.vuepress/components/table/demo2.vue
+</templates-demo>
+
+### 边框型表格
+
+<templates-demo name="table-demo3">
+<<< @/docs/.vuepress/components/table/demo3.vue
+</templates-demo>
+
+### 对齐方式
+
+<templates-demo name="table-demo4">
+<<< @/docs/.vuepress/components/table/demo4.vue
+</templates-demo>
+
 ## API
 
 ### table
 
-| 参数 | 描述 | 类型 | 是否必填 | 可选值 | 默认值 |
-| :--- | :--- | :--- | :------- | :----- | :----- |
+| 参数   | 描述                                             | 类型     | 是否必填 | 可选值               | 默认值 |
+| :----- | :----------------------------------------------- | :------- | :------- | :------------------- | :----- |
+| data   | 表格数据源                                       | object[] | false    | -                    | -      |
+| column | 表格每列的配置 详细配置见[下表](./#table-column) | object[] | false    | -                    | -      |
+| type   | 表格的类型 条纹和边框 默认为空                   | string   | false    | 'stripe' \| 'border' | -      |
 
+### table:column
+
+| 参数  | 描述                          | 类型   | 是否必填 | 可选值                        | 默认值 |
+| :---- | :---------------------------- | :----- | :------- | :---------------------------- | :----- |
+| prop  | 列内容对应的字段名 Object.key | string | false    | -                             | -      |
+| label | 列内容对应的标题              | string | false    | -                             | -      |
+| width | 列内容的宽度 必须有单位       | string | false    | -                             | -      |
+| align | 列内容的对齐方式              | string | false    | 'left' \| 'center' \| 'right' | 'left' |
