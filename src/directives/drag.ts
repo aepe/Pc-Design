@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-12 14:04:54
  * @LastEditors: wpp
- * @LastEditTime: 2019-11-18 14:52:39
+ * @LastEditTime: 2019-11-19 09:41:22
  */
 const install = (Vue: any) => {
   return Vue.directive('ZDrag', {
@@ -14,7 +14,7 @@ const install = (Vue: any) => {
           x: 0,
           y: 0,
           w: 0,
-          h: 0,
+          h: 0
         };
         let dragLock: boolean = false;
         let parentNode: any = null;
@@ -30,7 +30,7 @@ const install = (Vue: any) => {
           dragAttribute.h = el.offsetTop;
           window.onmousemove = mouseMoveFn;
           window.onmouseup = mouseUpFn;
-        }
+        };
         const mouseMoveFn = function (e: any) {
           if (!dragLock) {
             return false;
@@ -59,13 +59,13 @@ const install = (Vue: any) => {
           } else {
             el.style.top = (boxHeight - itemHeight) + 'px';
           }
-        }
+        };
         const mouseUpFn = function (e: any) {
           dragLock = false;
           document.body.style.userSelect = 'auto';
           window.onmousemove = null;
           window.onmouseup = null;
-        }
+        };
       }
     }
   });
