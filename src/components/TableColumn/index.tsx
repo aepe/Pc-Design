@@ -9,8 +9,6 @@ export default class ZTableColumn extends Vue {
   tableData!: any[];
 
   render() {
-    // let slots = this.$slots.default || [];
-
     return <div class="z-table-column">aaaa</div>;
   }
 }

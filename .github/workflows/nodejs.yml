@@ -1,28 +1,38 @@
-name: node ci run
+name: 文档发布
 
 on:
   push:
     branches:
-    - release
+    - develop
 
 jobs:
-  test:
-
+  BUILDDOCS:
+    
     runs-on: macOS-latest
-
     strategy:
       matrix:
         node-version: [8.x, 10.x, 12.x]
-
     steps:
     - uses: actions/checkout@master
     - name: 初始化node环境
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: 安装项目依赖
-      run: npm install
-    - name: 编译源码
-      run: npm run build
       env:
-        CI: true
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        INSTALL: npm install
+        TODEPLOY: npm run deploy:to
+        BUILD: npm run build
+        BUILD_DOCS: npm run deploy
+        DEPLOYSUCCESS: npm run deploy:success
+    - name: 安装依赖
+      run: $INSTALL
+     - name: 开始部署
+      run: $TODEPLOY
+    - name: 编译源码
+      run: $BUILD
+    - name: 部署文档
+      run: $BUILD_DOCS
+    - name: 完成操作
+      run: $DEPLOYSUCCESS
+      CI: true

@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-06 16:37:55
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-14 12:21:58
+ * @LastEditTime: 2019-11-14 19:11:01
  -->
 <!-- # 组件使用指南 -->
 
@@ -12,6 +12,7 @@
     我们不是vue的开发者，我们只是vue的搬运工
 </p>
 
+[在线文档](https://zx-js.github.io/zx-util-ui-docs/)
 ## 开发者须知
 > 该框架既定名称为zx-util-ui less 存在层级关系，父级别定义的变量 通过`@import`能够 集成到子级别引用
 > 1. 框架前缀名称要求 
