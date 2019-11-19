@@ -1,57 +1,60 @@
+import { VNode } from 'vue';
 import { Component, Vue, Prop, Provide } from 'vue-property-decorator';
+
+// components
+import TableCol from './tableCol';
 import TableHeader from './tableHead';
+import TableBody from './tableBody';
 
 @Component({
   components: {
-    TableHeader
+    TableCol,
+    TableHeader,
+    TableBody
   }
 })
 export default class ZTable extends Vue {
-  @Prop({ type: Array, default: [] }) private data?: any[]; // 标题
+  /* ************************ Props ************************** */
+  @Prop({
+    type: Array,
+    default() {
+      return [];
+    }
+  })
+  private data?: object[]; // 数据
+
+  @Prop({
+    type: Array,
+    default() {
+      return [];
+    }
+  })
+  private column?: object[]; // 每列的配置项
+
+  @Prop({ type: String, default: '' }) private type?: string; // table类型
+
+  /* ************************ Provide ************************ */
+  @Provide()
+  private table: Vue = this;
 
   @Provide()
-  table = this;
+  private slots: VNode[] = this.$slots.default || [];
 
-  @Provide()
-  slots = this.$slots.default || [];
+  /* ************************ Main *************************** */
+  private get getClassName(): string {
+    let str: string = 'z-table ';
+    str += (this.type && `z-table__${this.type}`) || '';
+    return str;
+  }
 
-  @Provide()
-  tableData = this.data;
-
+  /* ************************ Render ************************* */
   render() {
-    console.log(this.$slots.default);
+    const tableCol = <TableCol />;
+
     return (
-      <div class="z-table">
-        <TableHeader />
-        <div class="tbody">
-          <div class="tbody-scroll">
-            <table>
-              <colgroup>
-                {/* <col style="width:100px; background:#f00;" /> */}
-                <col />
-              </colgroup>
-              <tbody>
-                <tr>
-                  <td>
-                    <p>aaa</p>
-                  </td>
-                  <td>
-                    <p>aaa</p>
-                  </td>
-                  <td>
-                    <p>aaa</p>
-                  </td>
-                  <td>
-                    <p>aaa</p>
-                  </td>
-                  <td>
-                    <p>aaa</p>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
+      <div class={this.getClassName}>
+        <TableHeader>{tableCol}</TableHeader>
+        <TableBody>{tableCol}</TableBody>
         {/* <div class="noData">暂无数据</div> */}
       </div>
     );

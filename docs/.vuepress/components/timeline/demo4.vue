@@ -35,10 +35,10 @@ export default {
 
 <style lang="stylus">
 .demo4 {
-    .custom-dot {
-        background: #f00;
-        width: 15px;
-        height: 15px;
-    }
+  .custom-dot {
+    background: #f00;
+    width: 15px;
+    height: 15px;
+  }
 }
 </style>

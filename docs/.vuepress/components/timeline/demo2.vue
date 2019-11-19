@@ -1,11 +1,3 @@
-<!--
- * @Description: 
- * @Version: 0.0.1
- * @Author: 王晓龙
- * @Date: 2019-11-13 13:47:19
- * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-14 12:07:27
- -->
 <template>
   <div class="demo2">
     <z-timeline>

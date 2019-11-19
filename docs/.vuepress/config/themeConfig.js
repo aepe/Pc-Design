@@ -3,8 +3,8 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-07 09:48:14
- * @LastEditors: wpp
- * @LastEditTime: 2019-11-14 15:23:14
+ * @LastEditors: 王晓龙
+ * @LastEditTime: 2019-11-19 09:28:33
  */
 const themeConfig = {
     nav: [
@@ -17,7 +17,7 @@ const themeConfig = {
                 // { text: 'ts', link: '/ts/' }
             ],
         },
-        { text: '马良docs', link: '/vue/ml/'},
+        { text: '马良docs', link: '/vue/ml/' },
         { text: '主题', link: '/vue/theme/' },
         { text: 'github', link: 'https://github.com/zx-js/zx-util-ui' },
     ],
@@ -31,12 +31,12 @@ const themeConfig = {
             ['Button/', 'button'],
             ['Tag/', 'tag 标签'],
             ['Input/', 'Input 输入框'],
-            ['Loading/', 'loading加载'],
-            ['timeline/', 'timeline时间轴'],
-            ['Table/', 'table表格'],
+            ['loading/', 'loading加载'],
+            ['timeline/', 'timeline 时间轴'],
+            ['Table/', 'table 表格'],
             ['Message/', 'Message提示'],
             ['Drag/', 'drag拖动'],
-            ['ml/', '马良docs']
+            ['ml/', '马良docs'],
         ],
     },
     sidebarDepth: 2,

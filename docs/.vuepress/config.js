@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-06 16:39:45
  * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-15 11:00:36
+ * @LastEditTime: 2019-11-15 14:34:27
  */
 const themeConfig = require('./config/themeConfig').themeConfig;
 module.exports = {
@@ -12,6 +12,7 @@ module.exports = {
     port: 9991,
     base: '/zx-util-ui-docs/',
     markdown: {
+        lineNumbers: true,
         plugins: [
             '@org/foo', // 等价于 @org/markdown-it-foo，如果对应的包存在
             [

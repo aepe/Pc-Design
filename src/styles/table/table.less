@@ -1,5 +1,88 @@
 .z-table {
+  text-align: left;
+
   table {
+    table-layout: fixed;
     margin: 0;
+    padding: 0;
+
+    tr {
+      border: none;
+      background: @White;
+      transition: 0.5s;
+
+      th,
+      td {
+        border: none;
+        padding: 15px;
+        word-break: break-word;
+        font-size: @small-font-size;
+        border-bottom: 1px solid @BorderColor-2;
+      }
+    }
+  }
+
+  .z-table-head {
+    table {
+      thead {
+        tr {
+          background: @BorderColor-1;
+
+          th {
+            font-weight: bold;
+            color: @FontColor-1;
+          }
+        }
+      }
+    }
+  }
+
+  .z-table-body {
+    table {
+      tbody {
+        tr {
+          td {
+            font-weight: normal;
+            color: @FontColor-1;
+          }
+
+          &:hover {
+            background: @BorderColor-4;
+          }
+        }
+      }
+    }
+  }
+
+  // 条纹
+  &.z-table__stripe {
+    .z-table-body {
+      table {
+        tbody {
+          tr {
+            &:nth-child(even) {
+              background: @BorderColor-3;
+            }
+
+            &:hover {
+              background: @BorderColor-4;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 边框
+  &.z-table__border {
+    table {
+      tr {
+        th,
+        td {
+          border: solid @BorderColor-2;
+          border-width: 0 1px 1px 1px;
+        }
+      }
+    }
   }
 }

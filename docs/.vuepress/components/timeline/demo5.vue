@@ -32,8 +32,8 @@ export default {
 
 <style lang="stylus">
 .demo5 {
-    .custom-summary {
-        border: 2px solid #f00;
-    }
+  .custom-summary {
+    border: 2px solid #f00;
+  }
 }
 </style>
