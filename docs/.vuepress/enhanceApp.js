@@ -4,9 +4,9 @@
  * @Author: bhabgs
  * @Date: 2019-11-07 09:20:06
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-12 13:36:45
+ * @LastEditTime: 2019-11-20 18:18:26
  */
-import mtUtil from '../../dist/js/mt-util.min';
+import mtUtil from '../../dist/js/zui.min.es';
 import '../../dist/css/mt.style.css';
 
 export default ({
