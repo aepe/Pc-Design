@@ -3,7 +3,7 @@ name: 文档发布
 on:
   push:
     branches:
-    - babel7
+    - release
 
 jobs:
   test:
@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [8.x, 12.x]
+        node-version: [12.x]
 
     steps:
     - uses: actions/checkout@master
