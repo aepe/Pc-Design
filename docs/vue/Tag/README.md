@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-07 17:20:23
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-13 12:18:36
+ * @LastEditTime: 2019-11-21 16:46:42
  -->
 
 # tag
@@ -70,12 +70,27 @@
 
 ### tag
 
-Attributes | 参数 | 描述 | 类型 | 是否必填 | 可选值 | 默认值 | | :------ | :------------------- | :----- | :------- | :----- | :----- | | size | 尺寸 | string | false | large、small、mini | - | | closable | 是否可关闭 | boolean | false | - | false | | visible | 是否显示 | boolean | false | - | true | | type | 类型 | string | false | success、info、warning、danger | info | | theme | 主题 | string | false | fill、plain | plain | | hasConfirm | 是否关闭标签提示 | boolean | false | - | false | | confirm-message | 关闭标签提示语 | string | false | - | 确认关闭标签么？ |
+| Attributes      | 参数             | 描述    | 类型  | 是否必填                       | 可选值           | 默认值 |
+| :-------------- | :--------------- | :------ | :---- | :----------------------------- | :--------------- | ------ |
+| size            | 尺寸             | string  | false | large、small、mini             | -                |
+| closable        | 是否可关闭       | boolean | false | -                              | false            |
+| visible         | 是否显示         | boolean | false | -                              | true             |
+| type            | 类型             | string  | false | success、info、warning、danger | info             |
+| theme           | 主题             | string  | false | fill、plain                    | plain            |
+| hasConfirm      | 是否关闭标签提示 | boolean | false | -                              | false            |
+| confirm-message | 关闭标签提示语   | string  | false | -                              | 确认关闭标签么？ |
 
-Events | 事件名称 | 描述 | 回调参数 | | :------ | :------------------- | :----- | :------- | :----- | :----- | | click | 点击 Tag 时触发的事件 | - | | close | 关闭 Tag 时触发的事件 | - |
+| Events | 事件名称              | 描述 | 回调参数 |
+| :----- | :-------------------- | :--- | :------- |
+| click  | 点击 Tag 时触发的事件 | -    |
+| close  | 关闭 Tag 时触发的事件 | -    |
 
 ### check-tag
 
-Attributes | 参数 | 描述 | 类型 | 是否必填 | 可选值 | 默认值 | | :------ | :------------------- | :----- | :------- | :----- | :----- | | checked(v-model) | 设置标签的选中状态 | boolean | false | - | false |
+| Attributes       | 参数               | 描述    | 类型  | 是否必填 | 可选值 | 默认值 |
+| :--------------- | :----------------- | :------ | :---- | :------- | :----- | ------ |
+| checked(v-model) | 设置标签的选中状态 | boolean | false | -        | false  |
 
-Events | 事件名称 | 描述 | 回调参数 | | :------ | :------------------- | :----- | :------- | :----- | :----- | | change | 改变 tag 时触发的回调 | (checked) => void | </script>
+| Events | 事件名称              | 描述              | 回调参数 |
+| :----- | :-------------------- | :---------------- | :------- |
+| change | 改变 tag 时触发的回调 | (checked) => void |
