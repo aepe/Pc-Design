@@ -1,0 +1,26 @@
+name: 文档部署
+on:
+  push:
+    branches:
+    - babel7
+
+jobs:
+  DEPLOYDOCS:
+    runs-on: macOS-latest
+      strategy:
+        matrix:
+          node-version: [8.x, 10.x, 12.x]
+      steps:
+      - uses: actions/checkout@master
+      - name: 初始化node环境
+        uses: actions/setup-node@v1
+      - name: 安装依赖
+        run: npm i
+      - name: 编译源代码
+        run: npm run build
+      - name: 设置环境变量
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+      - naem: 部署文档
+        run: npm run deploy
+      

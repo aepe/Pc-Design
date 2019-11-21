@@ -3,7 +3,7 @@ name: 文档发布
 on:
   push:
     branches:
-    - develop
+    - release
 
 jobs:
   BUILDDOCS:
@@ -25,14 +25,4 @@ jobs:
         BUILD: npm run build
         BUILD_DOCS: npm run deploy
         DEPLOYSUCCESS: npm run deploy:success
-    - name: 安装依赖
-      run: $INSTALL
-     - name: 开始部署
-      run: $TODEPLOY
-    - name: 编译源码
-      run: $BUILD
-    - name: 部署文档
-      run: $BUILD_DOCS
-    - name: 完成操作
-      run: $DEPLOYSUCCESS
-      CI: true
+        CI: true
