@@ -24,7 +24,17 @@ jobs:
       run: npm i
     - name: 编译源码
       run: npm run build
+    - name: 设置ssk
       env:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        BUILD_SCRIPT: npm run deploy
-        CI: true
+      run: |
+          mkdir -p ~/.ssh/
+          echo "$ACCESS_TOKEN" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan github.com >> ~/.ssh/known_hosts
+          git config --global user.email "bhabgs@aliyun.com"
+          git config --global user.name "bhabgs"
+        
+    - name: 编译部署文档
+      run: |
+          npm run deploy
