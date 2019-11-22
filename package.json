@@ -1,6 +1,6 @@
 {
   "name": "zx-util-ui",
-  "version": "1.0.2",
+  "version": "1.0.5",
   "description": "vue 组件开发框架",
   "main": "./src/index.ts",
   "scripts": {
@@ -10,8 +10,8 @@
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "deploy": "bash deploy.sh",
-    "deploy:to": "node .robot/robot.js",
-    "deploy:success": "cross-env msg=success node .robot/robot.js"
+    "deploy:send": "cross-env",
+    "deploy:success": "cross-env msg=部署成功 msgtype=success node .robot/robot.js"
   },
   "keywords": [
     "bhabgs",
