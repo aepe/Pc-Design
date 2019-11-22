@@ -4,7 +4,7 @@
  * @Author: 
  * @Date: 2019-11-14 16:03:05
  * @LastEditors: langxue
- * @LastEditTime: 2019-11-18 12:24:01
+ * @LastEditTime: 2019-11-22 10:23:33
  -->
 <template>
   <div id="input-demo-icon">
@@ -13,6 +13,7 @@
       <z-input type="text"
         placeholder="请输入内容"
         suffixIcon="zxclose"
+        @click="handleClick"
         class="item-input" />
         <z-input type="text"
         placeholder="请输入内容"
@@ -34,6 +35,20 @@
     </div>
   </div>
 </template>
+<script>
+  export default {
+    data() {
+      return {
+
+      }
+    },
+    methods: {
+      handleClick(e) {
+        console.log(e);
+      }
+    }
+  }
+</script>
 <style lang="stylus">
 #input-demo-icon {
   .attr {
