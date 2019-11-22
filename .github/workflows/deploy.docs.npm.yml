@@ -44,6 +44,10 @@ jobs:
       - name: 部署成功通知
         run: npm run deploy:send text=最新版本zx-util-ui文档体精部署成功请点击链接查看 title=CI部署DOCS通知 url=https://zx-js.github.io/zx-util-ui-docs/ node .robot/robot.js
       - name: 发布最新版本至npm
-        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        run: |
+          npm publish
       - name: npm 最新版本部署成功通知
-        run: npm run deploy:send text=最新版本zx-util-ui以部署至npm title=CINPM-publish通知 url=https://zx-js.github.io/zx-util-ui-docs/ node .robot/robot.js
+        run: |
+          npm run deploy:send text=最新版本zx-util-ui以部署至npm title=CINPM-publish通知 url=https://zx-js.github.io/zx-util-ui-docs/ node .robot/robot.js
