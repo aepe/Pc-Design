@@ -1,0 +1,42 @@
+// 主色调
+// @MainColor-1: #4a80f6;
+@MainColor-1: #4498f0;
+@MainColor-2: #85c4ff;
+@MainColor-3: #e6f2fe;
+@MainColor-4: #edf0f5;
+
+// 辅助色
+@AuxiliaryColor-1: #feb736;
+@AuxiliaryColor-2: #ea5858;
+@AuxiliaryColor-3: #03d485;
+@AuxiliaryColor-4: #fff0d3;
+@AuxiliaryColor-5: #fed9d9;
+@AuxiliaryColor-6: #b5f3dc;
+
+// 灰色系
+@GrayColor-1: #2f323b;
+@GrayColor-2: #333333;
+@GrayColor-3: #666666;
+@GrayColor-4: #999999;
+@GrayColor-5: #cccccc;
+@GrayColor-6: #e7e7e7;
+@GrayColor-7: #f7f7f7;
+@GrayColor-8: #fafafa;
+
+// 背景渐变
+@DefaultDirection: 90deg;
+@DefaultPosition: center;
+@DefaultShape: circle;
+@DefaultSize: closest-side;
+@DefaultColors: @MainColor-1, #4a80f6;
+@DefaultType: linear;
+
+// 线性
+.Gradient(@type: @DefaultType; @direction: @DefaultDirection; @colors: @DefaultColors) when(@type = linear) {
+  background-image: linear-gradient(@direction, @colors);
+}
+
+// 径向
+.Gradient(@type: @DefaultType; @direction: @DefaultPosition; @shape: @DefaultShape; @size: @DefaultSize; @colors: @DefaultColors) when(@type = radial) {
+  background: -webkit-radial-gradient(@direction, @shape @size, @colors);
+}
