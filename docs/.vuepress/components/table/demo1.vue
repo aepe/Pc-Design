@@ -1,11 +1,3 @@
-<!--
- * @abstract: JianJie
- * @version: 0.0.1
- * @Author: bhabgs
- * @Date: 2019-11-20 17:04:57
- * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-21 09:58:33
- -->
 <template>
   <div class="demo1">
     <z-table :column="column" :data="list"></z-table>
