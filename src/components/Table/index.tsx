@@ -53,9 +53,10 @@ export default class ZTable extends Vue {
 
     return (
       <div class={this.getClassName}>
-        <TableHeader>{tableCol}</TableHeader>
-        <TableBody>{tableCol}</TableBody>
-        {/* <div class="noData">暂无数据</div> */}
+        {/* <TableHeader>{tableCol}</TableHeader> */}
+        {/* <TableBody>{tableCol}</TableBody> */}
+        {tableCol}
+        <div class="noData">暂无数据</div>
       </div>
     );
   }
