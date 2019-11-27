@@ -3,8 +3,8 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-07 17:20:23
- * @LastEditors: wpp
- * @LastEditTime: 2019-11-18 09:43:36
+ * @LastEditors: bhabgs
+ * @LastEditTime: 2019-11-26 10:57:32
  -->
 
 # Loading
@@ -13,7 +13,9 @@
 
 1. loading
 2. 根据指令进行 loading
-3. 定制化 loading 样式 :::
+3. 定制化 loading 样式
+
+:::
 
 ## 代码演示
 
