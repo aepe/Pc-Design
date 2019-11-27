@@ -10,6 +10,7 @@ export default class ZTableCol extends Vue {
 
   /* ************************ Main ************************** */
   private get getCOLs(): JSX.Element[] {
+    return;
     return this.table.column.map((item: any) => <col style={{ width: item.width }} />);
   }
 
