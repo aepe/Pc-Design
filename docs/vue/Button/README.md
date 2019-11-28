@@ -3,13 +3,17 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-12 09:06:17
- * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-28 11:56:02
+ * @LastEditors: bhabgs
+ * @LastEditTime: 2019-11-28 16:14:51
  -->
 
 # button 按钮
 
 ::: explain
+
+```vue
+<z-button type="success" size="small">中等</z-button>
+```
 
 :::
 
@@ -20,6 +24,30 @@
 <templatePc name="Button-index">
 
 <<< @/docs/.vuepress/components/Button/index.vue
+
+</templatePc>
+
+:::
+
+---
+
+::: explain 不同大小
+
+<templatePc name="Button-size">
+
+<<< @/docs/.vuepress/components/Button/size.vue
+
+</templatePc>
+
+:::
+
+---
+
+::: explain 禁用状态
+
+<templatePc name="Button-disabled">
+
+<<< @/docs/.vuepress/components/Button/disabled.vue
 
 </templatePc>
 
@@ -36,6 +64,8 @@
 | size     | 按钮大小             | string  | 否       | medium / small / mini                       | medium        |
 
 :::
+
+---
 
 ::: explain button Events
 

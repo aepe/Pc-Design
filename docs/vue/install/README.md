@@ -3,8 +3,8 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-07 10:04:23
- * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-28 12:11:37
+ * @LastEditors: bhabgs
+ * @LastEditTime: 2019-11-28 17:47:08
  -->
 
 # 安装
@@ -34,7 +34,8 @@ yarn add -D zx-pc-design
 ::: explain vue 项目引入
 
 ```js explain
-import zui from 'zx-pc-design';
+import zui from "zx-pc-design";
+import "zx-pc-design/dist/z-style.css";
 ```
 
 :::

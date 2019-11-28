@@ -1,29 +1,33 @@
 // 主色调
 // @MainColor-1: #4a80f6;
-@MainColor-1: #4498f0;
-@MainColor-2: #85c4ff;
-@MainColor-3: #e6f2fe;
-@MainColor-4: #edf0f5;
+@MainColor-1: #4498f0; // 为智信品牌主色，应用于菜单选中状态、文字、按钮、链接、图标等
+@MainColor-2: #85c4ff; // 应用于智信header渐变效果
+@MainColor-3: #e6f2fe; // 应用于智信header渐变效果
+@MainColor-4: #edf0f5; // 应用于智信header渐变效果
 
 // 辅助色
-@AuxiliaryColor-1: #feb736;
-@AuxiliaryColor-2: #ea5858;
-@AuxiliaryColor-3: #03d485;
-@AuxiliaryColor-4: #fff0d3;
-@AuxiliaryColor-5: #fed9d9;
-@AuxiliaryColor-6: #b5f3dc;
+@AuxiliaryColor-1: #feb736; // 应用于辅助色、标签等、提示警告字体颜色
+@AuxiliaryColor-2: #ea5858; // 应用警示性文字、失败及错误提示字体颜色
+@AuxiliaryColor-3: #03d485; // 应用于信息提示成功等
+@AuxiliaryColor-4: #fff0d3; // 应用于辅助色、提示信息背景色
+@AuxiliaryColor-5: #fed9d9; // 应用于辅助色、提示信息背景色
+@AuxiliaryColor-6: #b5f3dc; // 应用于辅助色、提示信息背景色
 
 // 灰色系
-@GrayColor-1: #2f323b;
-@GrayColor-2: #333333;
-@GrayColor-3: #666666;
-@GrayColor-4: #999999;
-@GrayColor-5: #cccccc;
-@GrayColor-6: #e7e7e7;
-@GrayColor-7: #f7f7f7;
-@GrayColor-8: #fafafa;
+@GrayColor-1: #2f323b; // 应用于智信侧边导航底色
+@GrayColor-2: #333333; // 应用于主要文字、标题等
+@GrayColor-3: #666666; // 应用于小标题、正文、项目名称、辅助icon等
+@GrayColor-4: #999999; // 应用于辅助性文字
+@GrayColor-5: #cccccc; // 应用于按钮描边
+@GrayColor-6: #e7e7e7; // 应用于分割线、Hover状态底色、有背景的标题底色
+@GrayColor-7: #f7f7f7; // 应用于内容区底色
+@GrayColor-8: #fafafa; // 应用于表格斑马线背景色
 
-// 背景渐变
+// 背景渐变 应用于智信header渐变效果
+// @type: 渐变类型
+// @direction: 渐变方向|角度
+// @color: 渐变颜色&占比
+
 @DefaultDirection: 90deg;
 @DefaultPosition: center;
 @DefaultShape: circle;
@@ -37,6 +41,8 @@
 }
 
 // 径向
+// @shape: 渐变形状
+// @size: 渐变大小
 .Gradient(@type: @DefaultType; @direction: @DefaultPosition; @shape: @DefaultShape; @size: @DefaultSize; @colors: @DefaultColors) when (@type = radial) {
   background: -webkit-radial-gradient(@direction, @shape @size, @colors);
 }
