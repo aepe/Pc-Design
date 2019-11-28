@@ -32,11 +32,11 @@
 @DefaultType: linear;
 
 // 线性
-.Gradient(@type: @DefaultType; @direction: @DefaultDirection; @colors: @DefaultColors) when(@type = linear) {
+.Gradient(@type: @DefaultType; @direction: @DefaultDirection; @colors: @DefaultColors) when (@type = linear) {
   background-image: linear-gradient(@direction, @colors);
 }
 
 // 径向
-.Gradient(@type: @DefaultType; @direction: @DefaultPosition; @shape: @DefaultShape; @size: @DefaultSize; @colors: @DefaultColors) when(@type = radial) {
+.Gradient(@type: @DefaultType; @direction: @DefaultPosition; @shape: @DefaultShape; @size: @DefaultSize; @colors: @DefaultColors) when (@type = radial) {
   background: -webkit-radial-gradient(@direction, @shape @size, @colors);
 }

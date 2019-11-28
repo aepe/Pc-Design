@@ -1,10 +1,37 @@
 import { VNode } from 'vue';
-import { Component, Vue, Prop, Provide } from 'vue-property-decorator';
+import { Component, Vue, Provide } from 'vue-property-decorator';
 
 // components
 import TableCol from './tableCol';
 import TableHeader from './tableHead';
 import TableBody from './tableBody';
+
+/*************************** Props *****************************/
+const BaseProps = Vue.extend({
+  props: {
+    // 表格数据
+    data: {
+      type: Array,
+      default() {
+        return [];
+      }
+    },
+    // 表格每一项配置
+    column: {
+      type: Array,
+      default() {
+        return [];
+      }
+    },
+    // 表格类型
+    type: {
+      type: String,
+      default() {
+        return '';
+      }
+    }
+  }
+});
 
 @Component({
   components: {
@@ -13,26 +40,7 @@ import TableBody from './tableBody';
     TableBody
   }
 })
-export default class ZTable extends Vue {
-  /* ************************ Props ************************** */
-  @Prop({
-    type: Array,
-    default() {
-      return [];
-    }
-  })
-  private data?: object[]; // 数据
-
-  @Prop({
-    type: Array,
-    default() {
-      return [];
-    }
-  })
-  private column?: object[]; // 每列的配置项
-
-  @Prop({ type: String, default: '' }) private type?: string; // table类型
-
+export default class ZTable extends BaseProps {
   /* ************************ Provide ************************ */
   @Provide()
   private table: Vue = this;
@@ -42,9 +50,7 @@ export default class ZTable extends Vue {
 
   /* ************************ Main *************************** */
   private get getClassName(): string {
-    let str: string = 'z-table ';
-    str += (this.type && `z-table__${this.type}`) || '';
-    return str;
+    return 'z-table' + ((this.type && ` z-table__${this.type}`) || '');
   }
 
   /* ************************ Render ************************* */
@@ -53,10 +59,8 @@ export default class ZTable extends Vue {
 
     return (
       <div class={this.getClassName}>
-        {/* <TableHeader>{tableCol}</TableHeader> */}
-        {/* <TableBody>{tableCol}</TableBody> */}
-        {tableCol}
-        <div class="noData">暂无数据</div>
+        <TableHeader>{tableCol}</TableHeader>
+        <TableBody>{tableCol}</TableBody>
       </div>
     );
   }

@@ -3,15 +3,13 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-07 17:20:23
- * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-21 16:46:42
+ * @LastEditors: 王晓龙
+ * @LastEditTime: 2019-11-28 12:02:02
  -->
 
-# tag
+# tag 标签
 
-> 进行标记和分类的小标签。
-
-::: warning 预计实现功能
+::: explain
 
 1. tag 大小改变：large、small、mini 默认：large
 2. tag 可关闭
@@ -22,53 +20,80 @@
 
 :::
 
-## 代码演示
+## Demo
 
-### 基础用法
+::: explain 基础用法
 
-<templates-demo name="tag-demo">
+<templatePc name="tag-demo">
+
 <<< @/docs/.vuepress/components/tag/demo.vue
-</templates-demo>
 
-### 可关闭
+</templatePc>
 
-<templates-demo name="tag-demo-close">
+:::
+
+::: explain 可关闭
+
+<templatePc name="tag-demo-close">
+
 <<< @/docs/.vuepress/components/tag/demo-close.vue
-</templates-demo>
 
-### 可选尺寸
+</templatePc>
 
-<templates-demo name="tag-demo-size">
+:::
+
+::: explain 可选尺寸
+
+<templatePc name="tag-demo-size">
+
 <<< @/docs/.vuepress/components/tag/demo-size.vue
-</templates-demo>
 
-### 切换 tag 的显示状态
+</templatePc>
 
-<templates-demo name="tag-demo-visible">
+:::
+
+::: explain 切换 tag 的显示状态
+
+<templatePc name="tag-demo-visible">
+
 <<< @/docs/.vuepress/components/tag/demo-visible.vue
-</templates-demo>
 
-### 可选主题
+</templatePc>
 
-<templates-demo name="tag-demo-theme">
+:::
+
+::: explain 可选主题
+
+<templatePc name="tag-demo-theme">
+
 <<< @/docs/.vuepress/components/tag/demo-theme.vue
-</templates-demo>
 
-### 关闭确认
+</templatePc>
 
-<templates-demo name="tag-demo-confirm">
+:::
+
+::: explain 关闭确认
+
+<templatePc name="tag-demo-confirm">
+
 <<< @/docs/.vuepress/components/tag/demo-confirm.vue
-</templates-demo>
-    
- ### 可多选标签-类似于checkbox效果
 
-<templates-demo name="tag-demo-check-tag">
+</templatePc>
+
+:::  
+ ::: explain 可多选标签-类似于 checkbox 效果
+
+<templatePc name="tag-demo-check-tag">
+
 <<< @/docs/.vuepress/components/tag/demo-check-tag.vue
-</templates-demo>
+
+</templatePc>
+
+:::
 
 ## API
 
-### tag
+::: explain tag
 
 | Attributes      | 参数             | 描述    | 类型  | 是否必填                       | 可选值           | 默认值 |
 | :-------------- | :--------------- | :------ | :---- | :----------------------------- | :--------------- | ------ |
@@ -80,17 +105,29 @@
 | hasConfirm      | 是否关闭标签提示 | boolean | false | -                              | false            |
 | confirm-message | 关闭标签提示语   | string  | false | -                              | 确认关闭标签么？ |
 
+:::
+
+::: explain tag Events
+
 | Events | 事件名称              | 描述 | 回调参数 |
 | :----- | :-------------------- | :--- | :------- |
 | click  | 点击 Tag 时触发的事件 | -    |
 | close  | 关闭 Tag 时触发的事件 | -    |
 
-### check-tag
+:::
+
+::: explain check-tag
 
 | Attributes       | 参数               | 描述    | 类型  | 是否必填 | 可选值 | 默认值 |
 | :--------------- | :----------------- | :------ | :---- | :------- | :----- | ------ |
 | checked(v-model) | 设置标签的选中状态 | boolean | false | -        | false  |
 
+:::
+
+::: explain check-tag Events
+
 | Events | 事件名称              | 描述              | 回调参数 |
 | :----- | :-------------------- | :---------------- | :------- |
 | change | 改变 tag 时触发的回调 | (checked) => void |
+
+:::

@@ -4,12 +4,12 @@
  * @Author: 王晓龙
  * @Date: 2019-11-12 10:53:37
  * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-14 09:49:30
+ * @LastEditTime: 2019-11-28 12:02:20
  -->
 
-# `timeline` 时间轴
+# timeline 时间轴
 
-::: warning 实现功能
+::: explain
 
 1. 可自定义时间轴节点 可更改颜色
 2. 可更改时间轴线的颜色和类型
@@ -20,45 +20,67 @@
 
 ## Demo
 
-### 基础用法
+::: explain 基础用法
 
-<templates-demo name="timeline-demo1">
+<templatePc name="timeline-demo1">
+
 <<< @/docs/.vuepress/components/timeline/demo1.vue
-</templates-demo>
 
-### 节点&线样式
+</templatePc>
 
-<templates-demo name="timeline-demo2">
+:::
+
+::: explain 节点&线样式
+
+<templatePc name="timeline-demo2">
+
 <<< @/docs/.vuepress/components/timeline/demo2.vue
-</templates-demo>
 
-### 节点顺序
+</templatePc>
 
-<templates-demo name="timeline-demo3">
+:::
+
+::: explain 节点顺序
+
+<templatePc name="timeline-demo3">
+
 <<< @/docs/.vuepress/components/timeline/demo3.vue
-</templates-demo>
 
-### 自定义 dot 插槽
+</templatePc>
 
-<templates-demo name="timeline-demo4">
+:::
+
+::: explain 自定义 dot 插槽
+
+<templatePc name="timeline-demo4">
+
 <<< @/docs/.vuepress/components/timeline/demo4.vue
-</templates-demo>
 
-### 自定义内容插槽
+</templatePc>
 
-<templates-demo name="timeline-demo5">
+:::
+
+::: explain 自定义内容插槽
+
+<templatePc name="timeline-demo5">
+
 <<< @/docs/.vuepress/components/timeline/demo5.vue
-</templates-demo>
+
+</templatePc>
+
+:::
 
 ## API
 
-### timeline
+::: explain timeline
 
 | 参数    | 描述                               | 类型    | 是否必填 | 可选值        | 默认值 |
 | :------ | :--------------------------------- | :------ | :------- | :------------ | :----- |
 | reverse | 节点排序方向，默认为 false => 正序 | boolean | false    | true \| false | false  |
 
-### timeline-item
+:::
+
+::: explain timeline-item
 
 | 参数      | 描述                 | 类型   | 是否必填 | 可选值                          | 默认值  |
 | :-------- | :------------------- | :----- | :------- | :------------------------------ | :------ |
@@ -68,13 +90,13 @@
 | lineColor | 指定时间轴线的颜色   | string | false    | -                               | #DCDFE6 |
 | lineType  | 指定时间轴线的类型   | string | false    | 'solid' \| 'dashed' \| 'dotted' | 'solid' |
 
-### timeline-item slot
+:::
+
+::: explain timeline-item Slots
 
 | 参数    | 描述                 |
 | :------ | :------------------- |
 | dot     | 自定义时间轴节点     |
 | content | 自定义时间轴文字内容 |
 
-<!-- ## Example
-
-![Example](../../.vuepress/public/timeLine/timeLine.png) -->
+:::
