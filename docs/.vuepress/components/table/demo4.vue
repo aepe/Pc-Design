@@ -36,7 +36,7 @@ for (let i = 0; i < 4; i++) {
     name: `小${num}`,
     age: `2${num}`,
     job: `Job ${num}`,
-    address: i == 0 ? `地址地址地址地址地址地址地址地址地址地址地址地址 ${num}` : `地址地址地址 ${num}`
+    address: i == 0 ? `地址地址地址地址地址地址地址地址地址地址地址地址地址地址地址地址 ${num}` : `地址地址地址 ${num}`
   });
 }
 export default {

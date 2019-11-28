@@ -3,8 +3,8 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-07 11:49:39
- * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-07 14:47:41
+ * @LastEditors: 王晓龙
+ * @LastEditTime: 2019-11-28 12:04:29
  -->
 
 # 组件更新信息
@@ -43,6 +43,9 @@ export default {
 
 <style lang="stylus">
 .demo5
+    background #fff
+    padding 24px;
+    border-radius 3px;
     .custom-summary
         border none;
 </style>

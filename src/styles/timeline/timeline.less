@@ -6,15 +6,17 @@
     .zx-timeline-item {
       position: relative;
 
+      // 时间线
       .zx-timeline-line {
         position: absolute;
         left: @dotSize / 2 - 1px;
         top: @dotSize / 2;
         width: 0;
         height: 100%;
-        border-left: 2px solid @MainColor-1;
+        border-left: 2px solid @MainColor-2;
       }
 
+      // 时间点
       .zx-timeline-icon {
         position: absolute;
         left: 0;
@@ -43,6 +45,7 @@
         }
       }
 
+      // 文字区
       .zx-timeline-content {
         padding: 0 0 40px @dotSize + 15px;
 
