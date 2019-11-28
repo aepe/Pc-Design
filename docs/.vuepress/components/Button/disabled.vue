@@ -4,22 +4,22 @@
  * @Author: bhabgs
  * @Date: 2019-11-12 11:07:52
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-28 16:13:11
+ * @LastEditTime: 2019-11-28 16:11:44
  -->
 <template>
   <div class="bhabgs-block">
-    不同状态：
-    <ZButton type="sss">sss</ZButton>
+    禁用状态：
+    <ZButton type="sss" disabled>sss</ZButton>
 
-    <ZButton type="primary" @click="click">primary</ZButton>
+    <ZButton type="primary" disabled>primary</ZButton>
 
-    <ZButton type="success">success</ZButton>
+    <ZButton type="success" disabled>success</ZButton>
 
-    <ZButton type="warning">warning</ZButton>
+    <ZButton type="warning" disabled>warning</ZButton>
 
-    <ZButton type="danger">danger</ZButton>
+    <ZButton type="danger" disabled>danger</ZButton>
 
-    <ZButton type="text">text</ZButton>
+    <ZButton type="text" disabled>text</ZButton>
   </div>
 </template>
 <script>
