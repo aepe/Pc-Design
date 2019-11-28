@@ -1,11 +1,21 @@
-import { Component, Vue, Prop, Provide } from 'vue-property-decorator';
+import { Component, Vue, Provide } from 'vue-property-decorator';
 import { VNode } from 'vue';
 
-@Component
-export default class ZTimeline extends Vue {
-  /* ************************ Props ************************** */
-  @Prop({ type: Boolean, default: false }) private reverse?: boolean; // 节点排序
+/*************************** Props ****************************/
+const BaseProps = Vue.extend({
+  props: {
+    // 节点排序
+    reverse: {
+      type: Boolean,
+      default() {
+        return false;
+      }
+    }
+  }
+});
 
+@Component
+export default class ZTimeline extends BaseProps {
   /* ************************ Provide ************************ */
   @Provide()
   private timeline: Vue = this;

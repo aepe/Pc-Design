@@ -1,15 +1,49 @@
-import { Component, Vue, Prop, Inject } from 'vue-property-decorator';
+import { Component, Vue, Inject } from 'vue-property-decorator';
 import { VNode } from 'vue';
 
-@Component
-export default class ZTimelineItem extends Vue {
-  /* ************************ Props ************************* */
-  @Prop({ type: String }) private title?: string; // 标题
-  @Prop({ type: String }) private content?: string; // 内容
-  @Prop({ type: String }) private dotColor?: string; // 节点颜色
-  @Prop({ type: String }) private lineColor?: string; // 线颜色
-  @Prop({ type: String }) private lineType?: string; // 线类型
+/*************************** Props ****************************/
+const BaseProps = Vue.extend({
+  props: {
+    // 标题
+    title: {
+      type: String,
+      default() {
+        return '';
+      }
+    },
+    // 内容
+    content: {
+      type: String,
+      default() {
+        return '';
+      }
+    },
+    // 节点颜色
+    dotColor: {
+      type: String,
+      default() {
+        return '';
+      }
+    },
+    // 线颜色
+    lineColor: {
+      type: String,
+      default() {
+        return '';
+      }
+    },
+    // 线类型
+    lineType: {
+      type: String,
+      default() {
+        return '';
+      }
+    }
+  }
+});
 
+@Component
+export default class ZTimelineItem extends BaseProps {
   /* ************************ Inject ************************ */
   @Inject()
   private timeline!: Vue;

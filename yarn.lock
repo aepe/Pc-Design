@@ -1366,24 +1366,6 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-<<<<<<< HEAD
-"@bhabgs/vuepress-theme@^0.0.1":
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/@bhabgs/vuepress-theme/-/vuepress-theme-0.0.1.tgz#f36b49cd72c86de9e4d4731ef30a529696c7fea0"
-  integrity sha512-WLmr2BiLeo7ljOQ6mzOzIjJl9JFnBivDiBInccacDnBZ2N91GVd9xp6JfaUiluXbO56N+3yvXuyuohMG9O+/Yw==
-  dependencies:
-    "@vuepress/plugin-active-header-links" "^1.2.0"
-    "@vuepress/plugin-nprogress" "^1.2.0"
-    "@vuepress/plugin-search" "^1.2.0"
-    docsearch.js "^2.5.2"
-    lodash "^4.17.15"
-    stylus "^0.54.5"
-    stylus-loader "^3.0.2"
-    vuepress-plugin-container "^2.0.2"
-    vuepress-plugin-smooth-scroll "^0.0.3"
-
-=======
->>>>>>> d4dfbebcc75391737e94e522af2ca0244b6c2a8b
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -2539,15 +2521,9 @@ caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001004, caniuse-lite@^1.0.30001006:
   integrity sha512-b8DJyb+VVXZGRgJUa30cbk8gKHZ3LOZTBLaUEEVr2P4xpmFigOCc62CO4uzquW641Ouq1Rm9N+rWLWdSYDaDIw==
 
 caniuse-lite@^1.0.30001010:
-<<<<<<< HEAD
-  version "1.0.30001011"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001011.tgz#0d6c4549c78c4a800bb043a83ca0cbe0aee6c6e1"
-  integrity sha512-h+Eqyn/YA6o6ZTqpS86PyRmNWOs1r54EBDcd2NTwwfsXQ8re1B38SnB+p2RKF8OUsyEIjeDU8XGec1RGO/wYCg==
-=======
   version "1.0.30001012"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001012.tgz#653ec635e815b9e0fb801890923b0c2079eb34ec"
   integrity sha512-7RR4Uh04t9K1uYRWzOJmzplgEOAXbfK72oVNokCdMzA67trrhPzy93ahKk1AWHiA0c58tD2P+NHqxrA8FZ+Trg==
->>>>>>> d4dfbebcc75391737e94e522af2ca0244b6c2a8b
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -7203,15 +7179,9 @@ rollup-pluginutils@^2.0.1, rollup-pluginutils@^2.8.1:
     estree-walker "^0.6.1"
 
 rollup@^1.27.3:
-<<<<<<< HEAD
-  version "1.27.4"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-1.27.4.tgz#5bca607a10c99c034288de9f9c756f9fe1a08431"
-  integrity sha512-UaGNOIax/Ixfd92CAAanUilx2RSkkwEfC1lCTw1eL5Re6NURWgX66ARZt5+3px4kYnpSwzyOot4r18c2b+QgJQ==
-=======
   version "1.27.5"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-1.27.5.tgz#d100fb0ffd8353575cb2057152547b9abfddfe59"
   integrity sha512-8rfVdzuTg2kt8ObD9LNJpEwUN7B6lsl3sHc5fddtgICpLjpYeSf4m2+RftBzcCaBTMi1iYX3Ez8zFT4Gj2nJjg==
->>>>>>> d4dfbebcc75391737e94e522af2ca0244b6c2a8b
   dependencies:
     "@types/estree" "*"
     "@types/node" "*"
@@ -8351,10 +8321,10 @@ vuepress-plugin-smooth-scroll@^0.0.3:
   dependencies:
     smoothscroll-polyfill "^0.4.3"
 
-vuepress-theme-bhabgs@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/vuepress-theme-bhabgs/-/vuepress-theme-bhabgs-0.0.1.tgz#86ce675a161c6e40ddae2d01d11cbef50003ce60"
-  integrity sha512-TslaVZy5qIxvMRqSe3WI4Dsl0FugQwizKydFa/m3D7xFJOo+wcL9p50NUhk7H7kuc+S5SHbGEfAEEwaozVxc8Q==
+vuepress-theme-bhabgs@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/vuepress-theme-bhabgs/-/vuepress-theme-bhabgs-0.0.3.tgz#e39b1562129212b22939998bacefea44df21d83e"
+  integrity sha512-6SK68YRBEUe23MLU3yOFNTF+WzuPHt0INLruyjleHicGU4gVEJ5UIxGYNAvutDVmEExsEaO7sCM7VMIp6wNEWw==
   dependencies:
     "@vuepress/plugin-active-header-links" "^1.2.0"
     "@vuepress/plugin-nprogress" "^1.2.0"

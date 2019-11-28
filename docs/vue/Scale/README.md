@@ -3,34 +3,36 @@
  * @version:
  * @Author: wpp
  * @Date: 2019-11-07 17:20:23
- * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-26 10:57:53
+ * @LastEditors: 王晓龙
+ * @LastEditTime: 2019-11-28 11:48:48
  -->
 
-# Scale
+# scale 缩放
 
-::: warning 预计实现功能
+::: explain
 
 1. Scale
 
 :::
 
-## 代码演示
+## Demo
 
-### Scale 效果展示
+::: explain 基础用法
 
-<templates-demo name="Scale-demo">
+<templatePc name="Scale-demo">
+
 <<< @/docs/.vuepress/components/Scale/demo.vue
-</templates-demo>
 
-<!-- ### Drag指令（ZDrag）
+</templatePc>
 
-<templates-demo name="Drag-directivesDemo">
-<<< @/docs/.vuepress/components/Drag/directivesDemo.vue
-</templates-demo> -->
+:::
 
-## Event
+## API
+
+::: explain scale Events
 
 | 参数            | 描述           | 类型     | 是否必填 | 可选值 | 默认值 |
 | :-------------- | :------------- | :------- | :------- | :----- | :----- |
 | getMovePosition | 获取拖拽的位置 | function | false    | -      | -      |
+
+:::

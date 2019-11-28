@@ -1,7 +1,11 @@
 .z-table {
   text-align: left;
 
+  // table
   table {
+    width: 100%;
+    display: table;
+    border-collapse: collapse;
     table-layout: fixed;
     margin: 0;
     padding: 0;
@@ -22,6 +26,7 @@
     }
   }
 
+  // 表格头
   .z-table-head {
     table {
       thead {
@@ -37,6 +42,7 @@
     }
   }
 
+  // 表格体
   .z-table-body {
     table {
       tbody {
@@ -51,6 +57,17 @@
           }
         }
       }
+    }
+
+    .z-table__empty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50px;
+      font-size: @small-font-size;
+      color: @GrayColor-3;
+      border-bottom: 1px solid @BorderColor-2;
     }
   }
 
