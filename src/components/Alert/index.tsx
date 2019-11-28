@@ -25,7 +25,15 @@ export default class ZAlert extends BaseProps {
   render() {
     return (
       <div class="z-alert">
-        <p>{this.title}</p>
+        <div class="z-alert-inner">
+          <div class="z-alert-icon"></div>
+          <div class="z-alert-content">
+            <div class="z-alert-title">
+              <span>{this.title}</span>
+            </div>
+          </div>
+          <div class="close"></div>
+        </div>
       </div>
     );
   }
