@@ -3,39 +3,55 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-07 17:20:23
- * @LastEditors: wpp
- * @LastEditTime: 2019-11-18 09:43:36
+ * @LastEditors: 王晓龙
+ * @LastEditTime: 2019-11-28 12:01:30
  -->
 
-# Loading
+# lading 加载
 
-::: warning 预计实现功能
+::: explain 预计实现功能
 
 1. loading
 2. 根据指令进行 loading
-3. 定制化 loading 样式 :::
+3. 定制化 loading 样式
 
-## 代码演示
+:::
 
-### loading 效果展示:
+## Demo
 
-<templates-demo name="loading-loadingDemo">
+::: explain 基础用法
+
+<templatePc name="loading-loadingDemo">
+
 <<< @/docs/.vuepress/components/loading/loadingDemo.vue
-</templates-demo>
 
-### Loading 指令 (Zloading)
+</templatePc>
 
-<templates-demo name="loading-directivesDemo">
+:::
+
+::: explain Loading 指令 (Zloading)
+
+<templatePc name="loading-directivesDemo">
+
 <<< @/docs/.vuepress/components/loading/directivesDemo.vue
-</templates-demo>
 
-### 定制化 loading 样式
+</templatePc>
 
-<templates-demo name="loading-customLoadingDemo">
+:::
+
+::: explain 定制化 loading 样式
+
+<templatePc name="loading-customLoadingDemo">
+
 <<< @/docs/.vuepress/components/loading/customLoadingDemo.vue
-</templates-demo>
+
+</templatePc>
+
+:::
 
 ## API
+
+::: explain loading
 
 | 参数           | 描述           | 类型    | 是否必填 | 可选值     | 默认值                  |
 | :------------- | :------------- | :------ | :------- | :--------- | :---------------------- |
@@ -43,3 +59,5 @@
 | markBackground | 遮罩层背景颜色 | string  | false    | -          | rgba(119, 111, 111, .7) |
 | visible        | 显示隐藏       | boolean | false    | true/false | false                   |
 | fullScreen     | 全屏还是模块内 | boolean | false    | true/false | true                    |
+
+:::

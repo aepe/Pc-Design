@@ -1,21 +1,21 @@
 @z-prefix: z;
-@z-prefix-cls: ~'@{z-prefix}-tag';
+@z-prefix-cls: ~"@{z-prefix}-tag";
 .@{z-prefix-cls} {
   display: inline-block;
   padding: 0 10px;
   box-sizing: border-box;
   text-align: center;
-  background-color: @InfoColor;
+  background: transparent;
   border: none;
   color: #fff;
   position: relative;
-  margin: 0 10px;
+  margin-right: 10px;
   box-sizing: border-box;
   border: 1px solid transparent;
-  height: 42px;
-  line-height: 40px;
-  font-size: 20px;
-  border-radius: 8px;
+  height: 32px;
+  line-height: 32px;
+  font-size: 12px;
+  border-radius: 5px;
   white-space: nowrap;
   .z-close {
     display: inline-block;
@@ -34,8 +34,8 @@
     right: -5px;
     box-sizing: border-box;
   }
-  &:focus{
-    outline:0;
+  &:focus {
+    outline: 0;
   }
   // 大size
   &-large {
@@ -88,8 +88,8 @@
   // 类型
   &-success {
     border-color: @SuccessColor;
-    background-color: transparent;
-    color:  @SuccessColor;
+    background-color: @AuxiliaryColor-6;
+    color: @SuccessColor;
     .z-close {
       &:hover {
         background-color: @SuccessColor;
@@ -98,19 +98,19 @@
     }
   }
   &-info {
-    border-color: @InfoColor;
-    background-color: transparent;
+    border-color: @GrayColor-3;
+    background-color: @GrayColor-6;
     color: @InfoColor;
     .z-close {
       &:hover {
-        background-color: @InfoColor;
+        background-color: @GrayColor-3;
         color: #fff;
       }
     }
   }
   &-danger {
     border-color: @ErrorColor;
-    background-color: transparent;
+    background-color: @AuxiliaryColor-5;
     color: @ErrorColor;
     .z-close {
       &:hover {
@@ -121,7 +121,7 @@
   }
   &-warning {
     border-color: @WarningColor;
-    background-color: transparent;
+    background-color: @AuxiliaryColor-4;
     color: @WarningColor;
     .z-close {
       &:hover {
@@ -134,7 +134,7 @@
   &-fill&-success {
     border-color: @SuccessColor;
     background-color: @SuccessColor;
-    color:  #fff;
+    color: #fff;
   }
   &-fill&-info {
     border-color: @InfoColor;
@@ -154,5 +154,5 @@
 }
 
 // 预设颜色
-@colors: pink, magenta, red, volcano, orange, yellow, gold, cyan, lime, green, blue, geekblue,
-    purple;
+@colors: pink, magenta, red, volcano, orange, yellow, gold, cyan, lime, green,
+  blue, geekblue, purple;

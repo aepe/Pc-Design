@@ -1,7 +1,11 @@
 .z-table {
   text-align: left;
 
+  // table
   table {
+    width: 100%;
+    display: table;
+    border-collapse: collapse;
     table-layout: fixed;
     margin: 0;
     padding: 0;
@@ -17,40 +21,53 @@
         padding: 15px;
         word-break: break-word;
         font-size: @small-font-size;
-        border-bottom: 1px solid @BorderColor-2;
+        border-bottom: 1px solid @GrayColor-6;
       }
     }
   }
 
+  // 表格头
   .z-table-head {
     table {
       thead {
         tr {
-          background: @BorderColor-1;
+          background: @MainColor-4;
 
           th {
             font-weight: bold;
-            color: @FontColor-1;
+            color: @GrayColor-2;
           }
         }
       }
     }
   }
 
+  // 表格体
   .z-table-body {
     table {
       tbody {
         tr {
           td {
             font-weight: normal;
-            color: @FontColor-1;
+            color: @GrayColor-2;
           }
 
           &:hover {
-            background: @BorderColor-4;
+            background: @MainColor-3;
           }
         }
       }
+    }
+
+    .z-table__empty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 50px;
+      font-size: @small-font-size;
+      color: @GrayColor-3;
+      border-bottom: 1px solid @BorderColor-2;
     }
   }
 
@@ -61,11 +78,11 @@
         tbody {
           tr {
             &:nth-child(even) {
-              background: @BorderColor-3;
+              background: @GrayColor-8;
             }
 
             &:hover {
-              background: @BorderColor-4;
+              background: @MainColor-3;
             }
           }
         }
@@ -79,7 +96,7 @@
       tr {
         th,
         td {
-          border: solid @BorderColor-2;
+          border: solid @GrayColor-6;
           border-width: 0 1px 1px 1px;
         }
       }

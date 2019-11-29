@@ -3,8 +3,8 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-07 11:49:39
- * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-07 14:47:41
+ * @LastEditors: 王晓龙
+ * @LastEditTime: 2019-11-29 10:21:08
  -->
 
 # 组件更新信息
@@ -12,11 +12,7 @@
 <template>
     <div class="demo5">
         <z-timeline :reverse="reverse">
-            <z-timeline-item v-for="(item, index) in list" :key="index" :title="item.title">
-                <div slot="content" class="custom-summary">
-                    <p>{{item.content}}</p>
-                </div>
-            </z-timeline-item>
+            <z-timeline-item v-for="(item, index) in list" :key="index" :title="item.title" :content="item.content" />
         </z-timeline>
     </div>
 </template>
@@ -43,6 +39,9 @@ export default {
 
 <style lang="stylus">
 .demo5
+    background #fff
+    padding 24px;
+    border-radius 3px;
     .custom-summary
         border none;
 </style>
