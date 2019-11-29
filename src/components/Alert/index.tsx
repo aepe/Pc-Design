@@ -50,7 +50,7 @@ export default class ZAlert extends BaseProps {
     return 'iconfont' + ((this.type == 'info' && ' zxinfo') || (this.type == 'warning' && ' zxwarning') || (this.type == 'error' && ' zxerror') || (this.type == 'success' && ' zxsuccess'));
   }
 
-  private get getIcon(): JSX.Element {
+  private get getIcon(): JSX.Element | '' {
     return this.showIcon ? (
       <div class="z-alert-icon">
         <i class={this.getIconClassName}></i>
@@ -71,8 +71,8 @@ export default class ZAlert extends BaseProps {
   }
 
   @Emit('close')
-  private close(e) {
-    this.$el.style.display = 'none';
+  private close(e: MouseEvent): MouseEvent {
+    (this.$el as HTMLHtmlElement).style.display = 'none';
     return e;
   }
 
