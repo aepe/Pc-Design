@@ -1,4 +1,4 @@
-@import "./color.less";
+@import './color.less';
 
 // 文字默认色
 @FontColor-1: #303133; // 主要字体颜色
@@ -34,7 +34,14 @@
 @small-padding-size: 3px;
 @mini-padding-size: 1px;
 // font-family
-@font-family: "Microsoft YaHei", Arial, Helvetica, sans-serif;
+@font-family: 'Microsoft YaHei', Arial, Helvetica, sans-serif;
+
+// ellipsis
+.z-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
 .FontSizeTitle {
   font-size: @FontSizeTitle;
