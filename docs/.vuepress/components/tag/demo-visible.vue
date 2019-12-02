@@ -1,27 +1,35 @@
+<!--
+ * @abstract: JianJie
+ * @version: 0.0.1
+ * @Author: bhabgs
+ * @Date: 2019-11-21 16:41:08
+ * @LastEditors: bhabgs
+ * @LastEditTime: 2019-11-29 11:25:17
+ -->
 <template>
   <div>
     <div class="tagBox">
-      <z-tag :visible="visible"
-        :closable="true"
-        @close="handleClick">movies...</z-tag>
+      <z-tag :visible="visible" :closable="true" @close="handleClick"
+        >movies...</z-tag
+      >
     </div>
-    <button @click="handleClick">切换tag的显示状态</button>
+    <z-button type="primary" size="small" @click="handleClick">toggle</z-button>
   </div>
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        visible: true
-      }
-    },
-    methods: {
-      handleClick() {
-        this.visible = !this.visible;
-      },
+export default {
+  data() {
+    return {
+      visible: true
+    };
+  },
+  methods: {
+    handleClick() {
+      this.visible = !this.visible;
     }
   }
+};
 </script>
 <style lang="stylus">
 .tagBox
