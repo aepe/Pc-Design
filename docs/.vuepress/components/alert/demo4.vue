@@ -1,6 +1,13 @@
 <template>
-  <div class="demo1">
-    <z-alert v-for="(item, index) in list" :key="index" :title="item.title" :type="item.type"></z-alert>
+  <div class="demo4">
+    <z-alert
+      v-for="(item, index) in list"
+      :key="index"
+      :title="item.title"
+      :type="item.type"
+      :showClose="item.showClose"
+      @close="callback"
+    ></z-alert>
   </div>
 </template>
 
@@ -27,6 +34,11 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    callback() {
+      alert('alert callback!');
+    }
   }
 };
 </script>

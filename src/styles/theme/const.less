@@ -1,9 +1,9 @@
 // 主色调
 // @MainColor-1: #4a80f6;
 @MainColor-1: #4498f0; // 为智信品牌主色，应用于菜单选中状态、文字、按钮、链接、图标等
-@MainColor-2: #85c4ff; // 应用表头背景色
-@MainColor-3: #e6f2fe; // 应用于按钮、表格、提示等背景色
-@MainColor-4: #edf0f5; // 应用表头背景色
+@MainColor-2: #85c4ff; // 应用于智信header渐变效果
+@MainColor-3: #e6f2fe; // 应用于智信header渐变效果
+@MainColor-4: #edf0f5; // 应用于智信header渐变效果
 
 // 辅助色
 @AuxiliaryColor-1: #feb736; // 应用于辅助色、标签等、提示警告字体颜色
@@ -36,13 +36,17 @@
 @DefaultType: linear;
 
 // 线性
-.Gradient(@type: @DefaultType; @direction: @DefaultDirection; @colors: @DefaultColors) when (@type = linear) {
+.Gradient(@type: @DefaultType; @direction: @DefaultDirection; @colors: @DefaultColors)
+  when
+  (@type = linear) {
   background-image: linear-gradient(@direction, @colors);
 }
 
 // 径向
 // @shape: 渐变形状
 // @size: 渐变大小
-.Gradient(@type: @DefaultType; @direction: @DefaultPosition; @shape: @DefaultShape; @size: @DefaultSize; @colors: @DefaultColors) when (@type = radial) {
+.Gradient(@type: @DefaultType; @direction: @DefaultPosition; @shape: @DefaultShape; @size: @DefaultSize; @colors: @DefaultColors)
+  when
+  (@type = radial) {
   background: -webkit-radial-gradient(@direction, @shape @size, @colors);
 }

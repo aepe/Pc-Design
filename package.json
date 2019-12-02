@@ -48,7 +48,7 @@
     "vue": "^2.6.10",
     "vue-property-decorator": "^8.3.0",
     "vuepress": "^1.2.0",
-    "vuepress-theme-bhabgs": "^0.0.3",
+    "vuepress-theme-bhabgs": "^0.0.6",
     "zx-util-ui": "^1.0.5"
   }
 }

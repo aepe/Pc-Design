@@ -5,22 +5,24 @@
   padding: 0 10px;
   box-sizing: border-box;
   text-align: center;
+  background: @MainColor-2;
   border: none;
   color: #fff;
   position: relative;
   margin-right: 10px;
   box-sizing: border-box;
-  border: 1px solid transparent;
-  height: 32px;
-  line-height: 32px;
+  border: 1px solid @MainColor-1;
+  height: 36px;
+  line-height: 36px;
   font-size: 12px;
-  border-radius: 5px;
+  border-radius: 8px;
   white-space: nowrap;
   .z-close {
     display: inline-block;
     width: 16px;
     height: 16px;
     line-height: 16px;
+    transition: all 0.3s;
     cursor: pointer;
     font-style: normal;
     vertical-align: middle;
@@ -32,6 +34,9 @@
     top: -1px;
     right: -5px;
     box-sizing: border-box;
+    &:hover {
+      background-color: @MainColor-1;
+    }
   }
   &:focus {
     outline: 0;

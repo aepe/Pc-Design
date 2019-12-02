@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-12 09:06:17
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-28 16:14:51
+ * @LastEditTime: 2019-12-02 17:08:19
  -->
 
 # button 按钮
@@ -21,11 +21,11 @@
 
 ::: explain 基础用法
 
-<templatePc name="Button-index">
+<templateMobile name="Button-index">
 
 <<< @/docs/.vuepress/components/Button/index.vue
 
-</templatePc>
+</templateMobile>
 
 :::
 
