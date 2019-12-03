@@ -3,20 +3,19 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-07 17:20:23
- * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-28 12:02:02
+ * @LastEditors: bhabgs
+ * @LastEditTime: 2019-11-29 11:06:47
  -->
 
 # tag 标签
 
 ::: explain
 
-1. tag 大小改变：large、small、mini 默认：large
-2. tag 可关闭
-3. tag 主题定制
-4. 删除是否需要确认
-5. ...自行发挥
-6. 与 checkbox 同类功能的复选标签
+```vue explain
+<template>
+  <z-tag>tag</z-tag>
+</template>
+```
 
 :::
 

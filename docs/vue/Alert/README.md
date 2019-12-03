@@ -3,8 +3,8 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-12 09:06:17
- * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-29 13:33:05
+ * @LastEditors: bhabgs
+ * @LastEditTime: 2019-12-02 17:08:53
  -->
 
 # alert 警告
@@ -17,11 +17,11 @@
 
 ::: explain 基础用法
 
-<templatePc name="alert-demo1">
+<templateMobile name="alert-demo1">
 
 <<< @/docs/.vuepress/components/alert/demo1.vue
 
-</templatePc>
+</templateMobile>
 
 :::
 
