@@ -7707,14 +7707,16 @@ vuepress-plugin-smooth-scroll@^0.0.3:
   dependencies:
     smoothscroll-polyfill "^0.4.3"
 
-vuepress-theme-bhabgs@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/vuepress-theme-bhabgs/-/vuepress-theme-bhabgs-0.0.7.tgz#6093c3e2f68bb23fefd08712ede92c24ccc4b9db"
-  integrity sha512-v/S+XsgwVfpmMGuIHf5FiAL4VSWgAlq+1+AQwJKUWpMw2LIlCAqMlt8Tvp4NKr/NBMlkBFdfStlrH4sXJq922w==
+vuepress-theme-bhabgs@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/vuepress-theme-bhabgs/-/vuepress-theme-bhabgs-0.1.1.tgz#901368ce6f16005986f9c28dd6cbccea3a4aff2c"
+  integrity sha512-wI5En8P3GdT/uDSf4AMHsMfhGFIwH/fg4u7gz2WWNsqNN/+fCkqO3WL+uM8Y8UbkI2zoop1w9aG9lYfNdVWocw==
   dependencies:
     "@vuepress/plugin-active-header-links" "^1.2.0"
     "@vuepress/plugin-nprogress" "^1.2.0"
     "@vuepress/plugin-search" "^1.2.0"
+    cross-env "^6.0.3"
+    dingtalk-robot-sender "^1.2.0"
     docsearch.js "^2.5.2"
     lodash "^4.17.15"
     stylus "^0.54.5"
