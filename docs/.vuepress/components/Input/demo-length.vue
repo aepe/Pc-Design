@@ -10,7 +10,7 @@
   <div id="input-demo-length">
     <z-input type="text"
           placeholder="请输入内容"
-          :min="2" />
+          :maxlength="2" />
   </div>
 </template>
 <style lang="stylus">

@@ -4,7 +4,7 @@
  * @Author: 
  * @Date: 2019-11-14 16:03:05
  * @LastEditors: langxue
- * @LastEditTime: 2019-11-15 11:03:43
+ * @LastEditTime: 2019-12-04 14:03:18
  -->
 <template>
   <div id="input-demo-size">
@@ -12,26 +12,31 @@
       <strong>大尺寸：</strong>
       <z-input type="text"
         placeholder="请输入内容"
-        suffixIcon="zxclose"
         class="item-input" />
     </div>
     <br />
     <div class="item">
       <strong>中尺寸：</strong>
       <z-input type="text"
-        size="small"
-        suffixIcon="zxclose"
-        placeholder="请输入内容"
-        class="item-input" />
+        size="medium"
+        class="item-input"
+          placeholder="请输入内容" />
     </div>
     <br />
     <div class="item">
       <strong>小尺寸：</strong>
       <z-input type="text"
+        size="small"
+          placeholder="请输入内容"
+          class="item-input" />
+    </div>
+    <br />
+    <div class="item">
+      <strong>超小尺寸：</strong>
+      <z-input type="text"
         size="mini"
-        placeholder="请输入内容"
-        suffixIcon="zxclose"
-        class="item-input" />
+          placeholder="请输入内容"
+          class="item-input" />
     </div>
   </div>
 </template>

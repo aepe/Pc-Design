@@ -1,196 +1,146 @@
-import { Component, Vue, Prop, Model } from 'vue-property-decorator';
+import { Component, Vue, Prop, Model, Watch } from 'vue-property-decorator';
+import inputProps from './inputProps';
+import { VNode } from 'vue';
+
+const baseInput = Vue.extend({
+  props: {...inputProps},
+  model: {
+    prop: 'value',
+    event: 'input.value',
+  },
+  data() {
+    const { value, modelValue } = this.$props;
+    return {
+      stateValue: modelValue ? modelValue : value,
+    }
+  },
+})
 
 @Component
-export default class ZInput extends Vue {
-  @Model('input', {
-    type: [Number, String]
-  }) public inputValue!: number | string;
+export default class ZInput extends baseInput {
 
-  // value
-  @Prop({
-    type: [Number, String]
-  }) public value!: number | string;
-
-  // 类型
-  @Prop({
-    default: 'text',
-    type: String
-  }) public type!: string;
-
-  // 占位符
-  @Prop({
-    default: '请输入内容',
-    type: String
-  }) public placeholder!: string;
-
-  // 禁用
-  @Prop({
-    default: false,
-    type: Boolean
-  }) public disabled!: boolean;
-
-  // label
-  @Prop({
-    default: '',
-    type: String
-  }) public label!: string;
-
-  // label-width
-  @Prop({
-    default: 'auto',
-    type: String
-  }) public labelWidth!: string;
-  
-  // size
-  @Prop({
-    default: '',
-    type: String
-  }) public size!: string;
-
-  // 输入最小限制
-  @Prop({
-    default: 0,
-    type: Number
-  }) public min!: number;
-
-  // 输入最大限制
-  @Prop({
-    type: Number
-  }) public max!: number;
-
-  // 是否显示输入字符
-  @Prop({
-    type: Boolean
-  }) public showWordLimit!: boolean;
-
-  // 后置icon
-  @Prop({
-    type: String
-  }) public suffixIcon!: string;
-
-  // 前置icon
-  @Prop({
-    type: String
-  }) public prefixIcon!: string;
-
-  // 设置input框的类型
-  public setInputType() {
-    return this.type;
+  public mounted() {
+    // console.log(this.$props);
   }
 
-  // 设置placeholder
-  public setPlaeholder() {
-    return this.placeholder;
-  }
-
-  // 设置禁用状态
-  public setDisabled() {
-    return this.disabled;
-  }
-
-  // 设置最小限制和最大限制
-  public setLength() {
-    const { min, max } = this;
-    return {
-      min,
-      max
-    };
-  }
-
-  // 设置是否显示输入字符
-  public setShowWordLimit() {
-    const { max } = this;
-    const wordLimitClass = {
-      'z-input-show-limit': this.showWordLimit
-    };
-    const wordLimit = <span class={ wordLimitClass }>2/{ max }</span>;
-    return wordLimit;
-  }
-
-  // 设置class
+  // set input classnames
   public setInputClass() {
-    const { disabled, size, suffixIcon, prefixIcon, $slots } = this;
+    const { $slots, $props } = this;
     return {
-      [`z-input-${size}`]: size === 'medium' || '' ? null : size,
-      'z-input-disabled': disabled,
-      'z-input-suffix': suffixIcon || $slots.suffix,
-      'z-input-prefix': prefixIcon || $slots.prefix
+      [`z-input-${$props.size}`]: $props.size == 'default' ? '' : $props.size,
+      'z-input-disabled': $props.disabled,
+      'z-input-suffix': $props.suffixIcon || $slots.suffix || $props.clearable,
+      'z-input-prefix': $props.prefixIcon || $slots.prefix
     };
   }
 
-  // handleBlur
-  public handleBlur(e: any) {
-    this.$emit('blur', e.target.value);
+  // set icon classnames
+  public setIconClass() {
+    const { $props, $slots } = this;
+    const prefix = $props.prefixIcon || $slots.prefix;
+    return {
+      [`z-input-icon-${$props.size}`]: prefix ? $props.size : '',
+    }
   }
 
   // handleInput
-  public handleInput(e: any) {
-    this.$emit('input', e.target.value);
+  public handleInput(e) {
+    const value = e.target.value;
+    this.$emit('input', value);
+    this.$emit('input.value', e.target.value);
+    this.stateValue = value;
   }
 
   // handleChange
-  public handleChange(e: any) {
+  public handleChange(e) {
     this.$emit('change', e.target.value);
   }
 
-  // render Label
-  public renderLabel() {
-    const { label, labelWidth } = this;
-    const labelWidthStyle = {
-      width: labelWidth
-    };
-    return label ? <span class={'z-input-label'} style={labelWidthStyle}>{label}:</span> : null;
+  // handleClear
+  public handleClear(e) {
+    this.stateValue = '';
+    this.$emit('clear', e);
+  }
+
+  //blur
+  public blur() {
+    (this.$refs.input as HTMLInputElement).blur();
+  }
+
+  // focus
+  public focus() {
+    (this.$refs.input as HTMLInputElement).focus();
   }
 
   // render prefixIcon or slot prefixIcon
-  public renderPrefixIcon() {
-    const { prefixIcon, $slots } = this;
-    const prefixRender = prefixIcon || $slots.prefix ? <span class="z-input-prefix-icon">
-      <span class="z-input-prefix-icon-inner">
-        <i class={['iconfont', prefixIcon]} if="prefixIcon"></i>
+  public renderPrefixIcon(): JSX.Element {
+    const { $props, $slots } = this;
+    const prefixIcon = $props.prefixIcon || $slots.prefix;
+    if (prefixIcon) {
+      return <span class={["z-input-prefix-icon"]}>
+        <i class={["iconfont z-icon", $props.prefixIcon]}></i>
         {$slots.prefix}
       </span>
-    </span> : null;
-    return prefixRender;
+    }
+    return null;
+  }
+
+  // render clear icon
+  public renderClearIcon(): JSX.Element {
+    const { clearable, disabled, suffixIcon, suffix } = this.$props;
+    const { stateValue, handleClear } = this;
+    // 存在suffixIcon 或 suffix 不显示清空图标
+    const hasSuffix = suffixIcon || suffix;
+    // 不清空，禁用，值为空
+    if (!clearable || disabled || stateValue === '' || stateValue === null || stateValue === undefined || hasSuffix) {
+      return null;
+    }
+    const clearIcon = <i class="iconfont zxclose z-icon z-input-clear-icon" onClick={handleClear}></i>;
+    return clearIcon;
+  }
+
+  // suffix
+  public renderSuffixIcon() {
+    const { $props, $slots } = this;
+    // $slots 直接渲染 $slots.suffix 否则 $props.suffixIcon
+    // return $slots.suffix;
+    return $slots.suffix ? $slots.suffix : <i class={["iconfont z-icon", $props.suffixIcon]}></i>
   }
 
   // render suffixIcon
-  public renderSuffixIcon() {
-    const { suffixIcon, $slots } = this;
-    const suffix = suffixIcon || $slots.suffix ? <span class="z-input-suffix-icon">
-      <span class="z-input-suffix-icon-inner">
-        <i class={['iconfont', suffixIcon]} if="suffixIcon"></i>
-        {$slots.suffix}
+  public renderSuffix() {
+    const { $props, $slots, renderClearIcon, renderSuffixIcon } = this;
+    const suffixClass = {
+      "z-input-suffix-icon": true,
+      "z-input-clear-icon": $props.clearable,
+    }
+    return <span class={suffixClass}>
+        {renderClearIcon()}
+        {renderSuffixIcon()}
       </span>
-    </span> : null;
-    return suffix;
   }
 
   // render input
-  public renderInput() {
-    const { setInputType, setPlaeholder, setDisabled, setLength, handleBlur, handleInput, handleChange } = this;
-    const limitLength = setLength();
-    return <input type={setInputType()}
-      placeholder={setPlaeholder()}
-      class='z-input-inner'
-      disabled={setDisabled()}
-      maxLength={limitLength.max}
-      minLength={limitLength.min}
-      on-blur={handleBlur}
+  public renderInput(): JSX.Element {
+    const { stateValue, $props, handleInput, handleChange } = this;
+    return <input ref="input"
+      value= {stateValue}
+      maxlength={$props.maxlength}
+      disabled={$props.disabled}
+      class={['z-input-inner']}
+      placeholder={$props.placeholder}
       on-input={handleInput}
       on-change={handleChange} />;
   }
 
   public render() {
-    const { renderInput, renderLabel, setInputClass, renderSuffixIcon, renderPrefixIcon } = this;
+    const { renderInput, renderPrefixIcon, renderSuffix, setInputClass } = this;
     return (
-      <div class={['z-input', setInputClass()]}>
+      <div class={["z-input", setInputClass()]}>
         {renderPrefixIcon()}
-        {renderLabel()}
         {renderInput()}
-        {renderSuffixIcon()}
-        {/* {setShowWordLimit()} */}
+        {renderSuffix()}
       </div>
-    );
+    )
   }
 }

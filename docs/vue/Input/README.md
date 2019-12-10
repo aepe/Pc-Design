@@ -3,8 +3,8 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-12 09:06:17
- * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-28 12:01:10
+ * @LastEditors: langxue
+ * @LastEditTime: 2019-12-10 10:34:38
  -->
 
 # input 输入
@@ -31,11 +31,11 @@
 
 :::
 
-::: explain 标签
+::: explain 可清空
 
-<templatePc name="Input-demo-label">
+<templatePc name="Input-demo-clearable">
 
-<<< @/docs/.vuepress/components/Input/demo-label.vue
+<<< @/docs/.vuepress/components/Input/demo-clearable.vue
 
 </templatePc>
 
@@ -90,14 +90,11 @@
 | type           | 文本框类型           | String          | false    | text 和其他原生 input 的 type 值 | text       |
 | placeholder    | 文本框占位文本       | String          | false    | -                                | 请输入内容 |
 | disabled       | 禁用                 | Boolean         | false    | -                                | false      |
-| label          | 文本框标签文本       | String          | false    | -                                | -          |
-| labelWidth     | 文本框标签文本宽度   | String          | false    | -                                | auto       |
+| clearable          | 点击清除图标清空内容       | Boolean          | false    | -                                | -          |
 | size           | 文本框尺寸           | String          | false    | medium，small，mini              | medium     |
-| min            | 文本框输入最小值     | Number          | false    | -                                | -          |
-| max            | 文本框输入最大值     | Number          | false    | -                                | -          |
+| maxlength            | 文本框输入最大长度     | Number          | false    | -                                | -          |
 | suffixIcon     | 后置 icon            | String          | false    | -                                | -          |
 | prefixIcon     | 前置 icon            | String          | false    | -                                | -          |
-| showWordLimit  | 是否显示输入字数统计 | Boolean         | false    | -                                | false      |
 | value(v-model) | 绑定值               | string / number | false    | -                                | -          |
 
 :::
@@ -111,6 +108,15 @@
 
 :::
 
+::: explain input Methods
+
+| 参数   | 描述           | 类型 | 是否必填 | 可选值 | 默认值 |
+| :----- | :------------- | :--- | :------- | :----- | :----- |
+| focus | 获取Input焦点 | -    | -        | -      | -      |
+| blur | Input失去焦点 | -    | -        | -      | -      |
+
+:::
+
 ::: explain input Events
 
 | 事件名称 | 描述                                | 类型 | 是否必填 | 可选值 | 默认值 |
@@ -118,5 +124,5 @@
 | blur     | 在 Input 失去焦点时触发             | -    | -        | -      | -      |
 | input    | 在 Input 值改变时触发               | -    | -        | -      | -      |
 | change   | 在 Input 失去焦点且值发生改变时触发 | -    | -        | -      | -      |
-
+| clear   | 清空input内容时触发 | -    | -        | -      | -      |
 :::
