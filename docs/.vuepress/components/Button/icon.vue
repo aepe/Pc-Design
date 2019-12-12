@@ -1,11 +1,3 @@
-<!--
- * @abstract: 
- * @version: 
- * @Author: bhabgs
- * @Date: 2019-11-12 11:07:52
- * @LastEditors: bhabgs
- * @LastEditTime: 2019-12-12 11:09:30
- -->
 <template>
   <div class="bhabgs-block">
     Icon:
@@ -19,10 +11,7 @@
       <ZIcon type="sousuo" />
     </ZButton>
     <ZButton type="warning" icon="success" />
-
     <ZButton :loading="loading" @click="changeLoading" type="warning" icon="success" />
-
-    <ZIcon type="sousuo" @click="click" />
   </div>
 </template>
 <script>
