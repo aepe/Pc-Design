@@ -3,13 +3,19 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-14 14:04:53
- * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-28 11:48:20
+ * @LastEditors: bhabgs
+ * @LastEditTime: 2019-12-12 15:14:32
  -->
 
 # message 消息
 
-::: explain
+::: explain message
+
+<templatePc name="Message-index">
+
+<<< @/docs/.vuepress/components/Message/index.vue
+
+</templatePc>
 
 :::
 

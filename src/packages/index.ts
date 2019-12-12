@@ -3,10 +3,12 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-10-29 16:40:33
- * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-14 11:25:14
+ * @LastEditors: bhabgs
+ * @LastEditTime: 2019-12-12 15:24:16
  */
-import utils from './utils';
+import utils from "./utils";
+import message from "./message";
 export default {
-  utils
+  utils,
+  message
 };

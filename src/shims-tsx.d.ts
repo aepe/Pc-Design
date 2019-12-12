@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-05 16:22:07
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-12-12 12:18:03
+ * @LastEditTime: 2019-12-12 12:22:43
  */
 import Vue, { VNode, VueConstructor } from "vue";
 
@@ -23,7 +23,7 @@ declare global {
     name: string;
     version: string;
   }
-  interface VueConstructor
+  interface VueConstructor {}
 }
 
 declare module "vue/types/options" {
