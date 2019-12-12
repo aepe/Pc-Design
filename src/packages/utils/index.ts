@@ -3,9 +3,10 @@
  * @version:""
  * @Author: bhabgs
  * @Date: 2019-11-08 10:07:49
- * @LastEditors: bhabgs
- * @LastEditTime: 2019-12-11 15:32:00
+ * @LastEditors: langxue
+ * @LastEditTime: 2019-12-12 12:04:58
  */
+import { VueConstructor } from 'vue';
 export function isEmptyElement(c) {
   return !(c.tag || (c.text && c.text.trim() !== ""));
 }

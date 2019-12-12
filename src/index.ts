@@ -3,8 +3,8 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-10-29 10:54:09
- * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-18 10:51:40
+ * @LastEditors: langxue
+ * @LastEditTime: 2019-12-12 11:58:41
  */
 import Vue from 'vue';
 import { compontents } from './components';
@@ -22,7 +22,7 @@ const install = function(Vue: any) {
   // 工具
   Vue.prototype.$Zutil = Zutil;
   // 组件
-  compontents.forEach((component) => Vue.component(component.name, component.install));
+  compontents.forEach((component: any) => Vue.component(component.name, component.install));
 };
 
 // 自动注册组件
