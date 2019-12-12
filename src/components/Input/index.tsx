@@ -1,7 +1,6 @@
-import { Component, Vue, Prop, Model, Watch } from 'vue-property-decorator';
+import { Component, Vue } from 'vue-property-decorator';
 import inputProps from './inputProps';
-import { VNode } from 'vue';
-
+import Icon from "../Icon/icon";
 const baseInput = Vue.extend({
   props: {...inputProps},
   model: {
@@ -16,11 +15,14 @@ const baseInput = Vue.extend({
   },
 })
 
-@Component
+@Component({
+  components: {
+    Icon,
+  },
+})
 export default class ZInput extends baseInput {
-
-  public mounted() {
-    // console.log(this.$props);
+  constructor () {
+    super();
   }
 
   // set input classnames
@@ -78,7 +80,7 @@ export default class ZInput extends baseInput {
     const prefixIcon = $props.prefixIcon || $slots.prefix;
     if (prefixIcon) {
       return <span class={["z-input-prefix-icon"]}>
-        <i class={["iconfont z-icon", $props.prefixIcon]}></i>
+        <Icon type={$props.prefixIcon} />
         {$slots.prefix}
       </span>
     }
@@ -95,16 +97,14 @@ export default class ZInput extends baseInput {
     if (!clearable || disabled || stateValue === '' || stateValue === null || stateValue === undefined || hasSuffix) {
       return null;
     }
-    const clearIcon = <i class="iconfont zxclose z-icon z-input-clear-icon" onClick={handleClear}></i>;
-    return clearIcon;
+    return <Icon type="error" onClick={handleClear}/>;
   }
 
   // suffix
   public renderSuffixIcon() {
     const { $props, $slots } = this;
     // $slots 直接渲染 $slots.suffix 否则 $props.suffixIcon
-    // return $slots.suffix;
-    return $slots.suffix ? $slots.suffix : <i class={["iconfont z-icon", $props.suffixIcon]}></i>
+    return $slots.suffix ? $slots.suffix : <Icon type={$props.suffixIcon} />
   }
 
   // render suffixIcon
@@ -122,15 +122,23 @@ export default class ZInput extends baseInput {
 
   // render input
   public renderInput(): JSX.Element {
-    const { stateValue, $props, handleInput, handleChange } = this;
-    return <input ref="input"
-      value= {stateValue}
-      maxlength={$props.maxlength}
-      disabled={$props.disabled}
-      class={['z-input-inner']}
-      placeholder={$props.placeholder}
-      on-input={handleInput}
-      on-change={handleChange} />;
+    const { stateValue, $props, handleInput, handleChange, $listeners } = this;
+    const inputProps = {
+      attrs: {
+        ...$props,
+      },
+      ref: "input",
+      class: "z-input-inner",
+      domProps: {
+        value: stateValue,
+      },
+      on: {
+        ...$listeners,
+        input: handleInput,
+        change: handleChange,
+      }
+    }
+    return <input {...inputProps} />;
   }
 
   public render() {
