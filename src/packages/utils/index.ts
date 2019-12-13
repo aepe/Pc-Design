@@ -6,7 +6,7 @@ import { VNode } from 'vue';
  * @Author: bhabgs
  * @Date: 2019-11-08 10:07:49
  * @LastEditors: 王晓龙
- * @LastEditTime: 2019-12-13 15:49:57
+ * @LastEditTime: 2019-12-13 16:32:09
  */
 export function isEmptyElement(c) {
   return !(c.tag || (c.text && c.text.trim() !== ''));

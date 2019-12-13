@@ -3,8 +3,8 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-10-29 10:54:09
- * @LastEditors: bhabgs
- * @LastEditTime: 2019-12-12 15:12:33
+ * @LastEditors: langxue
+ * @LastEditTime: 2019-12-13 12:15:10
  */
 import Vue from "vue";
 import { compontents } from "./components";

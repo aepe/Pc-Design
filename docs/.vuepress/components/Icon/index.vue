@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-12 11:07:52
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-12-13 11:00:04
+ * @LastEditTime: 2019-12-13 13:26:19
  -->
 <template>
   <div class="bhabgs-block">
@@ -83,7 +83,6 @@ textarea {
     margin: 9px 8px;
     height: 137px;
     position: relative;
-    border: 1px solid #4498f0;
     cursor: pointer;
 
     i {

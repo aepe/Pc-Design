@@ -1,83 +1,29 @@
-import { Component, Vue, Prop } from "vue-property-decorator";
-
-@Component
-export default class ZTag extends Vue {
-  // tag大小
-  @Prop({
-    default: "",
-    type: String
-  })
-  public size!: string;
-
-  // tag是否显示
-  @Prop({
-    default: true,
-    type: Boolean
-  })
-  public visible?: boolean;
-
-  // 是否显示删除按钮
-  @Prop({
-    default: false,
-    type: Boolean
-  })
-  public closable?: boolean;
-
-  // 类型
-  @Prop({
-    default: "",
-    type: String
-  })
-  public type?: string;
-
-  // 主题
-  @Prop({
-    default: "plain",
-    type: String
-  })
-  public theme?: string;
-
-  // 点击关闭是否确认提示
-  @Prop({
-    default: false,
-    type: Boolean
-  })
-  public hasConfirm?: boolean;
-
-  // 开启关闭标签确认提示时-关闭标签提示语
-  @Prop({
-    type: String,
-    default: "确认关闭标签么？"
-  })
-  public confirmMessage?: string;
-
-  // 设置颜色类
-  public setTypeClass() {
-    return `z-tag-${this.type}`;
+import { Component, Watch } from "vue-property-decorator";
+import Tagprops from './tagProp';
+import ZIcon from "../Icon/icon";
+@Component({
+  components: {
+    ZIcon,
+  },
+})
+export default class ZTag extends Tagprops {
+  @Watch('visible', {immediate: true})
+  public handleVisible(val) {
+    this.stateVisible = val;
   }
-
-  // 设置大小
-  public setClass() {
-    return this.size ? `z-tag-${this.size}` : null;
-  }
-
+  // 控制tag的显示和隐藏
+  private stateVisible: boolean = true;
   // 设置显示或隐藏
-  public setVisible() {
-    return this.visible;
-  }
-
-  // 设置是否删除
-  public setClose() {
-    return this.closable;
-  }
-
-  // 设置主题
-  public setTheme() {
-    return this.theme ? `z-tag-${this.theme}` : null;
+  private setVisible(visible, e) {
+    this.$emit('close', e);
+    if (e.defaultPrevented) {
+      return;
+    }
+    this.stateVisible = visible;
   }
 
   // 关闭按钮操作
-  public handleClose(e: any) {
+  private handleClose(e: any) {
     e.stopPropagation();
     if (e.defaultPrevented) {
       return;
@@ -92,38 +38,46 @@ export default class ZTag extends Vue {
       });
       return;
     }
-    this.$emit("close", e);
+    this.setVisible(false, e);
   }
 
   // 点击tag
-  public handleClick(e: any) {
+  private handleClick(e: any) {
     e.stopPropagation();
     this.$emit("click", e);
   }
 
-  public renderIcon(): any {
-    return this.setClose() ? (
-      <i class="z-close iconfont zxclose" on-click={this.handleClose}></i>
-    ) : null;
+  private renderIcon(): JSX.Element {
+    const { closable } = this.$props;
+    return closable ? <ZIcon type="close" onClick={this.handleClose} /> : null;
+  }
+  // set className
+  private setClassNames() {
+    const { $props } = this;
+    const transClass = {
+      'z-tag': true,
+      [`z-tag-${$props.size}`]: $props.size,
+      [`z-tag-${$props.type}`]: $props.type,
+      [`z-tag-${$props.theme}`]: $props.theme,
+      [`z-tag-closable`]: $props.closable ? 'closable' : null,
+    };
+    return transClass;
   }
 
-  public render(): any {
+  public render(): JSX.Element {
     const {
-      setClass,
-      setTypeClass,
-      setTheme,
-      setVisible,
+      $slots,
+      setClassNames,
+      renderIcon,
+      stateVisible,
       handleClick,
-      $slots
     } = this;
     return (
-      <span
-        class={["z-tag", setClass(), setTypeClass(), setTheme()]}
-        v-show={setVisible()}
-        on-click={handleClick}
-      >
+      <span class={setClassNames()}
+        v-show={stateVisible}
+        on-click={handleClick}>
         {$slots.default}
-        {this.renderIcon()}
+        {renderIcon()}
       </span>
     );
   }

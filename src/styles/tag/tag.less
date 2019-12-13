@@ -1,22 +1,21 @@
 @z-prefix: z;
 @z-prefix-cls: ~"@{z-prefix}-tag";
-.@{z-prefix-cls} {
+.z-tag,
+.z-check-tag {
   display: inline-block;
-  padding: 0 10px;
+  padding: 0 @padding-xs;
   box-sizing: border-box;
   text-align: center;
-  background: @MainColor-2;
   border: none;
-  color: #fff;
+  color: @white;
   position: relative;
-  margin-right: 10px;
   box-sizing: border-box;
-  border: 1px solid @MainColor-1;
-  height: 36px;
-  line-height: 36px;
-  font-size: 12px;
-  border-radius: 8px;
+  height: 32px;
+  line-height: 32px;
+  font-size: @font-size-sm;
+  border-radius: 6px;
   white-space: nowrap;
+  user-select: none;
   .z-close {
     display: inline-block;
     width: 16px;
@@ -42,13 +41,13 @@
     outline: 0;
   }
   // 大size
-  &-large {
+  &.z-tag-large {
     height: 42px;
-    line-height: 40px;
-    font-size: 20px;
+    line-height: 42px;
+    font-size: @font-size-lg;
     border-radius: 8px;
     .z-close {
-      font-size: 15px;
+      font-size: @font-size-lg;
     }
     &::after {
       top: -10px;
@@ -58,13 +57,13 @@
     }
   }
   // 中size
-  &-small {
+  &.z-tag-small {
     height: 36px;
-    line-height: 34px;
-    font-size: 18px;
+    line-height: 36px;
+    font-size: @font-size-md;
     border-radius: 6px;
     .z-close {
-      font-size: 14px;
+      font-size: @font-size-md;
     }
     &::after {
       top: -8px;
@@ -74,13 +73,13 @@
     }
   }
   // 小size
-  &-mini {
+  &.z-tag-mini {
     height: 32px;
-    line-height: 30px;
-    font-size: 12px;
-    border-radius: 4px;
+    line-height: 32px;
+    font-size: @font-size-sm;
+    border-radius: 6px;
     .z-close {
-      font-size: 13px;
+      font-size: @font-size-sm;
     }
     &::after {
       top: -5px;
@@ -90,69 +89,61 @@
     }
   }
   // 类型
-  &-success {
-    border-color: @SuccessColor;
-    background-color: @AuxiliaryColor-6;
-    color: @SuccessColor;
-    .z-close {
-      &:hover {
-        background-color: @SuccessColor;
-        color: #fff;
-      }
+  &.z-tag-fill,
+  &.z-check-tag__checked {
+    background-color: @blue-main;
+    &.z-tag-success {
+      background-color: @green-1;
     }
-  }
-  &-info {
-    border-color: @GrayColor-3;
-    background-color: @GrayColor-6;
-    color: @InfoColor;
-    .z-close {
-      &:hover {
-        background-color: @GrayColor-3;
-        color: #fff;
-      }
+    &.z-tag-info {
+      background-color: @gray-5;
     }
-  }
-  &-danger {
-    border-color: @ErrorColor;
-    background-color: @AuxiliaryColor-5;
-    color: @ErrorColor;
-    .z-close {
-      &:hover {
-        background-color: @ErrorColor;
-        color: #fff;
-      }
+    &.z-tag-danger {
+      background-color: @red-1;
     }
-  }
-  &-warning {
-    border-color: @WarningColor;
-    background-color: @AuxiliaryColor-4;
-    color: @WarningColor;
-    .z-close {
-      &:hover {
-        background-color: @WarningColor;
-        color: #fff;
-      }
+    &.z-tag-warning {
+      background-color: @orange;
     }
   }
   // 主题
-  &-fill&-success {
-    border-color: @SuccessColor;
-    background-color: @SuccessColor;
-    color: #fff;
+  &.z-tag-plain { // 有边框
+    border: @border-width-base solid @blue-main;
+    background-color: @blue-4;
+    color: @white;
+    &.z-tag-success {
+      border: @border-width-base solid @green-1;
+      background-color: @green-3;
+      color: @green-1;
+    }
+    &.z-tag-info {
+      border: @border-width-base solid @gray-5;
+      background-color: @gray-3;
+      color: @gray-5;
+    }
+    &.z-tag-danger {
+      border: @border-width-base solid @red-1;
+      background-color: @red-3;
+      color: @red-1;
+    }
+    &.z-tag-warning {
+      border: @border-width-base solid @orange;
+      background-color: @orange-3;
+      color: @orange;
+    }
   }
-  &-fill&-info {
-    border-color: @InfoColor;
-    background-color: @InfoColor;
-    color: #fff;
+}
+// checkbox tag
+.z-check-tag {
+  color: @black;
+  cursor: pointer;
+  &:hover {
+    color: @blue-main;
   }
-  &-fill&-danger {
-    border-color: @ErrorColor;
-    background-color: @ErrorColor;
-    color: #fff;
-  }
-  &-fill&-warning {
-    border-color: @WarningColor;
-    background-color: @WarningColor;
-    color: #fff;
+  &.z-check-tag__checked {
+    background-color: @blue-main;
+    color: @white;
+    &:hover {
+      color: @white;
+    }
   }
 }

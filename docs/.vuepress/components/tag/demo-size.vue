@@ -4,9 +4,7 @@
       :key="key"
       :type="i.type"
       :size="i.size"
-      :closable="i.closeable"
-      @click="handleClick"
-      @close="handleClose">{{i.title}}</z-tag>
+      :closable="i.closeable">{{i.title}}</z-tag>
   </div>
 </template>
 
@@ -37,13 +35,5 @@
         ],
       }
     },
-    methods: {
-      handleClick(e) {
-        console.log('click-----', e);
-      },
-      handleClose(e) {
-        console.log('close-----', e);
-      }
-    }
   }
 </script>
