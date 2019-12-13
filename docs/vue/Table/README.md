@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-12 09:06:17
  * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-29 11:36:09
+ * @LastEditTime: 2019-12-13 15:45:21
  -->
 
 # table 表格
@@ -20,9 +20,9 @@
 
 ::: explain 基础用法
 
-<templatePc name="table-demo1">
+<templatePc name="table-basic">
 
-<<< @/docs/.vuepress/components/table/demo1.vue
+<<< @/docs/.vuepress/components/table/basic.vue
 
 </templatePc>
 
@@ -30,9 +30,9 @@
 
 ::: explain 条纹型表格
 
-<templatePc name="table-demo2">
+<templatePc name="table-stripe">
 
-<<< @/docs/.vuepress/components/table/demo2.vue
+<<< @/docs/.vuepress/components/table/stripe.vue
 
 </templatePc>
 
@@ -40,9 +40,9 @@
 
 ::: explain 边框型表格
 
-<templatePc name="table-demo3">
+<templatePc name="table-border">
 
-<<< @/docs/.vuepress/components/table/demo3.vue
+<<< @/docs/.vuepress/components/table/border.vue
 
 </templatePc>
 
@@ -50,9 +50,9 @@
 
 ::: explain 对齐方式
 
-<templatePc name="table-demo4">
+<templatePc name="table-align">
 
-<<< @/docs/.vuepress/components/table/demo4.vue
+<<< @/docs/.vuepress/components/table/align.vue
 
 </templatePc>
 
@@ -64,8 +64,8 @@
 
 | 参数   | 描述                           | 类型                             | 是否必填 | 可选值               | 默认值 |
 | :----- | :----------------------------- | :------------------------------- | :------- | :------------------- | :----- |
-| data   | 表格数据源                     | object[]                         | false    | -                    | -      |
-| column | 表格每列的配置                 | array\<[column](#table:column)\> | false    | -                    | -      |
+| data   | 表格数据源                     | Array\<Object\>                  | false    | -                    | -      |
+| column | 表格每列的配置                 | Array\<[Column](#table:column)\> | false    | -                    | -      |
 | type   | 表格的类型 条纹和边框 默认为空 | string                           | false    | 'stripe' \| 'border' | -      |
 
 :::

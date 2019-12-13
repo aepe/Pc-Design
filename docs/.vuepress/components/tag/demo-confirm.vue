@@ -1,31 +1,27 @@
 <!--
- * @abstract: JianJie
+ * @abstract: 关闭标签时提示语
  * @version: 0.0.1
- * @Author: bhabgs
+ * @Author: langxue
  * @Date: 2019-11-21 16:41:08
- * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-29 11:03:12
+ * @LastEditors: langxue
+ * @LastEditTime: 2019-12-13 11:48:09
  -->
 <template>
-  <div>
+  <div id="Tag">
     <z-tag
       v-for="(i, index) in tags"
       :key="index"
       hasConfirm
       confirm-message="关闭标签提示语"
       closable
-      @click="handleClick"
       @close="handleClose(i, $event)"
       >{{ i }}</z-tag
     >
-    <input
-      type="text"
-      ref="input"
+    <z-input ref="input"
       class="tag-input"
       v-model="inputText"
       v-if="isShowInput"
-      @blur="handleBlurInput"
-    />
+      @blur="handleBlurInput"></z-input>
     <ZButton
       type="primary"
       class="tag-btn"
@@ -48,9 +44,6 @@ export default {
     };
   },
   methods: {
-    handleClick(e) {
-      console.log("click-----", e);
-    },
     handleClose(obj, e) {
       if (e.conf) {
         const tags = this.tags.filter(tag => tag != obj);
@@ -80,25 +73,18 @@ export default {
 };
 </script>
 <style lang="stylus">
-.tag-input {
-  width 60px;
-  height 42px;
-  padding 0 10px;
-  line-height 40px;
-  border-radius 8px;
-  box-shadow none;
-  border none;
-  outline #00FF00 dashed thin;
-}
-.tag-btn.zx-button-primary {
-  border-color #00FF00;
-  border-style dashed;
-  background-color transparent;
-  color #909399;
-  padding 0;
-  height 42px;
-  padding 0 10px;
-  line-height 40px;
-  border-radius 8px;
-}
+#Tag
+  height 40px;
+  display flex;
+  align-items center;
+  overflow hidden;
+  .z-button
+    border-radius 4px;
+    height: 32px;
+    line-height: 32px;
+    padding 0;
+    box-sizing border-box;
+    margin-left 4px;
+  .tag-input
+    width 100px;
 </style>
