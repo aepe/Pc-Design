@@ -3,8 +3,7 @@
     <z-tag v-for="(i, key) in tags"
       :key="key"
       :type="i.type"
-      @click="handleClick"
-      @close="handleClose">{{i.title}}</z-tag>
+      @click="handleClick">{{i.title}}</z-tag>
   </div>
 </template>
 
@@ -48,9 +47,11 @@
       handleClick(e) {
         console.log('click-----', e);
       },
-      handleClose(e) {
-        console.log('close-----', e);
-      }
     }
   }
 </script>
+<style lang="stylus">
+.z-tag {
+  margin-right: 10px;
+}
+</style>

@@ -4,8 +4,7 @@
       :key="key"
       :type="i.type"
       :closable="i.closeable"
-      @click="handleClick"
-      @close="handleClose">{{i.title}}</z-tag>
+      @close="handleClose($event, key)">{{i.title}}</z-tag>
   </div>
 </template>
 
@@ -47,11 +46,8 @@
       }
     },
     methods: {
-      handleClick(e) {
-        console.log('click-----', e);
-      },
-      handleClose(e) {
-        console.log('close-----', e);
+      handleClose(e, key) {
+        console.log('close-----', e, key);
       }
     }
   }

@@ -4,9 +4,8 @@
  * @Author: bhabgs
  * @Date: 2019-11-08 10:07:49
  * @LastEditors: langxue
- * @LastEditTime: 2019-12-12 12:04:58
+ * @LastEditTime: 2019-12-12 13:34:38
  */
-import { VueConstructor } from 'vue';
 export function isEmptyElement(c) {
   return !(c.tag || (c.text && c.text.trim() !== ""));
 }
