@@ -1,13 +1,13 @@
 @z-prefix: z;
 @z-prefix-cls: ~"@{z-prefix}-tag";
-.z-tag {
+.z-tag,
+.z-check-tag {
   display: inline-block;
   padding: 0 @padding-xs;
   box-sizing: border-box;
   text-align: center;
   border: none;
   color: @white;
-  // background-color: @blue-main;
   position: relative;
   box-sizing: border-box;
   height: 32px;
@@ -89,7 +89,8 @@
     }
   }
   // 类型
-  &.z-tag-fill {
+  &.z-tag-fill,
+  &.z-check-tag__checked {
     background-color: @blue-main;
     &.z-tag-success {
       background-color: @green-1;
@@ -128,6 +129,21 @@
       border: @border-width-base solid @orange;
       background-color: @orange-3;
       color: @orange;
+    }
+  }
+}
+// checkbox tag
+.z-check-tag {
+  color: @black;
+  cursor: pointer;
+  &:hover {
+    color: @blue-main;
+  }
+  &.z-check-tag__checked {
+    background-color: @blue-main;
+    color: @white;
+    &:hover {
+      color: @white;
     }
   }
 }

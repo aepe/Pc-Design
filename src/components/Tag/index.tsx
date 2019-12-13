@@ -54,14 +54,12 @@ export default class ZTag extends Tagprops {
   // set className
   private setClassNames() {
     const { $props } = this;
-    console.log($props)
     const transClass = {
       'z-tag': true,
       [`z-tag-${$props.size}`]: $props.size,
       [`z-tag-${$props.type}`]: $props.type,
       [`z-tag-${$props.theme}`]: $props.theme,
       [`z-tag-closable`]: $props.closable ? 'closable' : null,
-      [`z-tag-checked`]: $props.checked ? 'check' : null,
     };
     return transClass;
   }
