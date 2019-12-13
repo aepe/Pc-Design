@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-12 09:06:17
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-12-11 17:09:06
+ * @LastEditTime: 2019-12-13 11:49:56
  -->
 
 # button 按钮
@@ -93,8 +93,8 @@
 
 ::: explain button Events
 
-| 事件名称 | 描述     | 类型     | 是否必填 | 可选值   | 默认值 |
-| :------- | :------- | :------- | :------- | :------- | :----- |
-| @click   | 单击事件 | Function | 否       | Function | null   |
+| 事件名称 | 描述     | 返回值 |
+| :------- | :------- | :----- |
+| @click   | 单击事件 | null   |
 
 :::

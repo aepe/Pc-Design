@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-12-12 13:28:38
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-12-12 17:03:22
+ * @LastEditTime: 2019-12-13 10:53:38
  */
 import Vue from "vue";
 import msgBox from "../../components/Message/message";
@@ -19,13 +19,7 @@ interface openArgs {
   type: String;
   onClose: Function;
 }
-enum iconType {
-  info = "info-circle",
-  success = "check-circle",
-  error = "close-circle",
-  warning = "exclamation-circle",
-  loading = "loading"
-}
+
 function createMessageBox() {
   // 创建messagebox
   let messageBox = document.getElementById("z-message-box");
@@ -53,10 +47,8 @@ Message.open = (args: openArgs) => {
   instance.$props.id = target;
   instance.$props.onClose = args.onClose;
   createMessageBox();
-  setTimeout(() => {
-    instance.$mount();
-    document.getElementById("z-message-box").appendChild(instance.$el);
-  }, 1);
+  instance.$mount();
+  document.getElementById("z-message-box").appendChild(instance.$el);
 };
 typeList.forEach(type => {
   Message[type] = (

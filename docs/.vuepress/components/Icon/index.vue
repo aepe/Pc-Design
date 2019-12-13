@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-12 11:07:52
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-12-12 15:29:08
+ * @LastEditTime: 2019-12-13 11:00:04
  -->
 <template>
   <div class="bhabgs-block">
@@ -32,7 +32,11 @@ export default {
         "error",
         "info",
         "sousuo",
-        "close"
+        "close",
+        "info1",
+        "xiaoxi-chenggong",
+        "cuowu",
+        "jinggao"
       ],
       icon: ""
     };
@@ -44,7 +48,9 @@ export default {
         const text = document.getElementById("textarea");
         text.select();
         document.execCommand("Copy");
-        this.$ZMessage.error(this.icon);
+        this.$ZMessage.success(this.icon, () => {
+          console.log("close");
+        });
       });
     }
   }
