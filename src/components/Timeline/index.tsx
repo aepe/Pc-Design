@@ -21,8 +21,8 @@ export default class ZTimeline extends BaseProps {
   private timeline: Vue = this;
 
   /* ************************ Render ************************* */
-  render() {
-    let slots: VNode[] = this.$slots.default || [];
+  render(): JSX.Element {
+    let slots: VNode[] = this.$Zutil.filterEmpty(this.$slots.default) || [];
 
     if (this.reverse) {
       slots = slots.reverse();

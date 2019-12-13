@@ -3,10 +3,10 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-05 16:22:07
- * @LastEditors: langxue
- * @LastEditTime: 2019-12-13 12:15:28
+ * @LastEditors: 王晓龙
+ * @LastEditTime: 2019-12-13 16:31:30
  */
-import Vue, { VNode, VueConstructor } from "vue";
+import Vue, { VNode, VueConstructor } from 'vue';
 
 declare global {
   namespace JSX {
@@ -26,13 +26,13 @@ declare global {
   interface VueConstructor {}
 }
 
-declare module "vue/types/options" {
+declare module 'vue/types/options' {
   interface ComponentOptions<V extends Vue> {
     [propName: string]: any;
   }
 }
 
-declare module "vue/types/vue" {
+declare module 'vue/types/vue' {
   interface Vue {
     $Zutil: any;
   }
