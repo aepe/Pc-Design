@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-10-29 10:54:09
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-12-12 12:15:28
+ * @LastEditTime: 2019-12-12 15:12:33
  */
 import Vue from "vue";
 import { compontents } from "./components";
@@ -20,7 +20,8 @@ const install = function(Vue: any) {
   // 指令
   Vue.use(directives);
   // 工具
-  Vue.prototype.$Zutil = Zutil;
+  Vue.prototype.$Zutil = Zutil.utils;
+  Vue.prototype.$ZMessage = Zutil.message;
   // 组件
   compontents.forEach(component =>
     Vue.component(component.name, (component as zCompontent).install)

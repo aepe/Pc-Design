@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-12 11:07:52
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-12-12 09:28:58
+ * @LastEditTime: 2019-12-13 11:00:04
  -->
 <template>
   <div class="bhabgs-block">
@@ -32,7 +32,11 @@ export default {
         "error",
         "info",
         "sousuo",
-        "close"
+        "close",
+        "info1",
+        "xiaoxi-chenggong",
+        "cuowu",
+        "jinggao"
       ],
       icon: ""
     };
@@ -44,6 +48,9 @@ export default {
         const text = document.getElementById("textarea");
         text.select();
         document.execCommand("Copy");
+        this.$ZMessage.success(this.icon, () => {
+          console.log("close");
+        });
       });
     }
   }
@@ -67,7 +74,7 @@ textarea {
 
 .icons {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(7, 1fr);
 
   .icon-box {
     display: inline-flex;
@@ -76,6 +83,8 @@ textarea {
     margin: 9px 8px;
     height: 137px;
     position: relative;
+    border: 1px solid #4498f0;
+    cursor: pointer;
 
     i {
       font-size: 2rem;
@@ -93,7 +102,8 @@ textarea {
 
     &:hover {
       &:before {
-        background-color: rgba(0, 0, 0, 0.3);
+        opacity: 0.3;
+        background-color: #c9e4ff;
       }
     }
   }
