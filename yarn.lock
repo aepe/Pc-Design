@@ -7707,10 +7707,10 @@ vuepress-plugin-smooth-scroll@^0.0.3:
   dependencies:
     smoothscroll-polyfill "^0.4.3"
 
-vuepress-theme-bhabgs@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/vuepress-theme-bhabgs/-/vuepress-theme-bhabgs-0.1.1.tgz#901368ce6f16005986f9c28dd6cbccea3a4aff2c"
-  integrity sha512-wI5En8P3GdT/uDSf4AMHsMfhGFIwH/fg4u7gz2WWNsqNN/+fCkqO3WL+uM8Y8UbkI2zoop1w9aG9lYfNdVWocw==
+vuepress-theme-bhabgs@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/vuepress-theme-bhabgs/-/vuepress-theme-bhabgs-0.1.2.tgz#40f7cc959c72605383bb5547a0ec57ea024b8d25"
+  integrity sha512-OTFTbbrY+8N56saQrYTeg6SJ7ueXul6In3ohqFatJR2yIyLR+s8QcpAvgieqYJaCxesKDL8ynQmYD3gQEltWUA==
   dependencies:
     "@vuepress/plugin-active-header-links" "^1.2.0"
     "@vuepress/plugin-nprogress" "^1.2.0"

@@ -14,7 +14,7 @@ export default class ZTableCol extends Vue {
   }
 
   /* ************************ Render ************************ */
-  render() {
+  render(): JSX.Element {
     return <colgroup>{this.getCOLs}</colgroup>;
   }
 }

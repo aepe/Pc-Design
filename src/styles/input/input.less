@@ -1,5 +1,3 @@
-
-
 .z-input {
   width: 100%;
   position: relative;
@@ -7,175 +5,150 @@
   align-items: center;
   .z-input-inner {
     width: 100%;
-    height: 40px;
-    line-height: 40px;
+    height: 36px;
+    line-height: 36px;
     border-radius: 4px;
     border: none;
-    padding: 0 @medium-padding-size;
-    border: 1px solid @ActiveColor;
+    padding: 0 @padding-base;
+    border: @border-width-base solid @gray-5;
     box-sizing: border-box;
     box-shadow: none;
-    font-size: @medium-font-size;
-    color: @FontColor-2;
-    cursor: pointer;
+    font-size: @font-size-lg;
+    color: @black;
+    outline: none;
+    transition: all @animation-duration-base;
+    &:focus,
+    &:hover {
+      border-color: @blue-main;
+      border-right-width: @border-width-base !important;
+      outline: 0;
+      box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+    }
     &::-webkit-input-placeholder { /* WebKit browsers */
-      color: @FontColor-4;
-      font-size: @medium-font-size;
+      color: @gray-5;
+      font-size: @font-size-md;
     }
     &::-moz-placeholder { /* Mozilla Firefox 19+ */
-      color: @FontColor-4;
-      font-size: @medium-font-size;
+      color: @gray-5;
+      font-size: @font-size-md;
     }
     &:-ms-input-placeholder { /* Internet Explorer 10+ */
-      color: @FontColor-4;
-      font-size: @medium-font-size;
+      color: @gray-5;
+      font-size: @font-size-md;
+    }
+  }
+  .z-icon {
+    font-size: @font-size-md;
+  }
+  // size
+  &.z-input-medium {
+    .z-input-inner {
+      height: 32px;
+      line-height: 32px;
+      font-size: @font-size-md;
+      &::-webkit-input-placeholder { /* WebKit browsers */
+        color: @gray-5;
+        font-size: @font-size-md;
+      }
+      &::-moz-placeholder { /* Mozilla Firefox 19+ */
+        color: @gray-5;
+        font-size: @font-size-md;
+      }
+      &:-ms-input-placeholder { /* Internet Explorer 10+ */
+        color: @gray-5;
+        font-size: @font-size-md;
+      }
+    }
+    .z-icon {
+      font-size: @font-size-md;
     }
   }
   &.z-input-small {
     .z-input-inner {
-      padding: @small-padding-size;
-      font-size: @small-font-size;
-      height: 36px;
-      line-height: 36px;
+      height: 28px;
+      line-height: 28px;
+      font-size: @font-size-sm;
       &::-webkit-input-placeholder { /* WebKit browsers */
-        color: @FontColor-4;
-        font-size: @small-font-size;
+        color: @gray-5;
+        font-size: @font-size-sm;
       }
       &::-moz-placeholder { /* Mozilla Firefox 19+ */
-        color: @FontColor-4;
-        font-size: @small-font-size;
+        color: @gray-5;
+        font-size: @font-size-sm;
       }
       &:-ms-input-placeholder { /* Internet Explorer 10+ */
-        color: @FontColor-4;
-        font-size: @small-font-size;
+        color: @gray-5;
+        font-size: @font-size-sm;
       }
+    }
+    .z-icon {
+      font-size: @font-size-sm;
     }
   }
   &.z-input-mini {
     .z-input-inner {
-      padding: @mini-padding-size;
-      font-size: @mini-font-size;
-      height: 32px;
-      line-height: 32px;
+      height: 24px;
+      line-height: 24px;
+      font-size: @font-size-xs;
       &::-webkit-input-placeholder { /* WebKit browsers */
-        color: @FontColor-4;
-        font-size: @mini-font-size;
+        color: @gray-5;
+        font-size: @font-size-xs;
       }
       &::-moz-placeholder { /* Mozilla Firefox 19+ */
-        color: @FontColor-4;
-        font-size: @mini-font-size;
+        color: @gray-5;
+        font-size: @font-size-xs;
       }
       &:-ms-input-placeholder { /* Internet Explorer 10+ */
-        color: @FontColor-4;
-        font-size: @mini-font-size;
+        color: @gray-5;
+        font-size: @font-size-xs;
       }
+    }
+    .z-icon {
+      font-size: @font-size-xs;
     }
   }
-  // 后置icon
-  &.z-input-suffix {
-    .z-input-inner {
-      padding: 0 40px 0 @medium-padding-size;
-    }
-    .z-input-suffix-icon {
-      .z-input-suffix-icon-inner {
-        display: inline-block;
-        width: 40px;
-        text-align: center;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        right: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        .iconfont {
-          font-size: @medium-font-size;
-        }
-      }
-    }
-    &.z-input-small {
-      .z-input-inner {
-        padding-right: 36px;
-      }
-      .z-input-suffix-icon {
-        .z-input-suffix-icon-inner {
-          width: 36px;
-          .iconfont {
-            font-size: @small-font-size;
-          }
-        }
-      }
-    }
-    &.z-input-mini {
-      .z-input-inner {
-        padding-right: 32px;
-      }
-      .z-input-suffix-icon {
-        .z-input-suffix-icon-inner {
-          width: 32px;
-          .iconfont {
-            font-size: @mini-font-size;
-          }
-        }
-      }
-    }
-  }
-  // 前置icon
   &.z-input-prefix {
     .z-input-inner {
-      padding: 0 @medium-padding-size 0 40px;
+      padding-left: @padding-lg;
     }
     .z-input-prefix-icon {
-      .z-input-prefix-icon-inner {
-        display: inline-block;
-        width: 40px;
-        text-align: center;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        .iconfont {
-          font-size: @medium-font-size;
-        }
-      }
-    }
-    &.z-input-small {
-      .z-input-inner {
-        padding-right: 36px;
-      }
-      .z-input-prefix-icon {
-        .z-input-prefix-icon-inner {
-          width: 36px;
-          .iconfont {
-            font-size: @small-font-size;
-          }
-        }
-      }
-    }
-    &.z-input-mini {
-      .z-input-inner {
-        padding-right: 32px;
-      }
-      .z-input-prefix-icon {
-        .z-input-prefix-icon-inner {
-          width: 32px;
-          .iconfont {
-            font-size: @mini-font-size;
-          }
-        }
-      }
+      position: absolute;
+      left: 8px;
     }
   }
-  // 禁用
-  &.z-input-disabled {
+  &.z-input-suffix {
     .z-input-inner {
-      border-color: @DisableColor;
-      background-color: @BorderColor-4;
-      color: @FontColor-4;
+      padding-right: @padding-lg;
+    }
+    .z-input-suffix-icon {
+      position: absolute;
+      right: 8px;
+    }
+    .z-input-clear-icon {
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      line-height: 0;
+      transform: translateY(-50%);
+      color: @black;
+    }
+  }
+  &.z-input-disabled {
+    .z-input-inner,
+    .z-input-suffix-icon {
+      border-color: @gray-5;
+      background-color: @gray-3;
       cursor: not-allowed;
+    }
+    .z-input-inner {
+      &:focus,
+      &:hover {
+        border-color: @gray-5;
+        border-right-width: @border-width-base !important;
+        outline: 0;
+        box-shadow: none;
+      }
     }
   }
 }

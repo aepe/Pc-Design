@@ -4,12 +4,12 @@
  * @Author: bhabgs
  * @Date: 2019-11-28 16:09:05
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-28 16:10:48
+ * @LastEditTime: 2019-12-11 14:03:57
  -->
 <template>
   <div class="bhabgs-block">
     不同大小：
-    <z-button size="medium" type="danger">最大</z-button>
+    <z-button size="large" type="danger">最大</z-button>
 
     <z-button type="primary">默认</z-button>
 

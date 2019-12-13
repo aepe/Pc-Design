@@ -4,9 +4,9 @@
  * @Author: bhabgs
  * @Date: 2019-11-05 16:22:07
  * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-18 10:53:13
+ * @LastEditTime: 2019-12-13 16:31:30
  */
-import Vue, { VNode } from 'vue';
+import Vue, { VNode, VueConstructor } from 'vue';
 
 declare global {
   namespace JSX {
@@ -18,6 +18,12 @@ declare global {
       [elem: string]: any;
     }
   }
+  interface zCompontent {
+    install: VueConstructor;
+    name: string;
+    version: string;
+  }
+  interface VueConstructor {}
 }
 
 declare module 'vue/types/options' {

@@ -49,15 +49,15 @@ export default class ZTimelineItem extends BaseProps {
   private timeline!: Vue;
 
   /* ************************ Render ************************ */
-  render() {
-    const dotSlots = this.$slots.dot || <span class="zx-timeline-dot" style={`border-color:${this.dotColor}`}></span>;
-    const summartContent: VNode[] | string | undefined = this.$slots.content || this.content;
-    const timelineSummary: VNode[] | string | undefined | JSX.Element = summartContent ? <div class="zx-timeline-summary">{summartContent}</div> : '';
+  render(): JSX.Element {
+    const dot: VNode[] | JSX.Element = this.$Zutil.singleSlot(this.$slots.dot) || <span class="zx-timeline-dot" style={`border-color:${this.dotColor}`}></span>;
+    const summartContent: string | VNode[] = this.$Zutil.singleSlot(this.$slots.content) || this.content;
+    const timelineSummary: string | JSX.Element = summartContent ? <div class="zx-timeline-summary">{summartContent}</div> : '';
 
     return (
       <div class="zx-timeline-item">
         <div class="zx-timeline-line" style={{ 'border-left-color': this.lineColor, 'border-left-style': this.lineType }}></div>
-        <div class="zx-timeline-icon">{dotSlots}</div>
+        <div class="zx-timeline-icon">{dot}</div>
         <div class="zx-timeline-content">
           <div class="zx-timeline-title">{this.title}</div>
           {timelineSummary}

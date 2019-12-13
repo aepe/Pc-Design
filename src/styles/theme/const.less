@@ -1,52 +1,78 @@
-// 主色调
-// @MainColor-1: #4a80f6;
-@MainColor-1: #4498f0; // 为智信品牌主色，应用于菜单选中状态、文字、按钮、链接、图标等
-@MainColor-2: #85c4ff; // 应用于智信header渐变效果
-@MainColor-3: #e6f2fe; // 应用于智信header渐变效果
-@MainColor-4: #edf0f5; // 应用于智信header渐变效果
+// Color Palette
+@black: #000;
+@white: #fff;
+@gray-1: #fafafa;
+@gray-2: #f7f7f7;
+@gray-3: #e7e7e7;
+@gray-4: #ccc;
+@gray-5: #999;
+@gray-6: #666;
+@gray-7: #333;
+@gray-8: #2f323b;
 
-// 辅助色
-@AuxiliaryColor-1: #feb736; // 应用于辅助色、标签等、提示警告字体颜色
-@AuxiliaryColor-2: #ea5858; // 应用警示性文字、失败及错误提示字体颜色
-@AuxiliaryColor-3: #03d485; // 应用于信息提示成功等
-@AuxiliaryColor-4: #fff0d3; // 应用于辅助色、提示信息背景色
-@AuxiliaryColor-5: #fed9d9; // 应用于辅助色、提示信息背景色
-@AuxiliaryColor-6: #b5f3dc; // 应用于辅助色、提示信息背景色
+// red
+@red-1: #ea5858;
+@red-2: #fed9d9;
+@red-3: #fdeeee;
+//blue
+@blue-main: #4498f0;
+@blue-1: #0f69d0;
+@blue-2: #3689e0;
+@blue-3: #4498f0;
+@blue-4: #66b1ff;
+@blue-5: #85c4ff;
+@blue-6: #a1cbf7;
+@blue-7: #c9e4ff;
+@blue-8: #e6f2fe;
+// orange
+@orange: #ff976a;
+@orange-dark: #ed6a0c;
+@orange-light: #fffbe8;
+@orange-1: #feb736;
+@orange-2: #fff0d3;
+@orange-3: #fff8ed;
 
-// 灰色系
-@GrayColor-1: #2f323b; // 应用于智信侧边导航底色
-@GrayColor-2: #333333; // 应用于主要文字、标题等
-@GrayColor-3: #666666; // 应用于小标题、正文、项目名称、辅助icon等
-@GrayColor-4: #999999; // 应用于辅助性文字
-@GrayColor-5: #cccccc; // 应用于按钮描边
-@GrayColor-6: #e7e7e7; // 应用于分割线、Hover状态底色、有背景的标题底色
-@GrayColor-7: #f7f7f7; // 应用于内容区底色
-@GrayColor-8: #fafafa; // 应用于表格斑马线背景色
+// green
+@green-1: #03d485;
+@green-2: #b5f3dc;
+@green-3: #e5fbf3;
+// Gradient Colors
+@gradient-red: linear-gradient(to right, #ff6034, #ee0a24);
+@gradient-orange: linear-gradient(to right, #ffd01e, #ff8917);
+@gradient-blue: linear-gradient(to right, #4498f0, #4a80f6);
+// Component Colors
+@text-color: @gray-8;
+@active-color: @gray-2;
+@active-opacity: 0.7;
+@disabled-opacity: 0.5;
+@background-color: @gray-1;
+@background-color-light: #fafafa;
 
-// 背景渐变 应用于智信header渐变效果
-// @type: 渐变类型
-// @direction: 渐变方向|角度
-// @color: 渐变颜色&占比
+// Padding
+@padding-base: 4px;
+@padding-xs: @padding-base * 2;
+@padding-sm: @padding-base * 3;
+@padding-md: @padding-base * 4;
+@padding-lg: @padding-base * 6;
+@padding-xl: @padding-base * 8;
 
-@DefaultDirection: 90deg;
-@DefaultPosition: center;
-@DefaultShape: circle;
-@DefaultSize: closest-side;
-@DefaultColors: @MainColor-1, #4a80f6;
-@DefaultType: linear;
+// Font
+@font-size-xs: 10px;
+@font-size-sm: 12px;
+@font-size-md: 14px;
+@font-size-lg: 16px;
+@font-weight-bold: 500;
+@price-integer-font-family: Avenir-Heavy PingFang SC, Helvetica Neue, Arial,
+  sans-serif;
 
-// 线性
-.Gradient(@type: @DefaultType; @direction: @DefaultDirection; @colors: @DefaultColors)
-  when
-  (@type = linear) {
-  background-image: linear-gradient(@direction, @colors);
-}
+// Animation
+@animation-duration-base: 0.3s;
+@animation-duration-fast: 0.2s;
 
-// 径向
-// @shape: 渐变形状
-// @size: 渐变大小
-.Gradient(@type: @DefaultType; @direction: @DefaultPosition; @shape: @DefaultShape; @size: @DefaultSize; @colors: @DefaultColors)
-  when
-  (@type = radial) {
-  background: -webkit-radial-gradient(@direction, @shape @size, @colors);
-}
+// Border
+@border-color: @gray-3;
+@border-width-base: 1px;
+@border-radius-sm: 2px;
+@border-radius-md: 4px;
+@border-radius-lg: 8px;
+@border-radius-max: 999px;

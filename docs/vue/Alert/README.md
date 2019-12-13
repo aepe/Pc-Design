@@ -3,8 +3,8 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-12 09:06:17
- * @LastEditors: bhabgs
- * @LastEditTime: 2019-12-02 17:08:53
+ * @LastEditors: 王晓龙
+ * @LastEditTime: 2019-12-13 12:10:52
  -->
 
 # alert 警告
@@ -17,29 +17,29 @@
 
 ::: explain 基础用法
 
-<templateMobile name="alert-demo1">
+<templatePc name="alert-basic">
 
-<<< @/docs/.vuepress/components/alert/demo1.vue
-
-</templateMobile>
-
-:::
-
-::: explain 显示图标
-
-<templatePc name="alert-demo2">
-
-<<< @/docs/.vuepress/components/alert/demo2.vue
+<<< @/docs/.vuepress/components/alert/basic.vue
 
 </templatePc>
 
 :::
 
-::: explain 不显关闭按钮
+::: explain 显示图标
 
-<templatePc name="alert-demo3">
+<templatePc name="alert-showIcon">
 
-<<< @/docs/.vuepress/components/alert/demo3.vue
+<<< @/docs/.vuepress/components/alert/showIcon.vue
+
+</templatePc>
+
+:::
+
+::: explain 隐藏关闭按钮
+
+<templatePc name="alert-hideClose">
+
+<<< @/docs/.vuepress/components/alert/hideClose.vue
 
 </templatePc>
 
@@ -47,9 +47,9 @@
 
 ::: explain 关闭按钮回调
 
-<templatePc name="alert-demo4">
+<templatePc name="alert-closeCb">
 
-<<< @/docs/.vuepress/components/alert/demo4.vue
+<<< @/docs/.vuepress/components/alert/closeCb.vue
 
 </templatePc>
 

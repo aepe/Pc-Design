@@ -1,70 +1,128 @@
+@height: 44px;
+
 .z-button {
+  position: relative;
   display: inline-block;
-  line-height: 1;
-  white-space: nowrap;
-  cursor: pointer;
-  background: @White;
-  border: 1px solid @BorderColor-1;
-  color: @FontColor-2;
-  text-align: center;
   box-sizing: border-box;
-  outline: none;
+  height: @height;
   margin: 0;
-  transition: 0.1s;
-  padding: 12px 20px;
-  font-size: 1rem;
-  border-radius: 4px;
-  opacity: 0.8;
+  padding: 0;
+  font-size: @font-size-lg;
+  line-height: 42px;
+  text-align: center;
+  border-radius: @border-radius-sm;
+  transition: opacity @animation-duration-fast;
+  padding: 0 15px;
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  border: @border-width-base solid @gray-3;
+  text-size-adjust: 100%;
+  .zxicon + span,
+  span + .zxicon {
+    margin-left: 8px;
+  }
+  .zxicon {
+    &.zx-loading {
+      display: inline-flex;
+      align-items: center;
+      vertical-align: -0.335em;
+    }
+  }
+  &:before {
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+  }
+  &:active {
+    &:before {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+  }
   &:disabled {
     cursor: not-allowed;
-    opacity: 0.6;
-    &:hover {
-      opacity: 0.6;
-    }
+    border: none;
     &:active {
       opacity: 0.6;
     }
   }
-  &:hover {
-    opacity: 0.9;
+  &.z-button-hastype {
+    color: #fff;
+    &.z-button-primary {
+      border-color: @blue-main;
+      background-color: @blue-main;
+    }
+
+    &.z-button-success {
+      border-color: @green-1;
+      background-color: @green-1;
+    }
+
+    &.z-button-warning {
+      border-color: @orange-1;
+      background-color: @orange-1;
+    }
+
+    &.z-button-danger {
+      border-color: @red-1;
+      background-color: @red-1;
+    }
   }
-  &:active {
-    opacity: 1;
+  &.z-button-text {
+    color: @blue-main;
+    border: none;
+    background-color: @white;
   }
-  &.z-button-medium {
-    padding: 14px 24px;
+
+  &.z-button-round {
+    overflow: hidden;
+    border-radius: @border-radius-max;
+  }
+  &.z-button-square {
+    border-radius: 0;
+  }
+  &.z-button-plain {
+    background-color: #fff !important;
+    &.z-button-primary {
+      border-color: @blue-main;
+      color: @blue-main;
+    }
+
+    &.z-button-success {
+      border-color: @green-1;
+      color: @green-1;
+    }
+
+    &.z-button-warning {
+      border-color: @orange-1;
+      color: @orange-1;
+    }
+
+    &.z-button-danger {
+      border-color: @red-1;
+      color: @red-1;
+    }
+  }
+
+  &.z-button-large {
+    width: 100%;
   }
   &.z-button-small {
-    padding: 7px 12px;
+    height: @height - 10;
+    line-height: @height - 12;
+    padding: @padding-base / 2;
   }
   &.z-button-mini {
-    padding: 3px 6px;
+    height: @height - 15;
+    line-height: @height - 17;
+    padding: @padding-base / 4;
   }
-  &.z-button-primary {
-    color: @White;
-    background-color: @ActiveColor;
-    border-color: @ActiveColor;
-  }
-  &.z-button-success {
-    color: @White;
-    background-color: @SuccessColor;
-    border-color: @SuccessColor;
-  }
-  &.z-button-warning {
-    color: @White;
-    background-color: @WarningColor;
-    border-color: @WarningColor;
-  }
-
-  &.z-button-danger {
-    color: @White;
-    background-color: @ErrorColor;
-    border-color: @ErrorColor;
-  }
-
-  &.z-button-text {
-    color: @ActiveColor;
-    background-color: none;
-    border: none;
+  &:disabled {
+    &:before {
+      background: rgba(255, 255, 255, 0.3);
+    }
   }
 }

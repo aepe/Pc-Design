@@ -4,7 +4,7 @@
  * @Author: 王晓龙
  * @Date: 2019-11-12 10:53:37
  * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-28 12:02:20
+ * @LastEditTime: 2019-12-13 12:13:30
  -->
 
 # timeline 时间轴
@@ -22,9 +22,9 @@
 
 ::: explain 基础用法
 
-<templatePc name="timeline-demo1">
+<templatePc name="timeline-basic">
 
-<<< @/docs/.vuepress/components/timeline/demo1.vue
+<<< @/docs/.vuepress/components/timeline/basic.vue
 
 </templatePc>
 
@@ -32,9 +32,9 @@
 
 ::: explain 节点&线样式
 
-<templatePc name="timeline-demo2">
+<templatePc name="timeline-dotStyle">
 
-<<< @/docs/.vuepress/components/timeline/demo2.vue
+<<< @/docs/.vuepress/components/timeline/dotStyle.vue
 
 </templatePc>
 
@@ -42,9 +42,9 @@
 
 ::: explain 节点顺序
 
-<templatePc name="timeline-demo3">
+<templatePc name="timeline-dotSort">
 
-<<< @/docs/.vuepress/components/timeline/demo3.vue
+<<< @/docs/.vuepress/components/timeline/dotSort.vue
 
 </templatePc>
 
@@ -52,9 +52,9 @@
 
 ::: explain 自定义 dot 插槽
 
-<templatePc name="timeline-demo4">
+<templatePc name="timeline-dotSlot">
 
-<<< @/docs/.vuepress/components/timeline/demo4.vue
+<<< @/docs/.vuepress/components/timeline/dotSlot.vue
 
 </templatePc>
 
@@ -62,9 +62,9 @@
 
 ::: explain 自定义内容插槽
 
-<templatePc name="timeline-demo5">
+<templatePc name="timeline-contentSlot">
 
-<<< @/docs/.vuepress/components/timeline/demo5.vue
+<<< @/docs/.vuepress/components/timeline/contentSlot.vue
 
 </templatePc>
 

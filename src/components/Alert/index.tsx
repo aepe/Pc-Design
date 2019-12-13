@@ -72,12 +72,12 @@ export default class ZAlert extends BaseProps {
 
   @Emit('close')
   private close(e: MouseEvent): MouseEvent {
-    (this.$el as HTMLHtmlElement).style.display = 'none';
+    (this.$el as HTMLElement).style.display = 'none';
     return e;
   }
 
   /* ************************ Render ************************* */
-  render() {
+  render(): JSX.Element {
     return (
       <div class={this.getClassName}>
         <div class="z-alert-inner">

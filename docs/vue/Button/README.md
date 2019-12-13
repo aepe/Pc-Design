@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-12 09:06:17
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-12-02 17:08:19
+ * @LastEditTime: 2019-12-13 11:49:56
  -->
 
 # button 按钮
@@ -21,11 +21,11 @@
 
 ::: explain 基础用法
 
-<templateMobile name="Button-index">
+<templatePc name="Button-index">
 
 <<< @/docs/.vuepress/components/Button/index.vue
 
-</templateMobile>
+</templatePc>
 
 :::
 
@@ -36,6 +36,28 @@
 <templatePc name="Button-size">
 
 <<< @/docs/.vuepress/components/Button/size.vue
+
+</templatePc>
+
+:::
+
+---
+
+::: explain 不同形状
+
+<templatePc name="Button-shape">
+
+<<< @/docs/.vuepress/components/Button/shape.vue
+
+</templatePc>
+
+:::
+
+::: explain icon button
+
+<templatePc name="Button-icon">
+
+<<< @/docs/.vuepress/components/Button/icon.vue
 
 </templatePc>
 
@@ -57,11 +79,13 @@
 
 ::: explain button
 
-| 参数     | 描述                 | 类型    | 是否必填 | 可选值                                      | 默认值        |
-| :------- | :------------------- | :------ | :------- | :------------------------------------------ | :------------ |
-| type     | 决定按钮标签颜色主题 | string  | 否       | primary / success / warning / danger / text | default（空） |
-| disabled | 是否禁用             | Boolean | 否       | disabled                                    | false         |
-| size     | 按钮大小             | string  | 否       | medium / small / mini                       | medium        |
+| 参数     | 描述               | 类型    | 是否必填 | 可选值                         | 默认值 |
+| :------- | :----------------- | :------ | :------- | :----------------------------- | :----- |
+| shape    | 形状               | string  | false    | square/round/plain             | 默认   |
+| disabled | 禁用               | Boolean | false    | true/false                     | false  |
+| type     | 类型               | string  | false    | primary/success/warning/danger | false  |
+| size     | 大小               | string  | false    | large/small/mini               | false  |
+| href     | 点击打开新的标签页 | string  | false    |                                | false  |
 
 :::
 
@@ -69,8 +93,8 @@
 
 ::: explain button Events
 
-| 事件名称 | 描述     | 类型     | 是否必填 | 可选值   | 默认值 |
-| :------- | :------- | :------- | :------- | :------- | :----- |
-| @click   | 单击事件 | Function | 否       | Function | null   |
+| 事件名称 | 描述     | 返回值 |
+| :------- | :------- | :----- |
+| @click   | 单击事件 | null   |
 
 :::

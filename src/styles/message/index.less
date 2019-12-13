@@ -1,0 +1,67 @@
+#z-message-box {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 14px;
+  font-variant: tabular-nums;
+  line-height: 1.5;
+  list-style: none;
+  position: fixed;
+  top: 16px;
+  left: 0;
+  z-index: 1010;
+  width: 100%;
+  pointer-events: none;
+  text-align: center;
+}
+.z-message-box {
+  transition: all 0.3s;
+  .z-message {
+    display: inline-flex;
+    position: relative;
+    background: @white;
+    margin-bottom: 1rem;
+    border-radius: @border-radius-md;
+    padding: @padding-base @padding-xl;
+    padding-left: 0;
+    box-shadow: 0 1px 50px @gray-6;
+    i {
+      margin-left: 1rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+  .z-message-error {
+    i {
+      color: @red-1;
+    }
+  }
+  .z-message-success {
+    i {
+      color: @green-1;
+    }
+  }
+  .z-message-info {
+    i {
+      color: @blue-main;
+    }
+  }
+  .z-message-warning {
+    i {
+      color: @orange-1;
+    }
+  }
+}
+
+.z-message-enter-active,
+.z-message-leave-active {
+  transition: all @animation-duration-base;
+  transform: translateY(2px);
+}
+.z-message-enter,
+.z-message-leave-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all @animation-duration-fast;
+}

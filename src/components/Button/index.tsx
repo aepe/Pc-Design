@@ -1,92 +1,161 @@
-/*
- * @abstract:
- * @version:
- * @Author: bhabgs
- * @Date: 2019-11-12 15:26:50
- * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-14 14:42:50
- */
-import { Component, Vue, Prop, Emit } from "vue-property-decorator";
+import { Component, Vue, Prop, Emit, Ref } from "vue-property-decorator";
+import Icon from "../Icon/icon";
+import { filterEmpty } from "../../packages/utils";
+import utils from "../../packages/utils";
+import loadingSvg from "../../packages/utils/loadings-svg/loading";
+const rxTwoCNChar = /^[\u4e00-\u9fa5]{2}$/;
+const isTwoCNChar = rxTwoCNChar.test.bind(rxTwoCNChar);
 
-interface State {
-  zType: string | null;
-}
-
-@Component
-export default class ZButton extends Vue {
+@Component({
+  components: { Icon, loadingSvg }
+})
+export default class Button extends Vue {
   @Emit("click")
-  public btnClick(e) {
+  public btnClick(e: Event) {
     return e;
   }
-
-  // button风格
+  // 是否有icon
   @Prop({
-    type: String,
-    required: false,
     default() {
-      return "default";
+      return "";
     }
   })
-  public type?: string;
+  private icon?: string;
 
-  // 是否设置button为圆形
+  // 是否loading
   @Prop({
     type: Boolean,
-    required: false,
+    default: false
+  })
+  private loading?: boolean;
+
+  // 按钮形状
+  @Prop({
+    default() {
+      return "";
+    }
+  })
+  private shape?: string;
+
+  // 按钮类型
+  @Prop({
+    default() {
+      return "";
+    }
+  })
+  private type?: string;
+
+  // 按钮大小
+  @Prop({
+    default() {
+      return "";
+    }
+  })
+  private size?: string;
+
+  // 禁用状态
+  @Prop({
     default() {
       return false;
     }
   })
-  public circle?: boolean;
+  private disabled?: boolean;
 
-  // button大小
-  @Prop({
-    type: String,
-    required: false,
-    default() {
-      return "default";
-    }
-  })
-  public size?: string;
-
-  // 是否禁用
-  @Prop({
-    type: Boolean,
-    required: false,
-    default() {
-      return false;
-    }
-  })
-  public disabled?: boolean;
-
-  private state: State = {
-    zType: "default"
-  };
-
-  public created() {
-    if (this.type) {
-      this.state.zType = this.type;
-    }
-  }
-
-  // 拼装classname
+  private types: string[] = ["primary", "success", "warning", "danger"];
+  private BCN: string = "z-button ";
+  // 拼接class 处理样式问题
   get className(): string {
-    const type: string = "z-button " + "z-button-" + this.type;
-    const size: string = " z-button-" + this.size;
-    const circle: string = this.circle ? " z-button-circle" : "";
+    let classname: string = "z-button-";
+    let hasType = this.types.indexOf(this.type) == -1 ? "" : "z-button-hastype";
 
-    return type + size + circle;
+    let newclassname =
+      this.BCN +
+      utils.assembleClass(classname, this.type) +
+      utils.assembleClass(classname, this.shape) +
+      utils.assembleClass(classname, this.size) +
+      hasType;
+    return utils.clearBlank(newclassname);
   }
 
-  public render() {
-    const slots = this.$slots.default || [];
+  insertSpace(child, needInserted) {
+    const SPACE = needInserted ? " " : "";
+    if (typeof child.text === "string") {
+      let text = child.text.trim();
+      if (isTwoCNChar(text)) {
+        text = text.split("").join(SPACE);
+      }
+      return <span>{text}</span>;
+    }
+    return child;
+  }
+
+  isNeedInserted() {
+    const { icon, $slots } = this;
+    return $slots.default && $slots.default.length === 1 && !icon;
+  }
+
+  render() {
+    const {
+      icon,
+      btnClick,
+      disabled,
+      className,
+      $slots,
+      $attrs,
+      $listeners,
+      loading
+    } = this;
+    let buttonProps = {
+      attrs: {
+        ...$attrs,
+        disabled
+      },
+      class: className,
+      on: {
+        ...$listeners,
+        click: btnClick
+      }
+    };
+    let iconNode = this.icon ? <Icon type={icon} /> : null;
+    const children = filterEmpty($slots.default);
+    const kids = children.map(child =>
+      this.insertSpace(child, this.isNeedInserted())
+    );
+
+    if (loading) {
+      buttonProps.attrs.disabled = true;
+      iconNode = (
+        <Icon>
+          <loadingSvg />
+        </Icon>
+      );
+    }
+    // 如果按钮是链接类型
+    if ($attrs.href !== undefined) {
+      const linkButtonProps = {
+        attrs: Object.assign(
+          {
+            target: "view_window"
+          },
+          buttonProps.attrs
+        ),
+        class: className,
+        on: {
+          ...$listeners,
+          click: btnClick
+        }
+      };
+      return (
+        <a {...linkButtonProps}>
+          {iconNode}
+          {kids}
+        </a>
+      );
+    }
     return (
-      <button
-        onClick={this.btnClick}
-        disabled={this.disabled}
-        class={this.className}
-      >
-        {slots}
+      <button {...buttonProps}>
+        {iconNode}
+        {kids}
       </button>
     );
   }

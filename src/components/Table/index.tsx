@@ -54,8 +54,8 @@ export default class ZTable extends BaseProps {
   }
 
   /* ************************ Render ************************* */
-  render() {
-    const tableCol = <TableCol />;
+  render(): JSX.Element {
+    const tableCol = <TableCol slot="col" />;
 
     return (
       <div class={this.getClassName}>
