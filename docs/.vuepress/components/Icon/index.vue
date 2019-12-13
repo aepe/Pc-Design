@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-12 11:07:52
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-12-13 16:26:12
+ * @LastEditTime: 2019-12-13 17:23:58
  -->
 <template>
   <div class="bhabgs-block">
@@ -43,7 +43,7 @@ export default {
   },
   methods: {
     changeIcon(item) {
-      this.icon = `<ZIcon type="${item}"/>`;
+      this.icon = `成功复制 <ZIcon type="${item}"/>`;
       this.$nextTick(() => {
         const text = document.getElementById("textarea");
         text.select();
