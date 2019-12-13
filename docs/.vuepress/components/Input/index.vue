@@ -4,7 +4,7 @@
  * @Author: langxue
  * @Date: 2019-11-12 11:07:52
  * @LastEditors: langxue
- * @LastEditTime: 2019-12-10 10:34:51
+ * @LastEditTime: 2019-12-13 17:06:58
  -->
 <template>
   <div id="input-demo">
@@ -19,7 +19,7 @@
 export default {
   data() {
     return {
-      value: 0
+      value: ''
     };
   },
   methods: {
