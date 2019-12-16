@@ -3,13 +3,8 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-07 09:48:14
-<<<<<<< Updated upstream
  * @LastEditors: 王晓龙
- * @LastEditTime: 2019-12-16 09:14:27
-=======
- * @LastEditors: 王晓龙
- * @LastEditTime: 2019-12-16 09:01:47
->>>>>>> Stashed changes
+ * @LastEditTime: 2019-12-16 09:17:07
  */
 const themeConfig = {
   nav: [
