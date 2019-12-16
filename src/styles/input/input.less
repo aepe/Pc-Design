@@ -9,8 +9,8 @@
     line-height: 36px;
     border-radius: 4px;
     border: none;
-    padding: 0 @padding-base;
-    border: @border-width-base solid @gray-5;
+    padding: 0 @padding-sm;
+    border: @border-width-base solid @gray-3;
     box-sizing: border-box;
     box-shadow: none;
     font-size: @font-size-lg;
@@ -25,20 +25,17 @@
       box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
     }
     &::-webkit-input-placeholder { /* WebKit browsers */
-      color: @gray-5;
+      color: @gray-4;
       font-size: @font-size-md;
     }
     &::-moz-placeholder { /* Mozilla Firefox 19+ */
-      color: @gray-5;
+      color: @gray-4;
       font-size: @font-size-md;
     }
     &:-ms-input-placeholder { /* Internet Explorer 10+ */
-      color: @gray-5;
+      color: @gray-4;
       font-size: @font-size-md;
     }
-  }
-  .z-icon {
-    font-size: @font-size-md;
   }
   // size
   &.z-input-medium {
@@ -47,20 +44,14 @@
       line-height: 32px;
       font-size: @font-size-md;
       &::-webkit-input-placeholder { /* WebKit browsers */
-        color: @gray-5;
         font-size: @font-size-md;
       }
       &::-moz-placeholder { /* Mozilla Firefox 19+ */
-        color: @gray-5;
         font-size: @font-size-md;
       }
       &:-ms-input-placeholder { /* Internet Explorer 10+ */
-        color: @gray-5;
         font-size: @font-size-md;
       }
-    }
-    .z-icon {
-      font-size: @font-size-md;
     }
   }
   &.z-input-small {
@@ -69,20 +60,14 @@
       line-height: 28px;
       font-size: @font-size-sm;
       &::-webkit-input-placeholder { /* WebKit browsers */
-        color: @gray-5;
         font-size: @font-size-sm;
       }
       &::-moz-placeholder { /* Mozilla Firefox 19+ */
-        color: @gray-5;
         font-size: @font-size-sm;
       }
       &:-ms-input-placeholder { /* Internet Explorer 10+ */
-        color: @gray-5;
         font-size: @font-size-sm;
       }
-    }
-    .z-icon {
-      font-size: @font-size-sm;
     }
   }
   &.z-input-mini {
@@ -91,20 +76,14 @@
       line-height: 24px;
       font-size: @font-size-xs;
       &::-webkit-input-placeholder { /* WebKit browsers */
-        color: @gray-5;
         font-size: @font-size-xs;
       }
       &::-moz-placeholder { /* Mozilla Firefox 19+ */
-        color: @gray-5;
         font-size: @font-size-xs;
       }
       &:-ms-input-placeholder { /* Internet Explorer 10+ */
-        color: @gray-5;
         font-size: @font-size-xs;
       }
-    }
-    .z-icon {
-      font-size: @font-size-xs;
     }
   }
   &.z-input-prefix {
@@ -114,6 +93,14 @@
     .z-input-prefix-icon {
       position: absolute;
       left: 8px;
+      display: flex;
+      align-items: center;
+      line-height: 0;
+      transform: translateY(-50%);
+      color: @gray-4;
+      .iconfont {
+        font-size:  @font-size-md;
+      }
     }
   }
   &.z-input-suffix {
@@ -123,28 +110,30 @@
     .z-input-suffix-icon {
       position: absolute;
       right: 8px;
-    }
-    .z-input-clear-icon {
-      border-radius: 50%;
-      cursor: pointer;
       display: flex;
       align-items: center;
       line-height: 0;
       transform: translateY(-50%);
-      color: @black;
+      color: @gray-4;
+      .iconfont {
+        font-size:  @font-size-md;
+      }
+    }
+    .z-input-clear-icon {
+      cursor: pointer;
     }
   }
   &.z-input-disabled {
     .z-input-inner,
     .z-input-suffix-icon {
-      border-color: @gray-5;
-      background-color: @gray-3;
+      border-color: @gray-3;
+      background-color: @gray-2;
       cursor: not-allowed;
     }
     .z-input-inner {
       &:focus,
       &:hover {
-        border-color: @gray-5;
+        border-color: @gray-3;
         border-right-width: @border-width-base !important;
         outline: 0;
         box-shadow: none;

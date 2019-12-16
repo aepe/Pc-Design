@@ -4,7 +4,7 @@
  * @Author: 
  * @Date: 2019-11-14 16:03:05
  * @LastEditors: langxue
- * @LastEditTime: 2019-12-04 14:03:18
+ * @LastEditTime: 2019-12-16 10:00:48
  -->
 <template>
   <div id="input-demo-size">
@@ -42,8 +42,6 @@
 </template>
 <style lang="stylus">
 #input-demo-size {
-  display flex;
-  align-items center;
   .item {
     display flex;
     align-items center;

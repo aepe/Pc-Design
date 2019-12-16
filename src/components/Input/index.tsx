@@ -39,16 +39,16 @@ export default class ZInput extends baseInput {
   }
 
   // handleInput
-  private handleInput(e) {
-    const value = e.target.value;
+  private handleInput(e: MouseEvent) {
+    const value = (e.target as HTMLInputElement).value;
     this.$emit('input', value);
-    this.$emit('input.value', e.target.value);
+    this.$emit('input.value', (e.target as HTMLInputElement).value);
     this.stateValue = value;
   }
 
   // handleChange
-  private handleChange(e) {
-    this.$emit('change', e.target.value);
+  private handleChange(e: MouseEvent) {
+    this.$emit('change', (e.target as HTMLInputElement).value);
   }
 
   // handleClear
