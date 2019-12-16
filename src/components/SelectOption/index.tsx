@@ -1,46 +1,43 @@
-import { Component, Vue, Provide, Emit, Prop } from 'vue-property-decorator';
+import { Component, Vue, Emit } from 'vue-property-decorator';
+import { VNode } from 'vue';
 
 /*************************** Props ****************************/
 const BaseProps = Vue.extend({
   props: {
-    // 标题
-    title: {
+    // 每项对应的label
+    label: {
       required: false,
-      type: String,
-      default() {
-        return 'aaa';
-      }
+      type: [String]
+    },
+    // 每项对应的值
+    value: {
+      required: true,
+      type: [String]
     }
-  },
-  data() {
-    return {
-      a: 'a'
-    };
   }
 });
 
 @Component
 export default class ZSelectOption extends BaseProps {
-  @Prop({ default: 'bb' }) public b: string;
   /* ************************ Provide ************************ */
-  @Provide()
-  private selectOption: Vue = this;
 
   /* ************************ Main *************************** */
-
-  @Emit('change')
-  private change(e: MouseEvent): MouseEvent {
-    return e;
+  private emitSlotMounted(): void {
+    this.$ZBus.$emit('slotMounted');
   }
 
-  private aa: string = 'aa';
+  private innerContext: Array<VNode> = this.$slots.default || [];
+
+  private mounted(): void {
+    this.emitSlotMounted();
+  }
 
   /* ************************ Render ************************* */
   render(): JSX.Element {
     return (
-      <div class="z-select-option">
-        <span>select option</span>
-      </div>
+      <li class="z-select-dropdown__item">
+        <span>{this.label}</span>
+      </li>
     );
   }
 }
