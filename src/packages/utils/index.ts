@@ -6,7 +6,7 @@ import { VNode } from 'vue';
  * @Author: bhabgs
  * @Date: 2019-11-08 10:07:49
  * @LastEditors: 王晓龙
- * @LastEditTime: 2019-12-13 16:32:09
+ * @LastEditTime: 2019-12-19 14:21:06
  */
 export function isEmptyElement(c) {
   return !(c.tag || (c.text && c.text.trim() !== ''));
@@ -65,7 +65,7 @@ export default {
     return '';
   },
   // 创建需要处理的组件
-  instantiation(name: string, install: VueConstructor, version?: string) {
+  instantiation(name: string, install: JSX.constructor, version?: string) {
     return {
       version: version || '0.0.1',
       name,
@@ -83,6 +83,26 @@ export default {
     } else {
       return VNodes;
     }
+  },
+  // 获取元素距离文档的距离
+  offset(dom: HTMLElement) {
+    const fn = (type: string): number => {
+      var tmp: number = dom[type === 'top' ? 'offsetTop' : 'offsetLeft'];
+      var val: Element | null = dom.offsetParent;
+      while (val != null) {
+        tmp += (val as HTMLElement)[type === 'top' ? 'offsetTop' : 'offsetLeft'];
+        val = (val as HTMLElement).offsetParent;
+      }
+      return tmp;
+    };
+    return {
+      top(): number {
+        return fn('top');
+      },
+      left(): number {
+        return fn('left');
+      }
+    };
   },
   isEmptyElement,
   filterEmpty

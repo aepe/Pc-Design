@@ -13,15 +13,16 @@
     tr {
       border: none;
       background: @White;
-      transition: 0.5s;
+      transition: 0.3s;
 
       th,
       td {
         border: none;
         padding: 15px;
         word-break: break-word;
-        font-size: @small-font-size;
-        border-bottom: 1px solid @GrayColor-6;
+        font-size: @font-size-md;
+        color: @gray-7;
+        border-bottom: 1px solid @gray-3;
       }
     }
   }
@@ -31,11 +32,11 @@
     table {
       thead {
         tr {
-          background: @MainColor-4;
+          background: @gray-3;
 
           th {
             font-weight: bold;
-            color: @GrayColor-2;
+
           }
         }
       }
@@ -49,11 +50,10 @@
         tr {
           td {
             font-weight: normal;
-            color: @GrayColor-2;
           }
 
           &:hover {
-            background: @MainColor-3;
+            background: @blue-8;
           }
         }
       }
@@ -65,9 +65,9 @@
       justify-content: center;
       width: 100%;
       height: 50px;
-      font-size: @small-font-size;
-      color: @GrayColor-3;
-      border-bottom: 1px solid @BorderColor-2;
+      font-size: @font-size-md;
+      color: @gray-7;
+      border-bottom: 1px solid @gray-3;
     }
   }
 
@@ -78,11 +78,11 @@
         tbody {
           tr {
             &:nth-child(even) {
-              background: @GrayColor-8;
+              background: @gray-2;
             }
 
             &:hover {
-              background: @MainColor-3;
+              background: @blue-8;
             }
           }
         }
@@ -94,9 +94,10 @@
   &.z-table__border {
     table {
       tr {
+
         th,
         td {
-          border: solid @GrayColor-6;
+          border: solid @gray-3;
           border-width: 0 1px 1px 1px;
         }
       }
