@@ -3,13 +3,16 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-12 09:06:17
- * @LastEditors: 王晓龙
- * @LastEditTime: 2019-12-13 12:10:52
+ * @LastEditors  : 王晓龙
+ * @LastEditTime : 2020-01-16 12:14:07
  -->
 
 # alert 警告
 
 ::: explain
+
+1. 四种风格的警告弹框 支持手动关闭
+2. 支持图标
 
 :::
 
