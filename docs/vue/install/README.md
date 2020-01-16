@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-07 10:04:23
  * @LastEditors  : 王晓龙
- * @LastEditTime : 2020-01-16 11:47:31
+ * @LastEditTime : 2020-01-16 11:54:14
  -->
 
 # 安装
@@ -36,6 +36,8 @@ yarn add -S zx-pc-design
 ```js explain
 import zui from "zx-pc-design";
 import "zx-pc-design/dist/z-style.css";
+
+Vue.use(zui)
 ```
 
 :::
