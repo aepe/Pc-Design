@@ -3,8 +3,8 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-07 10:04:23
- * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-28 17:47:08
+ * @LastEditors  : 王晓龙
+ * @LastEditTime : 2020-01-16 11:47:31
  -->
 
 # 安装
@@ -14,7 +14,7 @@
 ::: explain npm 安装
 
 ```vue explain
-npm i -D zx-pc-design
+npm i -S zx-pc-design
 ```
 
 :::
@@ -24,7 +24,7 @@ npm i -D zx-pc-design
 ::: explain yarn 安装
 
 ```vue explain
-yarn add -D zx-pc-design
+yarn add -S zx-pc-design
 ```
 
 :::
