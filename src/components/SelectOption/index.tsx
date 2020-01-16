@@ -5,7 +5,7 @@ const BaseProps = Vue.extend({
   props: {
     // 每项对应的label
     label: {
-      required: false,
+      required: true,
       type: [String, Number]
     },
     // 每项对应的值
