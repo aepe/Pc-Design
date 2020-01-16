@@ -3,8 +3,8 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-07 09:48:14
- * @LastEditors: 王晓龙
- * @LastEditTime: 2019-12-16 09:17:07
+ * @LastEditors  : 王晓龙
+ * @LastEditTime : 2020-01-16 12:15:31
  */
 const themeConfig = {
   nav: [
@@ -34,7 +34,6 @@ const themeConfig = {
       ["Table/", "Table 表格"],
       ["Message/", "Message 提示"],
       ["Alert/", "Alert 警告"],
-      ["Icon/", "Icon 图标"],
       ['Select/', 'Select 选择器'],
       ["Tag/", "Tag 标签"],
       ["timeline/", "Timeline 时间轴"]
