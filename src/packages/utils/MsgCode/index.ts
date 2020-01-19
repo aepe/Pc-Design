@@ -2,36 +2,35 @@ import library from "./library";
 import $util from "../index";
 
 export default class MsgCode {
-  private getLib = (code: any) => {
-    let msg: string;
-    for (const key in library) {
-      msg = code + library[code];
+  private getLib = (data: any, config?) => {
+    let msg: string = "";
+    if (!config) {
+      for (const key in library) {
+        msg = `${data}--${library[data]}，`;
+      }
+      return msg;
+    }
+
+    for (const key in data) {
+      if (data.hasOwnProperty(key)) {
+        const type = $util.dataType(data[key]);
+        if (type === "string") {
+          msg += `${data[key]}`;
+        } else {
+          console.warn(`${data}此类型无法使用`);
+        }
+      }
     }
     return msg;
   };
 
   /**
    * 用户自定义传入error code和 error mesage
+   * data : {code: '' / [], message: '' / []}
    */
-  private insert = ({ code, message }): string => {
+  private insert = (data: object): string => {
     let msg: string = "";
-    const codeType = $util.dataType(code);
-    const messageType = $util.dataType(message);
-    if (codeType === "string" && messageType === "string") {
-      msg = code + message;
-    } else if (codeType === "array") {
-      for (let i = 0; i < code.length; i++) {
-        if ($util.dataType(code[i]) === "string" && $util.dataType(message[i]) === "string") {
-          const ss = code[i] + "," + message[i] + ";";
-          msg += ss;
-        } else {
-          console.warn(`${code[i]}此类型无法使用`);
-          continue;
-        }
-      }
-    } else {
-      console.warn(`${code}或${message}此类型无法使用`);
-    }
+    msg = this.getLib(data, true);
     return msg;
   };
 
@@ -39,27 +38,26 @@ export default class MsgCode {
    * @param
    *  code 通过code码查找对应的message
    */
-  public getMsg = (code: any): string => {
-    console.log(code);
-    let msg: string;
-    const type = $util.dataType(code);
-    if (type === "string") {
-      msg = this.getLib(code);
-    } else if (type === "array") {
-      for (let i = 0; i < code.length; i++) {
-        const item = code[i];
-        if ($util.dataType(item) === "string") {
-          msg = this.getLib(item);
-        } else {
-          console.warn(`${item} 此类型无法使用`);
-          continue;
+  public getMsg = (data: any): string => {
+    // 1. code 为 string类型，
+    // 2. code 为 object 类型 { code: '', message: '', }
+    let msg: string = "";
+    const type = $util.dataType(data);
+    switch (type) {
+      case "string":
+        msg += this.getLib(data);
+        return msg;
+      case "array":
+        for (let i = 0; i < data.length; i++) {
+          msg += this.getMsg(data[i]);
         }
-      }
-    } else if (type === "object") {
-      msg = this.insert(code);
-    } else {
-      console.warn(`${code} 此类型无法使用`);
+        return msg;
+      case "object":
+        // msg = this.insert(data);
+        msg = this.getLib(data, true);
+        return msg;
+      default:
+        console.warn(`${data} 此类型无法使用`);
     }
-    return msg;
   };
 }

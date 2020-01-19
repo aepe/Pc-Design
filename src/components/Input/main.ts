@@ -10,11 +10,17 @@
 import Input from "./index";
 
 import utils from "../../packages/utils";
-const Msg = new utils.MsgCode();
+const Msg = new utils.msgCode();
+// const msg = Msg.getMsg({
+//   code: ["M0004", "M4003"],
+//   message: ["网络不稳定", "token过期"],
+// });
 const msg = Msg.getMsg({
-  code: ["WIN002", "WIN001", {}],
-  message: ["错了错了错了", "aaaaaaa", "{}"],
+  code: "M0004",
+  message: "网络不稳定",
 });
+// const msg = Msg.getMsg("WIN002");
+// const msg = Msg.getMsg(["WIN002", "WIN001"]);
 console.log("错误提示---", msg);
 const ZInput = {
   version: "0.0.1",
