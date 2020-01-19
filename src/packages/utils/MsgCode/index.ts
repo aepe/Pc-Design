@@ -2,35 +2,22 @@ import library from "./library";
 import $util from "../index";
 
 export default class MsgCode {
-  private getLib = (data: any, config?) => {
+  private getLib = (data: any) => {
     let msg: string = "";
-    if (!config) {
-      for (const key in library) {
-        msg = `${data}--${library[data]}，`;
-      }
-      return msg;
-    }
-
-    for (const key in data) {
-      if (data.hasOwnProperty(key)) {
-        const type = $util.dataType(data[key]);
-        if (type === "string") {
-          msg += `${data[key]}`;
-        } else {
-          console.warn(`${data}此类型无法使用`);
-        }
-      }
+    for (const key in library) {
+      msg = `${data}--${library[data]}，`;
     }
     return msg;
   };
 
   /**
    * 用户自定义传入error code和 error mesage
-   * data : {code: '' / [], message: '' / []}
+   * data : {code: '', message: ''}
    */
-  private insert = (data: object): string => {
+  private insert = ({ code, message }): string => {
+    library[code] = message;
     let msg: string = "";
-    msg = this.getLib(data, true);
+    msg = this.getLib(code);
     return msg;
   };
 
@@ -53,7 +40,7 @@ export default class MsgCode {
         }
         return msg;
       case "object":
-        msg = this.getLib(data, true);
+        msg += this.insert(data);
         return msg;
       default:
         console.warn(`${data} 此类型无法使用`);
