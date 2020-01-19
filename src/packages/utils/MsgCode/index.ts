@@ -53,7 +53,6 @@ export default class MsgCode {
         }
         return msg;
       case "object":
-        // msg = this.insert(data);
         msg = this.getLib(data, true);
         return msg;
       default:
