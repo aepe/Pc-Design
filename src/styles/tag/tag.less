@@ -1,5 +1,6 @@
 @z-prefix: z;
 @z-prefix-cls: ~"@{z-prefix}-tag";
+
 .z-tag,
 .z-check-tag {
   display: inline-block;
@@ -16,39 +17,26 @@
   border-radius: 6px;
   white-space: nowrap;
   user-select: none;
-  .z-close {
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    line-height: 16px;
-    transition: all 0.3s;
+
+  i {
     cursor: pointer;
-    font-style: normal;
-    vertical-align: middle;
-    border-radius: 50%;
-    background-color: transparent;
-    user-select: none;
-    font-size: 15px;
-    position: relative;
-    top: -1px;
-    right: -5px;
-    box-sizing: border-box;
-    &:hover {
-      background-color: @MainColor-1;
-    }
   }
+
   &:focus {
     outline: 0;
   }
+
   // 大size
   &.z-tag-large {
     height: 42px;
     line-height: 42px;
     font-size: @font-size-lg;
     border-radius: 8px;
+
     .z-close {
       font-size: @font-size-lg;
     }
+
     &::after {
       top: -10px;
       bottom: -10px;
@@ -56,15 +44,18 @@
       right: -10px;
     }
   }
+
   // 中size
   &.z-tag-small {
     height: 36px;
     line-height: 36px;
     font-size: @font-size-md;
     border-radius: 6px;
+
     .z-close {
       font-size: @font-size-md;
     }
+
     &::after {
       top: -8px;
       bottom: -8px;
@@ -72,15 +63,18 @@
       right: -8px;
     }
   }
+
   // 小size
   &.z-tag-mini {
     height: 32px;
     line-height: 32px;
     font-size: @font-size-sm;
     border-radius: 6px;
+
     .z-close {
       font-size: @font-size-sm;
     }
+
     &::after {
       top: -5px;
       bottom: -5px;
@@ -88,43 +82,54 @@
       right: -5px;
     }
   }
+
   // 类型
   &.z-tag-fill,
   &.z-check-tag__checked {
     background-color: @blue-main;
+
     &.z-tag-success {
       background-color: @green-1;
     }
+
     &.z-tag-info {
       background-color: @gray-5;
     }
+
     &.z-tag-danger {
       background-color: @red-1;
     }
+
     &.z-tag-warning {
       background-color: @orange;
     }
   }
+
   // 主题
-  &.z-tag-plain { // 有边框
+  &.z-tag-plain {
+    // 有边框
     border: @border-width-base solid @blue-main;
     background-color: @blue-4;
     color: @white;
+
     &.z-tag-success {
       border: @border-width-base solid @green-1;
       background-color: @green-3;
       color: @green-1;
     }
+
     &.z-tag-info {
       border: @border-width-base solid @gray-5;
       background-color: @gray-3;
       color: @gray-5;
     }
+
     &.z-tag-danger {
       border: @border-width-base solid @red-1;
       background-color: @red-3;
       color: @red-1;
     }
+
     &.z-tag-warning {
       border: @border-width-base solid @orange;
       background-color: @orange-3;
@@ -132,16 +137,20 @@
     }
   }
 }
+
 // checkbox tag
 .z-check-tag {
   color: @black;
   cursor: pointer;
+
   &:hover {
     color: @blue-main;
   }
+
   &.z-check-tag__checked {
     background-color: @blue-main;
     color: @white;
+
     &:hover {
       color: @white;
     }
