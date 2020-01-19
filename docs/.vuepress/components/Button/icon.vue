@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-12-11 17:08:09
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-12-12 16:11:55
+ * @LastEditTime: 2019-12-13 17:40:58
  -->
 <template>
   <div class="bhabgs-block">
@@ -19,7 +19,13 @@
       <ZIcon type="sousuo" />
     </ZButton>
     <ZButton type="warning" icon="success" />
-    <ZButton :loading="loading" @click="changeLoading" type="warning" icon="success" />
+    <ZButton
+      :loading="loading"
+      @click="changeLoading"
+      type="warning"
+      icon="success"
+      >loading</ZButton
+    >
   </div>
 </template>
 <script>

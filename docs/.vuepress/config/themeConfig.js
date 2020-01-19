@@ -4,7 +4,7 @@
  * @Author: bhabgs
  * @Date: 2019-11-07 09:48:14
  * @LastEditors: bhabgs
- * @LastEditTime: 2019-12-13 17:14:58
+ * @LastEditTime: 2019-12-16 09:30:07
  */
 const themeConfig = {
   nav: [
@@ -34,7 +34,6 @@ const themeConfig = {
       ["Table/", "Table 表格"],
       ["Message/", "Message 提示"],
       ["Alert/", "Alert 警告"],
-      ["Icon/", "Icon 图标"],
       ["Select/", "Select 选择器"]
     ]
   },

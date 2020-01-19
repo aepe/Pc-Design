@@ -3,8 +3,8 @@
  * @version: 0.0.1
  * @Author: bhabgs
  * @Date: 2019-11-19 10:12:41
- * @LastEditors: bhabgs
- * @LastEditTime: 2019-11-28 17:46:27
+ * @LastEditors  : bhabgs
+ * @LastEditTime : 2020-01-19 13:47:41
  */
 import babel from "rollup-plugin-babel";
 import { resolve } from "path"; // 获取文件地址
@@ -20,12 +20,7 @@ export default {
   input: resolve("./") + "/src/index.ts",
   output: output,
   plugins: [
-    rollupRresolve({
-      browser: true,
-      extensions,
-      dedupe: ["vue", "vue-property-decorator"],
-      jail: resolve("./") + "/src"
-    }),
+    rollupRresolve({ mainFields: ["module", "main", "browser"] }),
     commonjs(),
     babel({
       extensions,
