@@ -50,8 +50,8 @@ export default class ZTimelineItem extends BaseProps {
 
   /* ************************ Render ************************ */
   render(): JSX.Element {
-    const dot: VNode[] | JSX.Element = this.$Zutil.singleSlot(this.$slots.dot) || <span class="zx-timeline-dot" style={`border-color:${this.dotColor}`}></span>;
-    const summartContent: string | VNode[] = this.$Zutil.singleSlot(this.$slots.content) || this.content;
+    const dot: Array<VNode> | JSX.Element = this.$Zutil.singleSlot(this.$slots.dot) || <span class="zx-timeline-dot" style={`border-color:${this.dotColor}`}></span>;
+    const summartContent: string | Array<VNode> = this.$Zutil.singleSlot(this.$slots.content) || this.content;
     const timelineSummary: string | JSX.Element = summartContent ? <div class="zx-timeline-summary">{summartContent}</div> : '';
 
     return (

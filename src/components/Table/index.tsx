@@ -46,7 +46,7 @@ export default class ZTable extends BaseProps {
   private table: Vue = this;
 
   @Provide()
-  private slots: VNode[] = this.$slots.default || [];
+  private slots: Array<VNode> = this.$slots.default || [];
 
   /* ************************ Main *************************** */
   private get getClassName(): string {

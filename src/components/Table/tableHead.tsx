@@ -20,7 +20,7 @@ export default class ZTableHead extends Vue {
 
   /* ************************ Render ************************ */
   render(): JSX.Element {
-    const colSlots: VNode[] = this.$Zutil.singleSlot(this.$slots.col) || [];
+    const colSlots: Array<VNode> = this.$Zutil.singleSlot(this.$slots.col) || [];
 
     return (
       <div class="z-table-head">

@@ -8,11 +8,11 @@ export default class ZTableBody extends Vue {
   private table!: any;
 
   /* ************************ Main ************************** */
-  private getTDs(data: any): JSX.Element[] {
+  private getTDs(data: any): Array<JSX.Element> {
     return this.table.column.map((col: any) => <td align={col.align || 'left'}>{data[col.prop]}</td>);
   }
 
-  private get getTRs(): JSX.Element[] {
+  private get getTRs(): Array<JSX.Element> {
     return this.table.data.map((data: any) => <tr>{this.getTDs(data)}</tr>);
   }
 

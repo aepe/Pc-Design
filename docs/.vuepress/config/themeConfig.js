@@ -3,8 +3,8 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-07 09:48:14
- * @LastEditors: bhabgs
- * @LastEditTime: 2019-12-16 09:30:07
+ * @LastEditors  : bhabgs
+ * @LastEditTime : 2020-01-19 13:49:02
  */
 const themeConfig = {
   nav: [
@@ -34,7 +34,12 @@ const themeConfig = {
       ["Table/", "Table 表格"],
       ["Message/", "Message 提示"],
       ["Alert/", "Alert 警告"],
-      ["Select/", "Select 选择器"]
+      ["Select/", "Select 选择器"],
+      ["Tag/", "Tag 标签"],
+      ["timeline/", "Timeline 时间轴"]
+      // ["Drag/", "Drag 拖拽"],
+      // ["Scale/", "Scale 缩放"],
+      // ["ml/", "马良docs"],
     ]
   },
   sidebarDepth: 2

@@ -3,16 +3,15 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-12 09:06:17
- * @LastEditors: 王晓龙
- * @LastEditTime: 2019-12-13 15:45:21
+ * @LastEditors  : 王晓龙
+ * @LastEditTime : 2020-01-16 12:05:42
  -->
 
 # table 表格
 
 ::: explain
 
-1. 符合原生 table 标签风格 tbody、thead...
-2. 支持多种 table 风格（'default', 'stripe', 'border'）
+1. 支持多种 table 风格（'default', 'stripe', 'border'）
 
 :::
 

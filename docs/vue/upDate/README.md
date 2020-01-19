@@ -3,8 +3,8 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-07 11:49:39
- * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-29 10:21:08
+ * @LastEditors  : 王晓龙
+ * @LastEditTime : 2020-01-16 11:46:50
  -->
 
 # 组件更新信息
@@ -28,7 +28,7 @@ export default {
                     content: '完善文档与开发方式',
                 },
                 {
-                    title: 'v1.0.2加入tags组件',
+                    title: 'v1.0.2 加入tags组件',
                     content: '',
                 },
             ],

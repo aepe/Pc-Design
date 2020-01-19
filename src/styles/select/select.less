@@ -1,69 +1,143 @@
-.z-alert {
+.z-select {
+  width: 220px;
   text-align: left;
-  padding: 8px 0;
   box-sizing: border-box;
   font-size: @small-font-size;
 
-  .z-alert-inner {
-    padding: 0 20px;
-    display: flex;
-    align-items: center;
+  // select-input输入框
+  .z-select-input {
+    box-sizing: border-box;
+    font-size: @font-size-md;
 
-    .z-alert-icon {
+    .z-select-input__inner {
+      width: 100%;
+      height: 35px;
       display: flex;
       align-items: center;
-      margin-right: 10px;
-      font-size: @medium-font-size;
-      font-weight: bold;
-    }
+      padding: 0 @padding-md;
+      border: 1px solid @gray-3;
+      border-radius: 5px;
+      box-sizing: border-box;
+      cursor: pointer;
+      position: relative;
+      transition: .3s;
 
-    .z-alert-content {
-      flex: 1;
-      min-width: 0;
+      .z-select-input__render {
+        flex: 1;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        margin-right: @padding-md;
+        position: relative;
 
-      .z-alert-title {
-        display: block;
-        width: 100%;
+        // 数据值
+        .z-select-input__value {
+          position: relative;
+          z-index: 1;
+          width: 100%;
+          color: @gray-6;
+          pointer-events: none;
+          user-select: none;
+        }
+
+        // 输入元素
+
+        // placeholder
+        .z-select-input__placeholder {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          color: @gray-4;
+          pointer-events: none;
+          user-select: none;
+        }
+      }
+
+      // 图标
+      .z-select-input__icon {
+        pointer-events: none;
+        transition: .3s;
+
+        .iconfont {
+          display: block;
+          font-size: @font-size-md;
+          color: @gray-4;
+        }
+      }
+
+      // 鼠标滑过
+      &:hover {
+        border-color: @blue-5;
       }
     }
+  }
 
-    .z-alert-close {
-      display: flex;
-      align-items: center;
-      margin-left: 10px;
-      cursor: pointer;
+  // 焦点状态
+  &.z-select-isfocus {
+    .z-select-input {
+      .z-select-input__inner {
+        border-color: @blue-5;
+        box-shadow: 0 0 0 2px @blue-7;
+
+        .z-select-input__icon {
+          transform: rotate(180deg);
+        }
+      }
     }
   }
+}
 
-  +.z-alert {
-    margin-top: 15px;
-  }
+// select-dropdown下拉
+.z-select-dropdown {
+  .z-select-dropdown__wrap {
+    background: @white;
+    border: 1px solid @gray-2;
+    border-radius: 5px;
+    box-shadow: 0px 1px 5px @gray-3;
+    overflow: hidden;
 
-  // info
-  &.z-alert__info {
-    background: @MainColor-3;
-    border: 1px solid @MainColor-2;
-    color: @MainColor-2;
-  }
+    .z-select-dropdown__scroll {
+      overflow-y: auto;
 
-  // success
-  &.z-alert__success {
-    background: @AuxiliaryColor-6;
-    border: 1px solid @AuxiliaryColor-3;
-    color: @AuxiliaryColor-3;
-  }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
 
-  // warning
-  &.z-alert__warning {
-    background: @AuxiliaryColor-4;
-    border: 1px solid @AuxiliaryColor-1;
-    color: @AuxiliaryColor-1;
-  }
+        .z-select-dropdown__item {
+          height: 35px;
+          display: flex;
+          align-items: center;
+          padding: 0 @padding-md;
+          font-size: @font-size-md;
+          color: @gray-6;
+          cursor: pointer;
+          transition: .3s;
 
-  // error
-  &.z-alert__error {
-    background: @AuxiliaryColor-5;
-    border: 1px solid @AuxiliaryColor-2;
-    color: @AuxiliaryColor-2;
+          // 鼠标滑过
+          &:hover {
+            background: @blue-8;
+            color: @blue-3;
+          }
+
+          // 选中状态
+          &.selected {
+            background: @gray-2;
+            color: @gray-6;
+            font-weight: bold;
+          }
+
+          // 禁用状态
+          &.disabled {
+            background: @white;
+            color: @gray-4;
+            cursor: not-allowed;
+            user-select: none;
+          }
+        }
+      }
+    }
   }
 }
