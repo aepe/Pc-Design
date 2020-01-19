@@ -1,20 +1,21 @@
-import { Component, Vue } from 'vue-property-decorator';
-import inputProps from './inputProps';
+import { Component, Vue } from "vue-property-decorator";
+import inputProps from "./inputProps";
 import Icon from "../Icon/icon";
+import { VNode } from "vue";
 const baseInput = Vue.extend({
-  props: {...inputProps},
+  props: { ...inputProps },
   model: {
-    prop: 'value',
-    event: 'input.value',
+    prop: "value",
+    event: "input.value",
   },
   data() {
     const { value, modelValue } = this.$props;
     return {
       stateValue: modelValue ? modelValue : value,
       isFocus: false,
-    }
+    };
   },
-})
+});
 
 @Component({
   components: {
@@ -22,7 +23,7 @@ const baseInput = Vue.extend({
   },
 })
 export default class ZInput extends baseInput {
-  constructor () {
+  constructor() {
     super();
   }
 
@@ -30,31 +31,31 @@ export default class ZInput extends baseInput {
   private setInputClass() {
     const { $slots, $props } = this;
     return {
-      ['z-input']: true,
-      [`z-input-${$props.size}`]: $props.size == 'default' ? '' : $props.size,
-      'z-input-disabled': $props.disabled,
-      'z-input-suffix': $props.suffixIcon || $slots.suffix || $props.clearable,
-      'z-input-prefix': $props.prefixIcon || $slots.prefix
+      ["z-input"]: true,
+      [`z-input-${$props.size}`]: $props.size == "default" ? "" : $props.size,
+      "z-input-disabled": $props.disabled,
+      "z-input-suffix": $props.suffixIcon || $slots.suffix || $props.clearable,
+      "z-input-prefix": $props.prefixIcon || $slots.prefix,
     };
   }
 
   // handleInput
   private handleInput(e: MouseEvent) {
     const value = (e.target as HTMLInputElement).value;
-    this.$emit('input', value);
-    this.$emit('input.value', (e.target as HTMLInputElement).value);
+    this.$emit("input", value);
+    this.$emit("input.value", (e.target as HTMLInputElement).value);
     this.stateValue = value;
   }
 
   // handleChange
   private handleChange(e: MouseEvent) {
-    this.$emit('change', (e.target as HTMLInputElement).value);
+    this.$emit("change", (e.target as HTMLInputElement).value);
   }
 
   // handleClear
   private handleClear(e: MouseEvent) {
-    this.stateValue = '';
-    this.$emit('clear', e);
+    this.stateValue = "";
+    this.$emit("clear", e);
   }
 
   // handleMouseEnter
@@ -72,10 +73,12 @@ export default class ZInput extends baseInput {
     const { $props, $slots } = this;
     const prefixIcon = $props.prefixIcon || $slots.prefix;
     if (prefixIcon) {
-      return <span class={["z-input-prefix-icon"]}>
-        <Icon type={$props.prefixIcon} />
-        {$slots.prefix}
-      </span>
+      return (
+        <span class={["z-input-prefix-icon"]}>
+          <Icon type={$props.prefixIcon} />
+          {$slots.prefix}
+        </span>
+      );
     }
     return null;
   }
@@ -87,7 +90,7 @@ export default class ZInput extends baseInput {
     // 存在suffixIcon 或 suffix 不显示清空图标
     const hasSuffix = suffixIcon || suffix;
     // 不清空，禁用，值为空
-    if (!clearable || disabled || stateValue === '' || stateValue === null || stateValue === undefined || hasSuffix) {
+    if (!clearable || disabled || stateValue === "" || stateValue === null || stateValue === undefined || hasSuffix) {
       return null;
     }
     if (!isFocus) {
@@ -97,10 +100,10 @@ export default class ZInput extends baseInput {
   }
 
   // suffix
-  private renderSuffixIcon(): JSX.Element {
+  private renderSuffixIcon(): JSX.Element | VNode[] {
     const { $props, $slots } = this;
     // $slots 直接渲染 $slots.suffix 否则 $props.suffixIcon
-    return $slots.suffix ? $slots.suffix : <Icon type={$props.suffixIcon} />
+    return $slots.suffix ? $slots.suffix : <Icon type={$props.suffixIcon} />;
   }
 
   // render suffixIcon
@@ -109,16 +112,18 @@ export default class ZInput extends baseInput {
     const suffixClass = {
       "z-input-suffix-icon": true,
       "z-input-clear-icon": $props.clearable,
-    }
-    return <span class={suffixClass}>
+    };
+    return (
+      <span class={suffixClass}>
         {renderClearIcon()}
         {renderSuffixIcon()}
       </span>
+    );
   }
 
   // render input
   private renderInput(): JSX.Element {
-    const { stateValue, $props, handleInput, handleChange, $listeners, handleMouseEnter } = this;
+    const { stateValue, $props, handleInput, handleChange, $listeners } = this;
     const inputProps = {
       attrs: {
         ...$props,
@@ -132,8 +137,8 @@ export default class ZInput extends baseInput {
         ...$listeners,
         input: handleInput,
         change: handleChange,
-      }
-    }
+      },
+    };
     return <input {...inputProps} />;
   }
 
@@ -148,19 +153,13 @@ export default class ZInput extends baseInput {
   }
 
   public render(): JSX.Element {
-    const { renderInput,
-      renderPrefixIcon,
-      renderSuffix,
-      setInputClass,
-      handleMouseEnter,
-      handleMouseLeave,
-      $listeners } = this;
+    const { renderInput, renderPrefixIcon, renderSuffix, setInputClass, handleMouseEnter, handleMouseLeave, $listeners } = this;
     const divInputProps = {
       class: setInputClass(),
       on: {
         ...$listeners,
         mouseenter: handleMouseEnter,
-        mouseleave: handleMouseLeave
+        mouseleave: handleMouseLeave,
       },
     };
     return (
@@ -169,6 +168,6 @@ export default class ZInput extends baseInput {
         {renderInput()}
         {renderSuffix()}
       </div>
-    )
+    );
   }
 }
