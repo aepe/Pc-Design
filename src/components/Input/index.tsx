@@ -123,7 +123,7 @@ export default class ZInput extends baseInput {
 
   // render input
   private renderInput(): JSX.Element {
-    const { stateValue, $props, handleInput, handleChange, $listeners, handleMouseEnter } = this;
+    const { stateValue, $props, handleInput, handleChange, $listeners } = this;
     const inputProps = {
       attrs: {
         ...$props,
