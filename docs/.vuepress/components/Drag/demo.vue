@@ -3,19 +3,13 @@
  * @version:
  * @Author: bhabgs
  * @Date: 2019-11-12 14:04:54
- * @LastEditors: wpp
- * @LastEditTime: 2019-11-19 10:22:06
+ * @LastEditors  : wpp
+ * @LastEditTime : 2020-02-07 17:03:48
  -->
 <template>
   <div class="drag-component">
     <div class="drag">
-      <Zdrag @getMovePosition="dragPosition">
-        <div class="drag-item"></div>
-      </Zdrag>
-    </div>
-    <div class="result">
-      <p>left: <span>{{left}}</span>px</p>
-      <p>top: <span>{{top}}</span>px</p>
+      <Zdrag @dragmouseupfn="dragPosition" @scalemouseupfn="scaleSize" :initInfo='initInfo'> </Zdrag>
     </div>
   </div>
 </template>
@@ -23,17 +17,27 @@
 export default {
   data() {
     return {
-      left: 0,
-      top: 0
-    }
+      initInfo: {
+        left: 125,
+        top: 125,
+        width: 150,
+        height: 100,
+      },
+    };
   },
   methods: {
     dragPosition(data) {
-      this.left = data.rl;
-      this.top = data.rt;
-    }
-  }
-}
+      this.initInfo.left = data.left;
+      this.initInfo.top = data.top;
+      console.log('left:' + data.left, 'top:' + data.top);
+    },
+    scaleSize(data) {
+      this.initInfo.width = data.width;
+      this.initInfo.height = data.height;
+      console.log('width:' + data.width, 'height:' + data.height);
+    },
+  },
+};
 </script>
 <style>
 .drag {
@@ -41,19 +45,6 @@ export default {
   height: 380px;
   border: 1px solid #f0f0f0;
   border-radius: 3px;
-}
-.drag-item{
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  overflow: hidden;
-  background-color: #68b8f1;
-}
-.result {
-  display: flex;
-  color: #999;
-}
-.result p ~ p {
-  margin-left: 100px;
+  position: relative;
 }
 </style>

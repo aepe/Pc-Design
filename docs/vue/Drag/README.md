@@ -3,8 +3,8 @@
  * @version:
  * @Author: wpp
  * @Date: 2019-11-07 17:20:23
- * @LastEditors: 王晓龙
- * @LastEditTime: 2019-11-28 12:01:21
+ * @LastEditors  : wpp
+ * @LastEditTime : 2020-02-07 16:57:56
  -->
 
 # drag 拖拽
@@ -27,7 +27,7 @@
 
 :::
 
-::: explain Drag 指令（ZDrag）
+<!-- ::: explain Drag 指令（ZDrag）
 
 <templatePc name="Drag-directivesDemo">
 
@@ -35,14 +35,15 @@
 
 </templatePc>
 
-:::
+::: -->
 
 ## API
 
 ::: explain drag Events
 
-| 参数            | 描述           | 类型     | 是否必填 | 可选值 | 默认值 |
-| :-------------- | :------------- | :------- | :------- | :----- | :----- |
-| getMovePosition | 获取拖拽的位置 | function | false    | -      | -      |
+| 参数            | 描述               | 类型     | 是否必填 | 可选值 | 默认值 |
+| :-------------- | :-------------    | :------- | :------- | :----- | :----- |
+| dragmouseupfn   | 获取拖拽的位置      | function | false    | -      | -      |
+| scalemouseupfn  | 获取缩放的尺寸大小  | function | false    | -      | -      |
 
 :::
